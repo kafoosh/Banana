@@ -24,10 +24,10 @@ DATA_DIR = ROOT / "docs" / "data"
 VOICES = ROOT / "tools" / "voices"
 
 SR = 24000
-SPEED_NORMAL = 0.92   # Gerald's narration
-SPEED_QUOTE = 0.84    # lines the magician must repeat: slower, dictation-like
+SPEED_NORMAL = 1.04   # Gerald's narration — workout-tape pace, always mid-jog
+SPEED_QUOTE = 0.88    # lines the magician must repeat: slower, dictation-like
 HISS_LEVEL = 0.0055
-WAIT_TAIL = 1.4       # extra hiss after "pause the tape" so slow taps leak nothing
+WAIT_TAIL = 1.1       # hiss after the cue, then the deck "auto-stops" (clunk)
 
 
 def synth_factory(voice: str):
@@ -106,7 +106,10 @@ def assemble(seg: dict, synth) -> np.ndarray:
         else:
             raise ValueError(f"unknown part {part!r}")
     if seg["kind"] == "wait":
+        # hiss tail, then the deck stops itself: a soft transport clunk
         chunks.append(silence(WAIT_TAIL))
+        chunks.append(click() * 0.8)
+        chunks.append(silence(0.12))
     else:
         chunks.append(silence(0.35))
     return np.concatenate(chunks)
@@ -163,8 +166,8 @@ def main() -> None:
         dur = round(len(final) / SR, 2)
         manifest["segments"][sid] = {
             "kind": seg["kind"],
-            "play": seg.get("play"),
-            "rew": seg.get("rew"),
+            "yes": seg.get("yes"),
+            "no": seg.get("no"),
             "art": seg.get("art"),
             "caption": seg["caption"],
             "file": f"audio/{fname}",

@@ -82,12 +82,20 @@ to the home screen and runs full-screen/offline (no browser chrome during perfor
 Hidden debug mode (`?debug=1`) showing current node + remaining candidates, per §8.
 Man/Stickman contingency (§7) on by default. No method words anywhere user-visible.
 
-## Decisions (locked by owner, 2026-07-30)
+## Decisions (locked by owner, 2026-07-30; revised same day)
 
 1. **Skin: 1 · The Cassette** (flagship). Others remain future costumes; engine is shared.
-2. **Secret NO input: ⏪ rewind-10s**, then ▶. Taught diegetically as course rule #3.
-3. **Voice: pre-baked open TTS** — Kokoro (`am_michael`) + tape-ify chain, built by
-   `tools/build_audio.py`. Swap voices with `--voice`.
+2. **Secret input: the split play button** *(owner's revision — replaces the earlier
+   rewind-as-NO mechanic)*. The big ▶ is invisibly split: right half = YES, left half =
+   NO. The thumb covers the whole button, so the gesture is identical either way, and
+   Gerald openly jokes about the consequence: "Don't tell me their answer. Press play.
+   I'll know." On a NO he *called it* — sarcastic chastisement of the performer, never an
+   explanation. ⏪ within ~3s of a fork = undo (back to before the question); otherwise
+   ⏪ is an honest 10-second replay.
+3. **Voice & register: 80s/90s workout tape** — "MIND-AEROBICS™ with Gerald." Peppy,
+   relentless, turns passive-aggressive on misses; the performer is "champ"/"superstar"
+   (never "apprentice"). Pre-baked open TTS: Kokoro (`am_michael`, workout pace) +
+   tape-ify chain, built by `tools/build_audio.py`. Swap voices with `--voice`.
 4. **Reveal: kit coaches the magician** to announce the drawing, then the cassette art
    flips to the doodle as printed proof.
 

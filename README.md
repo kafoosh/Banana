@@ -1,11 +1,13 @@
 # Banana 🍌📼
 
 A webapp magic trick. On screen it's **AudioMaster™ 98**, a crusty shareware
-player with one file loaded: *"Read Minds in 30 Minutes — Tape 2, Side B: Your
-First Performance"*, narrated by The Amazing Gerald. You (the magician) press
-play and do exactly what the tape says, live, in front of a spectator. The tape
-runs the induction, feeds you every line, scolds you when the spectator says
-no… and then tells you exactly what they drew.
+player with one file loaded: *"MIND-AEROBICS™ — Tape 2, Side B: Your First
+Mind-Read"*, hosted by Gerald, your relentlessly upbeat 80s workout-cassette
+instructor. You (the magician) press play and do exactly what the tape says,
+live, in front of a spectator. The tape runs the warm-up, feeds you every
+line, sarcastically *calls* every "no" before you could possibly have told it
+("don't ask how I know, champ — I recorded this in 1987")… and then tells you
+exactly what they drew.
 
 The spectator sees a dumb linear audio file. It is not a dumb linear audio file.
 
@@ -17,10 +19,15 @@ The spectator sees a dumb linear audio file. It is not a dumb linear audio file.
 
 1. Open the app (phone, full volume). Read the packed-in insert once, alone.
 2. Seat your subject, phone flat between you, press ▶, and obey Gerald.
-3. When Gerald makes a claim and your subject **confirms**, press ▶ to continue.
-4. When your subject **denies** something, press **◀◀10** — you're "re-checking
-   the instructions" — then ▶. Gerald handles the rest. That's the entire secret
-   interface, and the insert states it in plain sight as course rule #3.
+3. When the tape stops, say Gerald's line and get the subject's answer. Then
+   resume with your thumb on the correct half of the big ▶ button:
+   **right half = YES, left half = NO.** Your thumb covers the whole button,
+   so there is nothing to see — and Gerald reacts to an answer he was "never
+   told." On air he only ever says: *"Don't tell me their answer. Press play.
+   I'll know."*
+4. Pressed the wrong half? Tap **◀◀10 immediately** — within ~3 seconds the
+   tape rewinds to just before the question, and you simply answer again.
+   (After that window, ◀◀10 is an honest 10-second replay, which is also fine.)
 5. At the end, Gerald coaches you through announcing the drawing; the cassette
    art flips to the doodle as printed proof. Press ■ to rewind for the next
    spectator.
