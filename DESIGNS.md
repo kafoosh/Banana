@@ -92,10 +92,12 @@ Man/Stickman contingency (§7) on by default. No method words anywhere user-visi
    I'll know." On a NO he *called it* — sarcastic chastisement of the performer, never an
    explanation. ⏪ within ~3s of a fork = undo (back to before the question); otherwise
    ⏪ is an honest 10-second replay.
-3. **Voice & register: 80s/90s workout tape** — "MIND-AEROBICS™ with Gerald." Peppy,
-   relentless, turns passive-aggressive on misses; the performer is "champ"/"superstar"
-   (never "apprentice"). Pre-baked open TTS: Kokoro (`am_michael`, workout pace) +
-   tape-ify chain, built by `tools/build_audio.py`. Swap voices with `--voice`.
+3. **Voice & register: 80s/90s workout tape, delivered bone-dry** *(owner's revision:
+   "too corny — dry humor")* — "MIND-AEROBICS™ with Gerald." Deadpan, unhurried,
+   understated omniscience ("I felt it coming, the way one feels weather"); zero
+   exclamation marks, zero nicknames (no "apprentice", no "champ"). Pre-baked open TTS:
+   Kokoro (`am_michael`, measured pace) + tape-ify chain, built by `tools/build_audio.py`.
+   Swap voices with `--voice`.
 4. **Reveal: kit coaches the magician** to announce the drawing, then the cassette art
    flips to the doodle as printed proof.
 

@@ -24,7 +24,7 @@ DATA_DIR = ROOT / "docs" / "data"
 VOICES = ROOT / "tools" / "voices"
 
 SR = 24000
-SPEED_NORMAL = 1.04   # Gerald's narration — workout-tape pace, always mid-jog
+SPEED_NORMAL = 0.96   # Gerald's narration — flat, unhurried, deadpan
 SPEED_QUOTE = 0.88    # lines the magician must repeat: slower, dictation-like
 HISS_LEVEL = 0.0055
 WAIT_TAIL = 1.1       # hiss after the cue, then the deck "auto-stops" (clunk)

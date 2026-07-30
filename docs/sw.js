@@ -1,5 +1,5 @@
 /* AudioMaster 98 — offline cache so the performance never depends on wifi. */
-const VERSION = 'am98-v2';
+const VERSION = 'am98-v3';
 const CORE = [
   './', './index.html', './css/player.css', './js/main.js', './js/art.js',
   './data/segments.json', './icon.svg', './manifest.webmanifest',

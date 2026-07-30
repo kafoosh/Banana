@@ -2,12 +2,12 @@
 
 A webapp magic trick. On screen it's **AudioMaster™ 98**, a crusty shareware
 player with one file loaded: *"MIND-AEROBICS™ — Tape 2, Side B: Your First
-Mind-Read"*, hosted by Gerald, your relentlessly upbeat 80s workout-cassette
-instructor. You (the magician) press play and do exactly what the tape says,
-live, in front of a spectator. The tape runs the warm-up, feeds you every
-line, sarcastically *calls* every "no" before you could possibly have told it
-("don't ask how I know, champ — I recorded this in 1987")… and then tells you
-exactly what they drew.
+Mind-Read"*, hosted by Gerald — an 80s workout-cassette instructor gone
+completely deadpan. You (the magician) press play and do exactly what the
+tape says, live, in front of a spectator. The tape runs the warm-up, feeds
+you every line, dryly *calls* every "no" before you could possibly have told
+it ("Don't ask how I know. I recorded this in 1987. The no arrived before
+you did.")… and then tells you exactly what they drew.
 
 The spectator sees a dumb linear audio file. It is not a dumb linear audio file.
 
@@ -23,8 +23,8 @@ The spectator sees a dumb linear audio file. It is not a dumb linear audio file.
    resume with your thumb on the correct half of the big ▶ button:
    **right half = YES, left half = NO.** Your thumb covers the whole button,
    so there is nothing to see — and Gerald reacts to an answer he was "never
-   told." On air he only ever says: *"Don't tell me their answer. Press play.
-   I'll know."*
+   told." On air he only ever says: *"Don't tell me the answer. Press play.
+   I'll know. I always know. Try not to think about it."*
 4. Pressed the wrong half? Tap **◀◀10 immediately** — within ~3 seconds the
    tape rewinds to just before the question, and you simply answer again.
    (After that window, ◀◀10 is an honest 10-second replay, which is also fine.)
