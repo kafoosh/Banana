@@ -1,0 +1,375 @@
+{
+ "runtime": "11:47",
+ "track": "02_SideB_FirstPerformance.mp3",
+ "segments": {
+  "intro": {
+   "kind": "wait",
+   "play": "ind1",
+   "rew": null,
+   "art": null,
+   "caption": "Side B. Your first performance. … Rule one: repeat only the lines I give you. Rule two: when I say pause, pause. Rule three: when something goes wrong, wind me back ten seconds and listen again — this course anticipates everything. Even you. … Seat your subject across from you, phone between you, face up. <b>Pause here. Play when you're both ready.</b>",
+   "file": "audio/t01.mp3",
+   "dur": 59.03
+  },
+  "ind1": {
+   "kind": "wait",
+   "play": "ind2",
+   "rew": null,
+   "art": null,
+   "caption": "「TO YOUR SUBJECT」 Close your eyes. You're in school again — ten, maybe twelve. Last period. A pencil in your hand, and without deciding to, you're doodling the same small doodle you always drew. Five, ten seconds of pencil. Not a smiley face. Not a mountain. Not a bicycle. No circles or triangles. A real thing anybody would recognize. See it on the page. Don't say it. <b>Pause — play when they nod.</b>",
+   "file": "audio/t02.mp3",
+   "dur": 65.02
+  },
+  "ind2": {
+   "kind": "wait",
+   "play": "preflight",
+   "rew": null,
+   "art": null,
+   "caption": "「TO YOUR SUBJECT」 Put the real thing in the room — real size, right there between you. Now think of it as a WORD (a smiley face would be the word SMILEY). Walk its letters one at a time… again, slower… good. 「TO YOU」 Ask: <b>“Do you have it?”</b> A nod is enough. <b>Pause — play when they nod.</b>",
+   "file": "audio/t03.mp3",
+   "dur": 46.78
+  },
+  "preflight": {
+   "kind": "auto",
+   "play": "20",
+   "rew": null,
+   "art": null,
+   "caption": "From here, you say only Gerald's words. Deep breath. Straight back. Dead eyes. Here we go.",
+   "file": "audio/t04.mp3",
+   "dur": 8.96
+  },
+  "20": {
+   "kind": "wait",
+   "play": "21",
+   "rew": "24",
+   "art": null,
+   "caption": "First impression. Say it calm, like you're reading a menu: <b>“I can feel a letter in your word. An A. There's an A… correct?”</b> Then pause.",
+   "file": "audio/t05.mp3",
+   "dur": 16.93
+  },
+  "21": {
+   "kind": "wait",
+   "play": "22",
+   "rew": "25m",
+   "art": null,
+   "caption": "Of course there's an A. There always is, with Gerald. Now say: <b>“I see a T as well… yes?”</b> Pause.",
+   "file": "audio/t06.mp3",
+   "dur": 11.63
+  },
+  "22": {
+   "kind": "wait",
+   "play": "23",
+   "rew": "26",
+   "art": null,
+   "caption": "Two for two. Don't get cocky. Softer this time: <b>“Is that… an R?”</b> Pause.",
+   "file": "audio/t07.mp3",
+   "dur": 13.14
+  },
+  "23": {
+   "kind": "wait",
+   "play": "52",
+   "rew": "51",
+   "art": null,
+   "caption": "Look at you. Almost dangerous. Last letter — barely believe it: <b>“Now I'm not sure about this one… an S?”</b> Pause.",
+   "file": "audio/t08.mp3",
+   "dur": 13.27
+  },
+  "24": {
+   "kind": "wait",
+   "play": "27",
+   "rew": "28",
+   "art": null,
+   "caption": "[click] You rewound me — so they said no. Fine. FINE. Shoulders down; doubt has a smell. Say: <b>“No… no, it's leaning — it's an S. There IS an S.”</b> Pause.",
+   "file": "audio/t09.mp3",
+   "dur": 26.02
+  },
+  "25m": {
+   "kind": "wait",
+   "play": "25",
+   "rew": "rman",
+   "art": null,
+   "caption": "[click] No T. Interesting — steady. Say it as a FACT, not a question: <b>“This thing you drew — it is NOT a living thing.”</b> If they agree: play. If they argue: you know the rule.",
+   "file": "audio/t10.mp3",
+   "dur": 29.43
+  },
+  "25": {
+   "kind": "wait",
+   "play": "29",
+   "rew": "30",
+   "art": null,
+   "caption": "Agreed — not alive. See how easy? Say: <b>“Hold out your hand. Imagine it there. Could you HOLD it in one hand?”</b> Pause.",
+   "file": "audio/t11.mp3",
+   "dur": 14.27
+  },
+  "26": {
+   "kind": "wait",
+   "play": "31",
+   "rew": "32",
+   "art": null,
+   "caption": "[click] No R. They're fine — YOU are 'adequate'. New angle: <b>“Leave the letters. Let me touch the thing itself. Is it ALIVE?”</b> Pause.",
+   "file": "audio/t12.mp3",
+   "dur": 18.76
+  },
+  "27": {
+   "kind": "wait",
+   "play": "33",
+   "rew": "38",
+   "art": null,
+   "caption": "There it is — we're back. Now the body does the work. Say: <b>“Reach out in your mind. Can you TOUCH it?”</b> Pause.",
+   "file": "audio/t13.mp3",
+   "dur": 14.89
+  },
+  "28": {
+   "kind": "wait",
+   "play": "34",
+   "rew": "35",
+   "art": null,
+   "caption": "[click] No A. No S. Whatever you're doing with your face — stop. Letters are not your instrument; we go to RAW IMPRESSIONS. Say: <b>“Forget letters. Forget words. I'm getting something warmer. Is it ALIVE?”</b> Pause.",
+   "file": "audio/t14.mp3",
+   "dur": 29.75
+  },
+  "29": {
+   "kind": "wait",
+   "play": "43",
+   "rew": "44",
+   "art": null,
+   "caption": "I thought so — I felt it in the palm too. Say: <b>“Squeeze it. Is it HARD?”</b> Pause.",
+   "file": "audio/t15.mp3",
+   "dur": 10.6
+  },
+  "30": {
+   "kind": "wait",
+   "play": "45",
+   "rew": "46",
+   "art": null,
+   "caption": "[click] Too big for a hand — exactly where Gerald wants us. Say: <b>“It's bigger than both of us. Tell me — do you OWN one?”</b> Pause.",
+   "file": "audio/t16.mp3",
+   "dur": 17.95
+  },
+  "31": {
+   "kind": "wait",
+   "play": "47",
+   "rew": "48",
+   "art": null,
+   "caption": "Alive — Gerald can hear it moving. Say: <b>“Stand next to it in your mind. Is it SMALLER than you?”</b> Pause.",
+   "file": "audio/t17.mp3",
+   "dur": 11.18
+  },
+  "32": {
+   "kind": "wait",
+   "play": "49",
+   "rew": "50",
+   "art": null,
+   "caption": "[click] Not alive — but it relates to life, tell them: <b>“It relates to life… it's part of a day.”</b> Then: <b>“Do you have one at HOME?”</b> Pause.",
+   "file": "audio/t18.mp3",
+   "dur": 16.77
+  },
+  "33": {
+   "kind": "wait",
+   "play": "36",
+   "rew": "37",
+   "art": null,
+   "caption": "Touchable — reach further. Say: <b>“I'm touching it with you… wait. I sense… LIFE. Is it alive?”</b> Pause.",
+   "file": "audio/t19.mp3",
+   "dur": 10.25
+  },
+  "34": {
+   "kind": "wait",
+   "play": "39",
+   "rew": "40",
+   "art": null,
+   "caption": "Alive! The impressions like you better than the letters did. Say: <b>“Stand next to it. Is it BIGGER than you?”</b> Pause.",
+   "file": "audio/t20.mp3",
+   "dur": 11.95
+  },
+  "35": {
+   "kind": "wait",
+   "play": "41",
+   "rew": "42",
+   "art": null,
+   "caption": "[click] Not alive. Close now — Gerald can feel edges. Say: <b>“Reach for it. Can you TOUCH it?”</b> Pause.",
+   "file": "audio/t21.mp3",
+   "dur": 11.82
+  },
+  "36": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "fish",
+   "caption": "Wet? WET. Say: <b>“Scales. A little bubble over its head.”</b> … <b>“You drew a FISH.”</b> Now turn the screen around.",
+   "file": "audio/t22.mp3",
+   "dur": 16.73
+  },
+  "37": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "house",
+   "caption": "[click] Say exactly: <b>“It's not alive — but it is FULL of life. It's where the life lives.”</b> Watch their face. Then: <b>“Square walls. Triangle roof. Smoke from the chimney. You drew a HOUSE.”</b> Turn the screen around.",
+   "file": "audio/t23.mp3",
+   "dur": 25.46
+  },
+  "38": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "sun",
+   "caption": "[click] Untouchable — and everything untouchable is magnificent. Say: <b>“Of course you can't touch it. It's ninety-three million miles away — you drew it in the corner of the page with little lines coming off it. You drew the SUN.”</b> Turn the screen around.",
+   "file": "audio/t24.mp3",
+   "dur": 27.69
+  },
+  "39": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "tree",
+   "caption": "Bigger, alive, older than everyone here. Say: <b>“Roots down. Branches up. The leaves were one big cloud, weren't they. You drew a TREE.”</b> Turn the screen around.",
+   "file": "audio/t25.mp3",
+   "dur": 16.52
+  },
+  "40": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "flower",
+   "caption": "[click] Smaller. Delicate. Say: <b>“A stem. Petals in a ring. You pressed harder on the middle. You drew a FLOWER.”</b> Turn the screen around.",
+   "file": "audio/t26.mp3",
+   "dur": 18.07
+  },
+  "41": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "pencil",
+   "caption": "Touchable — and someone in this story is holding its cousin. Say: <b>“Long. Thin. A point at one end. You drew the thing you were drawing WITH. You drew a PENCIL.”</b> Turn the screen around.",
+   "file": "audio/t27.mp3",
+   "dur": 18.67
+  },
+  "42": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "moon",
+   "caption": "[click] Untouchable, far away, cold silver. Say: <b>“You drew it as a crescent — a little banana in the sky — with stars around it. You drew the MOON.”</b> Turn the screen around.",
+   "file": "audio/t28.mp3",
+   "dur": 18.35
+  },
+  "43": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "glass",
+   "caption": "Hard — and cold, which is the giveaway. Say: <b>“A stem. A bowl. A toast at the end of a long week. You drew a GLASS.”</b> Turn the screen around.",
+   "file": "audio/t29.mp3",
+   "dur": 17.41
+  },
+  "44": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "ball",
+   "caption": "[click] Soft skin, full of air. Say: <b>“It wants to be thrown. It spends its whole life leaving. You drew a BALL.”</b> Turn the screen around.",
+   "file": "audio/t30.mp3",
+   "dur": 17.81
+  },
+  "45": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "car",
+   "caption": "They own one — Gerald has, in a manner of speaking, sat in it. Say: <b>“Four wheels. Windows. Parked outside a childhood house. You drew a CAR.”</b> Turn the screen around.",
+   "file": "audio/t31.mp3",
+   "dur": 15.64
+  },
+  "46": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "plane",
+   "caption": "[click] Nobody owns one — it belongs to the sky. Say: <b>“You drew it with little windows down the side, didn't you. You drew a PLANE.”</b> Turn the screen around.",
+   "file": "audio/t32.mp3",
+   "dur": 18.35
+  },
+  "47": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "cat",
+   "caption": "Small, warm, and completely indifferent to us both. Say: <b>“Whiskers. Pointed ears. It's ignoring you right now. You drew a CAT.”</b> Turn the screen around.",
+   "file": "audio/t33.mp3",
+   "dur": 16.37
+  },
+  "48": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "stickman",
+   "caption": "[click] Not smaller — exactly your size. It always was. Say: <b>“A round head. Stick arms straight out. A self-portrait, age ten. You drew a STICKMAN — you drew YOU.”</b> Turn the screen around.",
+   "file": "audio/t34.mp3",
+   "dur": 21.59
+  },
+  "rman": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "stickman",
+   "caption": "[click] They ARGUED? Good — arguing means a pulse. Say: <b>“You drew a person. Round head, stick arms straight out. That's YOU, isn't it.”</b> Turn the screen around.",
+   "file": "audio/t35.mp3",
+   "dur": 21.28
+  },
+  "49": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "table",
+   "caption": "At home — you've eaten off yours tonight. Say: <b>“Four legs. A flat top. The whole family around it. You drew a TABLE.”</b> Turn the screen around.",
+   "file": "audio/t36.mp3",
+   "dur": 15.64
+  },
+  "50": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "boat",
+   "caption": "[click] Not at home — it lives on the water. Say: <b>“A little hull. A sail. You always drew the waves as tiny W's, didn't you. You drew a BOAT.”</b> Turn the screen around.",
+   "file": "audio/t37.mp3",
+   "dur": 19.58
+  },
+  "51": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "heart",
+   "caption": "[click] No S… after A, T, R… oh. OH. Stand up straighter. Say: <b>“It's not letters anymore — I can FEEL this one. It's beating. You drew a HEART.”</b> Turn the screen around.",
+   "file": "audio/t38.mp3",
+   "dur": 23.88
+  },
+  "52": {
+   "kind": "reveal",
+   "play": null,
+   "rew": null,
+   "art": "star",
+   "caption": "Four letters, four hits — this is what Side A was FOR. Slowly: <b>“You were ten years old, bored out of your mind… and you reached for the sky. You drew a STAR.”</b> Turn the screen around.",
+   "file": "audio/t39.mp3",
+   "dur": 19.33
+  },
+  "finale": {
+   "kind": "end",
+   "play": "extras",
+   "rew": null,
+   "art": null,
+   "caption": "Let them have their moment. Don't explain anything — not that you could. You were adequate: Gerald's highest grade. The rest of this side is licensing information. <b>Press ■ to rewind for your next subject.</b>",
+   "file": "audio/t40.mp3",
+   "dur": 26.68
+  },
+  "extras": {
+   "kind": "end",
+   "play": null,
+   "rew": null,
+   "art": null,
+   "caption": "This recording is the property of Gerald Enterprises, Reseda, CA. Unauthorized duplication is flattering, but forbidden. No refunds. Side A is sold separately. It has always been sold separately.",
+   "file": "audio/t41.mp3",
+   "dur": 24.42
+  }
+ }
+}

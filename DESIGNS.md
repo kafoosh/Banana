@@ -82,10 +82,16 @@ to the home screen and runs full-screen/offline (no browser chrome during perfor
 Hidden debug mode (`?debug=1`) showing current node + remaining candidates, per §8.
 Man/Stickman contingency (§7) on by default. No method words anywhere user-visible.
 
-## Open decisions (owner)
+## Decisions (locked by owner, 2026-07-30)
 
-1. Which skin(s) to build. **Recommendation: 1 (Cassette) as flagship**, GeoCities later as
-   an alternate costume if wanted.
-2. Secret NO input for audio: ⏪ rewind (recommended) vs hidden tap zones vs long-press.
-3. TTS engine choice.
-4. Reveal style: coached announcement + art flip (recommended) vs voice names it directly.
+1. **Skin: 1 · The Cassette** (flagship). Others remain future costumes; engine is shared.
+2. **Secret NO input: ⏪ rewind-10s**, then ▶. Taught diegetically as course rule #3.
+3. **Voice: pre-baked open TTS** — Kokoro (`am_michael`) + tape-ify chain, built by
+   `tools/build_audio.py`. Swap voices with `--voice`.
+4. **Reveal: kit coaches the magician** to announce the drawing, then the cassette art
+   flips to the doodle as printed proof.
+
+Built accordingly in `docs/` — see `README.md` for performing, dev and rebuild notes.
+One deliberate change from the mockup: fake side length is **11:47** (not 24:31), and the
+finale claims "the rest of this side is licensing information," so every branch ending
+mid-file is covered — and pressing play again actually plays the licensing (easter egg).
