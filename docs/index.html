@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#008080">
+<title>AudioMaster™ 98</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="css/player.css">
+</head>
+<body>
+
+<main class="win" id="win">
+  <div class="tbar" id="tbar">
+    <span class="ttl">AudioMaster™ 98&nbsp;—&nbsp;UNREGISTERED</span>
+    <span class="tbtn">_</span><span class="tbtn">□</span><span class="tbtn">×</span>
+  </div>
+
+  <nav class="menu">
+    <button class="mitem" id="m-file" type="button">File</button>
+    <button class="mitem" id="m-playback" type="button">Playback</button>
+    <button class="mitem" id="m-eq" type="button">EQ</button>
+    <button class="mitem" id="m-help" type="button">Help</button>
+  </nav>
+
+  <div class="nag" id="nag">⚠ Trial day 2,847 of 30. Please register: mail $12 cheque to AudioMaster, P.O.&nbsp;Box&nbsp;40, Reseda&nbsp;CA.</div>
+
+  <div class="well">
+    <div class="tape" id="tape">
+      <div class="tape-face" id="tapeFace">
+        <div class="lab">
+          <div class="l1">MIND-AEROBICS™ · TAPE 2 — SIDE B</div>
+          <div class="l2">“Your First Mind-Read”</div>
+          <div class="l3">with Gerald. Side A sold separately.</div>
+        </div>
+        <div class="spools">
+          <span class="spool fat"></span>
+          <span class="tapewin"></span>
+          <span class="spool"></span>
+        </div>
+      </div>
+      <div class="tape-art" id="tapeArt" hidden>
+        <div class="art-frame" id="artFrame"></div>
+        <div class="art-done">SIDE B COMPLETE ■</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lcd">
+    <div class="file" id="lcdFile">MindAerobics_Tape2_SideB.mp3</div>
+    <div class="time" id="lcdTime">■ 00:00 / 11:47</div>
+    <div class="stat" id="lcdStat">LOADING TAPE…</div>
+    <div class="eq" id="eqBars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <div class="prog" id="prog">
+    <span class="fill" id="progFill"></span>
+    <span class="thumb" id="progThumb"></span>
+    <span class="toast" id="toast" hidden>⏪ −10 SEC</span>
+  </div>
+
+  <div class="ctl">
+    <div class="ctlrow">
+      <button class="cbtn" id="btnRew" type="button" aria-label="Back 10 seconds"><span class="rw">◀◀10</span></button>
+      <em>back 10s</em>
+    </div>
+    <div class="ctlrow">
+      <button class="cbtn big" id="btnPlay" type="button" aria-label="Play or pause">▶</button>
+      <em id="playLabel">play</em>
+    </div>
+    <div class="ctlrow">
+      <button class="cbtn" id="btnStop" type="button" aria-label="Stop">■</button>
+      <em>stop</em>
+    </div>
+  </div>
+
+  <div class="cc" id="cc">
+    <span class="cctag">CC</span>
+    <p id="ccText" class="dim">Captions appear during playback. Seat your subject across from you, press PLAY, and follow Gerald.</p>
+  </div>
+
+  <!-- Performer-only insert. Hidden once dismissed; Help > reopens. -->
+  <div class="insert-wrap" id="insert">
+    <div class="insert">
+      <div class="i-meta"><span>PACKED-IN INSERT</span><span>PERFORMER ONLY</span></div>
+      <div class="i-rule"></div>
+      <div class="i-title">READ ME FIRST,<br>THEN HIDE ME</div>
+      <ol class="i-list">
+        <li>This tape performs the trick <b>for</b> you. Press ▶, do what Gerald says, and repeat his lines like you mean them. He'll handle the rest. He always has.</li>
+        <li>When the tape stops itself, that's your part: say the line, get your subject's answer.</li>
+        <li><b>THE SECRET.</b> Resume with your thumb on the correct half of the big ▶ button: <b>RIGHT half = they said YES · LEFT half = they said NO.</b> (Right = they were right. Left = they left you hanging.) Your thumb covers the whole button — nobody can ever see which half. Gerald will know. He's at peace with it.</li>
+        <li>Pressed the wrong half? Tap ◀◀10 <b>immediately</b> — the tape rewinds to before the question, and you answer again. No one will mind.</li>
+        <li>Never explain. Never repeat for the same subject. Your subject may watch the player freely — it's just a tape.</li>
+        <li>Phone flat on the table, screen up, volume high. Emergencies: triple-tap the title bar to rewind the whole cassette.</li>
+      </ol>
+      <button class="i-btn" id="insertHide" type="button">I'M READY — HIDE THIS INSERT</button>
+      <div class="i-fine">Gerald Enterprises, Reseda CA. Results not typical. No refunds. Side A sold separately.</div>
+    </div>
+  </div>
+
+  <div class="debug" id="debug" hidden>
+    <div id="dbgInfo">–</div>
+    <div class="dbtns">
+      <button id="dbgYes" type="button">YES▶</button>
+      <button id="dbgNo" type="button">NO⏪</button>
+      <button id="dbgSkip" type="button">SKIP»</button>
+      <button id="dbgMute" type="button">MUTE</button>
+    </div>
+  </div>
+</main>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

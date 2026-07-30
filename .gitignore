@@ -1,0 +1,7 @@
+# TTS model weights (~340 MB) — fetch per README, never commit
+tools/voices/
+
+__pycache__/
+node_modules/
+*.wav
+nohup.out
