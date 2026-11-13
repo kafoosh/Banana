@@ -17,7 +17,7 @@ toss.
 
 **The voice was winking.** Gerald announced up front that he would "know", and
 every line was a joke about being a tape. Each no was treated as the student's
-failure. That tells the audience the recording is reacting, which is the one
+failure, and each yes was celebrated. That tells the audience the recording is reacting, which is the one
 thing it must not seem to do.
 
 **The look was a joke skin.** A fake shareware player with a nag banner. The
@@ -30,23 +30,18 @@ ending is what tapes do. The student does the step, then takes the next tape
 out of the case. The numbered tapes going back into the case one by one are
 the proof that this is a fixed sequence.
 
-**Every tape was meant to be.** Each tape opens by stating what just happened
-as the next step of the course. After a yes it builds on it. After a no, the
-no was the purpose of the step, and the student did it right. Nothing ever
-goes wrong and nobody is told to recover. Each no has its own purpose:
+**The tape does not know.** No tape says what the volunteer answered. There
+is no "you got the A", no "it is alive", no "no R". Each tape gives the next
+step and the next line, and that step is always the right one. The spectator
+hears a recording that never reacts and still ends up exactly where it should.
 
-| After | Why the course wanted it |
-|---|---|
-| No A | The first letter is always a test: it shows they answer honestly, and what a no looks like on this person. |
-| No A, then no S | The result it was looking for: a picture thinker, the easiest kind to read. Forget letters. |
-| No T, after a yes | After a first hit the course always gives a letter that isn't there. It is the signal to move on. |
-| No R | The signal that the letters are finished. They always run out. |
-| "Not a living thing" corrected | That is what the step is for: people correct a mistake faster than they answer a question. |
-| Can't touch it | The most useful answer in lesson one. |
+The one exception is the tape after a no to the first letter: "Your volunteer
+said no to the A. Don't worry, they are supposed to. The first letter in this
+course is always a test." It is the most common first answer, and it is the
+moment a first-time student would otherwise look lost.
 
 Each tape also gives the student something to do: fingers on the temple, a
-slow breath, hands out palms up. That gives every tape the shape of a lesson
-step, and gives the no-tapes something to adjust ("ask them to focus harder").
+slow breath, hands out palms up.
 
 **The pick is the input.** The next tape is taken from the case by touching
 it. A tap is yes; a finger rested on it until it lifts is no. Same tape, same
@@ -58,17 +53,16 @@ three seconds, and REWIND in that window puts it back in the case unplayed.
 **The red tape.** It sits in the case from the start and tape 1 says to save
 it for last. The final question on every route ends "whatever they answer,
 don't say a word; play the red tape". The red tape tells the student to put
-their hands in their lap, speaks to the partner, describes two features of
-the drawing, names it, and the drawing appears on the paper.
+their hands in their lap, speaks to the volunteer, names the drawing, and the drawing appears on the paper.
 
-Routes differ in length (three to five answers), so tape 6 is often skipped.
+Routes differ in length (three to five answers), so tape 7 is often skipped.
 The tape says so. Two routes resolve before a final question and get a short
 tape that says "That is everything you need."
 
 **The voice.** An upbeat how-to instructor: encouraging, brisk, never
-surprised, never joking. The set-up is one tape. The tape talks to the
-partner directly for the two passages whose wording carries the method
-("Partner, this part is for you"), so a first-timer cannot get them wrong. The voice never
+surprised, never joking. The tape talks to the
+volunteer directly for the passages whose wording carries the method
+("Volunteer, imagine the real thing"), so a first-timer cannot get them wrong. The voice never
 recites what has been learned. Rules are at the top of `tools/tapes.py`.
 
 **The look.** A player, a sheet of paper, the tapes on edge, three keys. Flat
@@ -92,10 +86,8 @@ with the height of the screen.
 
 - The tree is the book's, with the "not a living thing" check kept on the no-T
   branch.
-- Tape 2 adds "use the simple word, the one a kid would use", to pull people
+- Tape 3 adds "use the simple word, the one a kid would use", to pull people
   off ROSE and towards FLOWER.
-- Red-tape details are chosen to be true of nearly any child's version (fish
-  from the side, crescent moon, lines on the ball).
 - Not solved: a drawing outside the seventeen. The frame covers it, since a
   first-lesson student is allowed to fail, but the red tape will still name
   the wrong thing.
