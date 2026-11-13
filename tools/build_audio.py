@@ -134,25 +134,35 @@ def hiss_bed(n: int, seed: int) -> np.ndarray:
 
 
 def assemble(seg: dict, synth):
-    """Returns (dry audio, time the versions of this tape start to differ, page-turn time or None)."""
+    """Returns (dry audio, time the versions of this tape start to differ,
+    page-turn time or None, transcript lines as [start, end, text, is_say])."""
     chunks = [silence(LEADER)]
+    lines = []
     at = lambda: sum(len(c) for c in chunks) / SR
+
+    def speak(text, speed, say=0):
+        t0 = at()
+        chunks.append(synth(text, speed))
+        lines.append([round(t0, 2), round(at(), 2), text, say])
+
     parts = list(seg["parts"])
     # "Tape five. They said no." -> announce the number on its own, then wait.
     head, sep, rest = parts[0].partition(". ")
     if head.startswith("Tape ") and sep:
-        chunks += [synth(head + ".", SPEED), silence(AFTER_NUMBER)]
+        speak(head + ".", SPEED)
+        chunks.append(silence(AFTER_NUMBER))
         parts[0] = rest
     else:
-        chunks += [synth(parts.pop(0), SPEED), silence(0.18)]
+        speak(parts.pop(0), SPEED)
+        chunks.append(silence(0.18))
     safe_until = at()
     page_at = None
     for part in parts:
         if isinstance(part, str):
-            chunks.append(synth(part, SPEED))
+            speak(part, SPEED)
             chunks.append(silence(0.18))
         elif part[0] == "say":
-            chunks.append(synth(part[1], SPEED_SAY))
+            speak(part[1], SPEED_SAY, 1)
         elif part[0] == "beat":
             chunks.append(silence(float(part[1])))
         elif part[0] == "page":
@@ -160,7 +170,7 @@ def assemble(seg: dict, synth):
         else:
             raise ValueError(f"unknown part {part!r}")
     chunks.append(silence(RUNOUT))
-    return np.concatenate(chunks), safe_until, page_at
+    return np.concatenate(chunks), safe_until, page_at, lines
 
 
 def master(x: np.ndarray, seed: int) -> np.ndarray:
@@ -210,19 +220,17 @@ def main() -> None:
             continue
         seg = S[sid]
         fname = f"{i + 1:02d}.mp3"
-        dry, safe_until, page_at = assemble(seg, synth)
+        dry, safe_until, page_at, lines = assemble(seg, synth)
         final = master(dry, seed=i + 11)
         encode_mp3(final, AUDIO_DIR / fname)
         entry = {
             "tape": seg["tape"],
             "next": seg["next"],
-            "note": seg["note"],
             "file": f"audio/{fname}",
             "dur": round(len(final) / SR, 2),
             "safe": round(safe_until - 0.25, 2),
+            "lines": lines,
         }
-        if seg["say"]:
-            entry["say"] = seg["say"]
         if seg["art"]:
             entry["art"] = seg["art"]
             entry["page"] = round(page_at, 2)

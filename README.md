@@ -12,7 +12,8 @@ the student one step and one line to say, then stops. Whatever the partner
 answers, the next tape opens as if that answer was the lesson plan: after a yes
 it builds on it, after a no it explains that the no was a test, or a signal, or
 exactly the result the course was looking for. The red tape finishes the reading
-itself and names the drawing, which is also on the last page of the booklet.
+itself and names the drawing, which then appears on the paper as a pencil doodle.
+The paper types out what the voice says as it says it.
 
 - `METHOD.md`: how the drawing is found. Private.
 - `DESIGN.md`: why the trick is built this way.
@@ -35,9 +36,9 @@ Read the slip that opens the first time you load the app. In short:
    away. The tape goes back in the case; pick it again.
 5. REWIND later than that takes the tape back to its start. PLAY restarts it.
 
-Only the next tape in order responds to a touch. Hold a finger on the title
-plate for one second to reopen the slip, which also has **Return tapes to the
-case**. After the red tape the same button appears on the booklet.
+Only the next tape in order responds to a touch. Hold a finger on the player
+for one second to reopen the slip, which also has **Start over**. After the
+red tape the same button appears on the paper.
 
 Keyboard, for rehearsal at a desk: Space picks the next tape (tap or hold),
 S stops, R rewinds.

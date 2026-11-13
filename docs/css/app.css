@@ -1,6 +1,6 @@
-/* How to Read Minds: the open cassette album.
-   Everything is a flat printed or moulded surface. No blur, no glow, no gradients
-   except the ruled lines on the last page of the booklet. */
+/* How to Read Minds.
+   A player, a sheet of paper, the tapes, three keys. Nothing on screen is
+   labelled unless the object itself would carry the label. */
 
 @font-face { font-family: Franklin; font-weight: 500; font-display: block; src: url(../fonts/libre-franklin-latin-500-normal.woff2) format("woff2"); }
 @font-face { font-family: Franklin; font-weight: 800; font-display: block; src: url(../fonts/libre-franklin-latin-800-normal.woff2) format("woff2"); }
@@ -38,54 +38,32 @@ body {
 }
 
 .case {
+  --gap: 12px;
   height: 100dvh;
   max-width: 560px;
   margin: 0 auto;
-  padding: calc(12px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right))
+  padding: calc(14px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right))
            calc(14px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left));
   background: var(--case);
   display: grid;
-  grid-template: "plate" auto "deck" auto "tray" auto "booklet" minmax(0, 1fr) "keys" auto / minmax(0, 1fr);
-  gap: 12px;
+  grid-template: "deck" auto "paper" minmax(0, 1fr) "tray" auto "keys" auto / minmax(0, 1fr);
+  gap: var(--gap);
 }
-.plate { grid-area: plate; }
 .deck { grid-area: deck; }
+.paper { grid-area: paper; }
 .tray { grid-area: tray; }
-.booklet { grid-area: booklet; }
 .keys { grid-area: keys; }
 
-/* ---- title plate: the label stuck inside the lid ---- */
-.plate {
-  position: relative;
-  background: var(--paper);
-  color: var(--ink);
-  padding: 9px 12px 8px;
-  border-top: 5px solid var(--ochre);
-}
-.plate h1 {
-  margin: 0;
-  font-size: 15px; line-height: 1.2;
-  font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
-}
-.plate p { margin: 1px 0 0; font-size: 11.5px; color: var(--faint); }
-.plate .lesson {
-  position: absolute; right: 12px; top: 10px;
-  font-size: 10.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
-}
-
-/* ---- deck ---- */
-.well {
+/* ---- player ---- */
+.deck {
   background: var(--pit);
-  border: 1px solid #000;
-  border-bottom-color: var(--rib);
-  padding: 14px 26px 0;
+  border: 1px solid #000; border-bottom-color: var(--rib);
+  padding: 16px 30px;
   overflow: hidden;
+  min-height: 0;
 }
-.cass {
-  transition: transform .26s cubic-bezier(.3, .6, .3, 1);
-  will-change: transform;
-}
-.cass.away { transform: translateY(-112%); }
+.cass { transition: transform .26s cubic-bezier(.3, .6, .3, 1); will-change: transform; }
+.cass.away { transform: translateY(-125%); }
 .cass svg { display: block; width: 100%; height: auto; }
 
 .shell { fill: var(--shell); stroke: #000; stroke-width: 1; }
@@ -98,122 +76,89 @@ body {
 .window { fill: #2a221c; stroke: var(--ink); stroke-width: 1.5; }
 .pack { fill: #4a3526; }
 .hub circle { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
-.hub path { stroke: var(--ink); stroke-width: 3.2; fill: none; }
+.hub path { stroke: var(--ink); stroke-width: 3.4; fill: none; }
 .hub { transform-box: fill-box; transform-origin: center; }
-.rule { stroke: var(--ink); stroke-width: 1; }
-.cass text { font-family: var(--sans); fill: var(--ink); }
-.l-course { font-size: 14px; font-weight: 800; letter-spacing: .13em; }
-.l-lesson { font-size: 10.5px; font-weight: 800; letter-spacing: .12em; }
-.l-num { font-size: 68px; font-weight: 800; }
-.l-of { font-size: 11px; font-weight: 800; letter-spacing: .1em; }
-.l-small { font-size: 8.5px; font-weight: 500; letter-spacing: .12em; fill: var(--faint); }
-.l-last { display: none; font-size: 15px; font-weight: 800; letter-spacing: .1em; }
+.cass text { font-family: var(--sans); fill: var(--ink); font-weight: 800; }
+.l-course { font-size: 17px; letter-spacing: .13em; }
+.l-num { font-size: 44px; }
 
 .cass.red .shell { fill: var(--red); }
-.cass.red .edge, .cass.red .foot { stroke: var(--red-lo); fill: var(--red-lo); }
-.cass.red .edge { fill: none; }
+.cass.red .edge { stroke: var(--red-lo); }
+.cass.red .foot { fill: var(--red-lo); }
 .cass.red .screws circle { fill: var(--red-lo); stroke: #5f1510; }
 .cass.red .band { fill: var(--ink); }
-.cass.red .l-course, .cass.red .l-lesson { fill: var(--paper); }
-.cass.red .l-num { display: none; }
-.cass.red .l-last { display: block; }
+.cass.red .l-course { fill: var(--paper); }
 
 @keyframes turn { to { transform: rotate(-360deg); } }
 .playing .hub { animation: turn 2.6s linear infinite; }
 .rewinding .hub { animation: turn .28s linear infinite reverse; }
 
-.meter {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 8px 2px 0;
-}
-.counter { display: inline-flex; gap: 1px; background: #000; padding: 2px; }
-.counter b {
-  width: 15px; height: 20px;
-  display: grid; place-items: center;
-  background: var(--paper); color: var(--ink);
-  font: 700 14px/1 var(--typed);
-  padding-top: 2px;
-}
-.status {
-  font-size: 10.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
-  color: #8d8271;
-}
-
-/* ---- tray: nine tapes on edge ---- */
-.tray {
-  display: grid; grid-template-columns: repeat(var(--n, 7), 1fr); gap: 6px;
-  background: var(--pit);
-  border: 1px solid #000; border-bottom-color: var(--rib);
-  padding: 0 6px 4px;
-}
-.slot { text-align: center; touch-action: none; padding-top: 8px; }
-.slot i {
-  display: block; height: 52px; pointer-events: none;
-  background: var(--paper);
-  border-top: 9px solid var(--ochre);
-  color: var(--ink);
-  font: normal 800 17px/41px var(--sans);
-  transition: transform .12s ease-out;
-}
-.slot small {
-  display: block; margin-top: 3px;
-  font-size: 8px; font-weight: 800; letter-spacing: .08em; color: #5c5145;
-}
-.slot.red i { background: var(--red); border-top-color: var(--red-lo); }
-/* played and put back the other way round */
-.slot.done i { background: var(--shell-lo); border-top-color: #9a927f; color: transparent; }
-.slot.red.done i { background: var(--red-lo); border-top-color: #5f1510; }
-/* picked: rising out of the tray */
-.slot.lift i { transform: translateY(-8px); }
-/* in the player */
-.slot.out i { background: none; border-top-color: transparent; outline: 1px solid var(--rib); outline-offset: -1px; color: transparent; }
-
-/* ---- booklet ---- */
-.booklet { min-height: 0; display: flex; }
-.page {
-  flex: 1; min-height: 0; overflow: hidden;
+/* ---- paper ---- */
+.paper {
+  min-height: 0; overflow: hidden;
   position: relative;
   background: var(--paper); color: var(--ink);
-  padding: 12px 14px 12px;
-  font-family: var(--typed); font-size: 15px; line-height: 1.38;
-  display: flex; flex-direction: column;
 }
-.page .head {
-  display: flex; justify-content: space-between; align-items: baseline;
-  font: 800 10.5px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase;
-  padding-bottom: 7px; margin-bottom: 9px;
-  border-bottom: 1px solid var(--ink);
+.paper.cover {
+  display: flex; align-items: flex-end;
+  padding: 22px 22px 20px;
+  border-top: 10px solid var(--ochre);
 }
-.page .head span:last-child { font-weight: 500; letter-spacing: .1em; color: var(--faint); }
-.page p { margin: 0; }
-.page .say {
-  margin: 0 0 9px;
-  font-size: 19px; line-height: 1.28; font-weight: 700;
+.paper.cover h1 {
+  margin: 0;
+  font-size: clamp(34px, 11vw, 60px); line-height: .98;
+  font-weight: 800; letter-spacing: .01em; text-transform: uppercase;
 }
-.page .say small { display: block; font: 800 10px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; margin-bottom: 5px; color: var(--faint); }
-.page .note { color: #3b372f; }
-.page .back {
-  margin-top: auto; align-self: flex-start;
-  font: 800 11px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
-  color: var(--ink); background: none;
-  border: 1.5px solid var(--ink); border-radius: 0;
-  padding: 9px 12px;
+/* the transcript: newest line at the bottom, older lines ride up and off */
+.paper.type {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 16px 18px 14px;
+  font-family: var(--typed); font-size: 16px; line-height: 1.36;
 }
-
-/* the last page: a leaf from a school exercise book */
-.page.leaf {
-  padding: 0;
+.paper.type p { margin: .55em 0 0; flex: none; }
+.paper.type .say { font-weight: 700; font-size: 1.22em; line-height: 1.25; margin-top: .7em; }
+/* the drawing: a leaf from a school notebook */
+.paper.leaf {
+  display: flex;
   background:
     linear-gradient(90deg, transparent 39px, #c9837a 39px, #c9837a 40px, transparent 40px),
     repeating-linear-gradient(#f3efe2 0 21px, #a9bccb 21px 22px);
 }
-.page.leaf svg { flex: 1; min-height: 0; width: 100%; padding: 6px 28px 6px 52px; }
-.page.leaf path, .page.leaf circle, .page.leaf ellipse {
+.paper.leaf svg { flex: 1; min-height: 0; width: 100%; padding: 8px 28px 8px 52px; }
+.paper.leaf path, .paper.leaf circle, .paper.leaf ellipse {
   fill: none; stroke: #4b4845; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round;
 }
-.page.leaf .back { position: absolute; left: 52px; bottom: 10px; background: #f3efe2; }
-@keyframes leafin { from { transform: translateX(24px); opacity: 0; } }
-.page.turned > * { animation: leafin .22s ease-out; }
+.again {
+  position: absolute; right: 12px; bottom: 12px;
+  font: 800 11px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink); background: #f3efe2;
+  border: 1.5px solid var(--ink); border-radius: 0;
+  padding: 9px 12px;
+}
+
+/* ---- tapes ---- */
+.tray {
+  display: grid; grid-template-columns: repeat(var(--n, 7), 1fr); gap: 6px;
+  background: var(--pit);
+  border: 1px solid #000; border-bottom-color: var(--rib);
+  padding: 0 7px 7px;
+  transition: opacity .3s;
+}
+.loading .tray { opacity: .25; }
+.slot { touch-action: none; padding-top: 9px; }
+.slot i {
+  display: block; height: 58px; pointer-events: none;
+  background: var(--paper);
+  border-top: 10px solid var(--ochre);
+  color: var(--ink); text-align: center;
+  font: normal 800 19px/46px var(--sans);
+  transition: transform .12s ease-out;
+}
+.slot.red i { background: var(--red); border-top-color: var(--red-lo); }
+.slot.done i { background: var(--shell-lo); border-top-color: #9a927f; color: transparent; }
+.slot.red.done i { background: var(--red-lo); border-top-color: #5f1510; }
+.slot.lift i { transform: translateY(-8px); }
+.slot.out i { background: none; border-top-color: transparent; outline: 1px solid var(--rib); outline-offset: -1px; color: transparent; }
 
 /* ---- keys ---- */
 .keys {
@@ -224,16 +169,14 @@ body {
 }
 .key {
   appearance: none; border: 0; border-radius: 2px; margin: 0;
-  height: 62px;
+  height: 58px;
   background: var(--key); color: var(--paper);
   box-shadow: 0 6px 0 #0a0807;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
-  font: 800 9.5px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase;
+  display: grid; place-items: center;
   touch-action: none; cursor: default;
   transition: transform .05s linear, box-shadow .05s linear;
 }
-.key svg { width: 34px; height: 20px; fill: currentColor; pointer-events: none; }
-.key span { color: #a99e8b; pointer-events: none; }
+.key svg { width: 38px; height: 23px; fill: currentColor; pointer-events: none; }
 .key.down { transform: translateY(5px); box-shadow: 0 1px 0 #0a0807; background: #2f2924; }
 .key:focus-visible { outline: 2px solid var(--ochre); outline-offset: 2px; }
 
@@ -279,68 +222,49 @@ body {
 .debug button { pointer-events: auto; font: inherit; }
 
 /* Short portrait phones */
+/* Short upright phones */
 @media (max-height: 700px) and (max-aspect-ratio: 1/1) {
-  .case { gap: 8px; padding-top: calc(8px + env(safe-area-inset-top)); }
-  .well { padding: 10px 58px 0; }
-  .slot i { height: 40px; line-height: 30px; font-size: 15px; }
-  .key { height: 54px; }
-  .page { font-size: 14px; padding: 10px 12px; }
-  .page .say { font-size: 17px; }
+  .case { --gap: 8px; padding-top: calc(8px + env(safe-area-inset-top)); }
+  .deck { padding: 10px 64px; }
+  .slot i { height: 44px; line-height: 32px; font-size: 16px; }
+  .key { height: 50px; }
+  .paper.type { font-size: 14.5px; padding: 12px 14px; }
 }
-@media (min-height: 860px) and (max-aspect-ratio: 1/1) {
-  .well { padding: 18px 16px 0; }
-}
-/* Tall and wide enough to be a tablet held upright */
+/* A tablet held upright */
 @media (min-width: 600px) and (max-aspect-ratio: 1/1) {
-  .well { padding: 22px 70px 0; }
-  .slot i { height: 64px; line-height: 53px; font-size: 21px; }
-  .page { font-size: 18px; padding: 18px 20px; }
-  .page .say { font-size: 24px; }
+  .deck { padding: 26px 80px; }
+  .slot i { height: 76px; line-height: 64px; font-size: 24px; }
+  .paper.type { font-size: 20px; padding: 24px 26px; }
   .key { height: 72px; }
 }
 
-/* Anything wider than it is tall: the album lies open.
-   Player and keys on the left leaf, tapes and booklet on the right. */
+/* Wider than tall: player on the left, everything else on the right. */
 @media (min-aspect-ratio: 1/1) {
   body { display: grid; place-items: center; min-height: 100dvh; }
   .case {
+    --gap: clamp(8px, 1.8vh, 16px);
     width: 100%; max-width: 1180px;
     height: min(100dvh, 780px);
     grid-template:
-      "plate tray" auto
-      "deck  booklet" minmax(0, 1fr)
-      "keys  booklet" auto
-      / minmax(0, 1fr) minmax(0, 1.05fr);
-    gap: clamp(8px, 1.6vh, 16px) clamp(10px, 2vw, 24px);
+      "deck paper" minmax(0, 1fr)
+      "deck tray" auto
+      "keys tray" auto
+      / minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(10px, 2vw, 24px);
   }
-  .deck { display: flex; flex-direction: column; min-height: 0; }
-  .well { flex: 1; min-height: 0; padding: clamp(8px, 2.4vh, 26px) clamp(14px, 3vw, 44px); }
-  .plate h1 { font-size: clamp(15px, 2.9vh, 24px); }
-  .plate p { font-size: clamp(11.5px, 1.9vh, 15px); }
-  .plate .lesson { font-size: clamp(10.5px, 1.6vh, 13px); }
-  .slot small { font-size: clamp(8px, 1.3vh, 11px); }
-  .status { font-size: clamp(10.5px, 1.5vh, 12.5px); }
+  .deck { padding: clamp(10px, 3vh, 34px) clamp(14px, 3vw, 48px); display: flex; }
   .cass, .cass svg { width: 100%; height: 100%; }
-  .plate { display: flex; flex-direction: column; justify-content: center; }
-  .tray { align-content: end; }
-  .slot i { height: clamp(34px, 9vh, 70px); line-height: calc(clamp(34px, 9vh, 70px) - 11px); font-size: clamp(15px, 3.4vh, 22px); }
-  .key { height: clamp(48px, 11vh, 76px); }
-  .page { font-size: clamp(14px, 2.6vh, 21px); padding: clamp(10px, 2.4vh, 22px) clamp(12px, 2vw, 24px); }
-  .page .say { font-size: clamp(17px, 3.9vh, 31px); }
-  .page .head { font-size: clamp(10.5px, 1.6vh, 13px); }
-  .meter { padding-top: clamp(4px, 1vh, 8px); }
+  .tray { align-self: end; }
+  .slot i { height: clamp(40px, 11vh, 84px); line-height: calc(clamp(40px, 11vh, 84px) - 12px); font-size: clamp(16px, 3.6vh, 26px); }
+  .key { height: clamp(46px, 11vh, 76px); }
+  .paper.cover h1 { font-size: clamp(30px, 8.5vh, 68px); }
+  .paper.type { font-size: clamp(14px, 2.7vh, 21px); padding: clamp(10px, 2.6vh, 26px) clamp(12px, 2vw, 28px); }
 }
-/* Landscape phone: every pixel of height counts */
 @media (min-aspect-ratio: 1/1) and (max-height: 460px) {
-  .case { padding-top: calc(6px + env(safe-area-inset-top)); padding-bottom: calc(6px + env(safe-area-inset-bottom)); }
-  .plate { padding: 5px 10px 4px; border-top-width: 4px; }
-  .plate p { display: none; }
-  .plate .lesson { top: 7px; }
-  .slot { padding-top: 5px; }
-  .slot small { display: none; }
+  .case { padding-top: calc(8px + env(safe-area-inset-top)); padding-bottom: calc(8px + env(safe-area-inset-bottom)); }
+  .slot { padding-top: 6px; }
   .tray { padding-bottom: 5px; }
   .keys { padding: 5px 5px 10px; }
-  .key span { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cass, .slot i, .key { transition: none; }

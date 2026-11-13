@@ -12,15 +12,13 @@ const SWAP_MS = 760;      // one tape out, the next one in
 
 const $ = (id) => document.getElementById(id);
 const el = {
-  case: $('case'), plate: $('plate'), cass: $('cass'), tray: $('tray'), page: $('page'),
-  counter: $('counter'), status: $('status'),
-  num: $('lNum'), of2: $('lOf2'), title: $('cassTitle'),
+  case: $('case'), deck: $('deck'), cass: $('cass'), tray: $('tray'), paper: $('paper'),
+  num: $('lNum'), title: $('cassTitle'),
   packL: $('packL'), packR: $('packR'),
   play: $('kPlay'), stop: $('kStop'), rew: $('kRew'),
   slip: $('slip'),
 };
 const DEBUG = new URLSearchParams(location.search).has('debug');
-const WORDS = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
 let RED = 7;                        // number of tapes; the last one is red
 
 let SEGS = {};
@@ -44,12 +42,11 @@ const st = {
 
 async function boot() {
   renderTray();
-  renderPage();
+  renderPaper();
   let data;
   try {
     data = await (await fetch('data/tapes.json')).json();
   } catch {
-    el.status.textContent = 'No tapes found';
     return;
   }
   SEGS = data.segs; START = data.start; RED = data.tapes || RED;
@@ -61,16 +58,15 @@ async function boot() {
 
   const jobs = Object.entries(SEGS).map(([id, s]) => [id, s.file]);
   for (const fx of ['key', 'stop', 'swap', 'rew']) jobs.push([fx, `audio/fx-${fx}.mp3`]);
-  let n = 0;
   await Promise.all(jobs.map(async ([id, file]) => {
     try {
       const r = await fetch(file);
       if (!r.ok) throw 0;
       buffers.set(id, await ctx.decodeAudioData(await r.arrayBuffer()));
     } catch { /* silent run-through: timers stand in for audio */ }
-    el.status.textContent = `Loading ${++n}/${jobs.length}`;
   }));
   st.mode = 'idle';
+  el.case.classList.remove('loading');
   render();
 }
 
@@ -285,57 +281,58 @@ function renderTray() {
   for (let i = 1; i <= RED; i++) {
     const state = i === tape ? 'out' : i === st.lift ? 'lift' : st.played.has(i) ? 'done' : '';
     const cls = ['slot', i === RED ? 'red' : '', state].join(' ');
-    html += `<div class="${cls}" data-n="${i}"><i>${i === RED ? '' : i}</i><small>${i === RED ? 'RED' : i}</small></div>`;
+    html += `<div class="${cls}" data-n="${i}"><i>${i === RED ? '' : i}</i></div>`;
   }
   if (el.tray.dataset.sig !== html) { el.tray.innerHTML = html; el.tray.dataset.sig = html; }
 }
 
-function renderPage() {
-  const seg = st.cur && !(st.empty && st.mode !== 'swap') && SEGS[st.cur];
-  let html, leaf = false;
-  if (!seg) {
-    html = `<div class="head"><span>Lesson one</span><span>Booklet</span></div>
-      <p class="note">${WORDS[RED][0].toUpperCase() + WORDS[RED].slice(1)} cassettes. ${WORDS[RED - 1][0].toUpperCase() + WORDS[RED - 1].slice(1)} are numbered and one is red.</p>
-      <p class="note">&nbsp;</p>
-      <p class="note">${st.cur ? 'Take the next tape from the case.' : 'Begin with tape 1.'}</p>`;
-  } else if (st.turned) {
-    leaf = true;
-    html = DOODLES[seg.art] + (st.mode === 'done' ? backButton() : '');
-  } else {
-    const name = seg.tape === RED ? 'The red tape' : `Tape ${WORDS[seg.tape]}`;
-    html = `<div class="head"><span>${name}</span><span>Lesson one</span></div>` +
-      (seg.say ? `<p class="say"><small>${/\?$/.test(seg.say) ? 'Ask' : 'Say'}</small>&ldquo;${seg.say}&rdquo;</p>` : '') +
-      `<p class="note">${seg.note}</p>`;
+const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+// What the voice has said so far on this tape, typed out as it is spoken.
+function typed(seg, t) {
+  let html = '';
+  for (const [from, to, text, say] of seg.lines) {
+    if (t < from) break;
+    const n = t >= to ? text.length : Math.ceil(text.length * (t - from) / (to - from));
+    const body = esc(text.slice(0, n));
+    html += say ? `<p class="say">&ldquo;${body}${n === text.length ? '&rdquo;' : ''}</p>` : `<p>${body}</p>`;
   }
-  if (el.page.dataset.sig === html) return;
-  el.page.dataset.sig = html;
-  el.page.innerHTML = html;
-  el.page.classList.toggle('leaf', leaf);
-  el.page.classList.remove('turned');
-  void el.page.offsetWidth;
-  el.page.classList.add('turned');
-  el.page.querySelector('.back')?.addEventListener('click', reset);
+  return html;
 }
 
-const backButton = () => '<button class="back" type="button">Return tapes to the case</button>';
+// The paper in the case: the cover before anything is played, the transcript
+// while a tape plays, and the drawing at the end.
+function renderPaper() {
+  const seg = st.cur && !(st.empty && st.mode !== 'swap') && SEGS[st.cur];
+  let html = '', kind = 'type';
+  if (!st.cur) {
+    kind = 'cover';
+    html = '<h1>How to<br>Read Minds</h1>';
+  } else if (seg && st.turned) {
+    kind = 'leaf';
+    html = DOODLES[seg.art] + (st.mode === 'done' ? '<button class="again" type="button">Start over</button>' : '');
+  } else if (seg && st.mode !== 'swap') {
+    html = typed(seg, elapsed());
+  }
+  if (el.paper.dataset.sig === html) return;
+  el.paper.dataset.sig = html;
+  el.paper.className = `paper ${kind}`;
+  el.paper.innerHTML = html;
+  el.paper.querySelector('.again')?.addEventListener('click', reset);
+}
 
 function render() {
   const seg = st.cur && SEGS[st.cur];
   const tape = seg ? seg.tape : 1;
   el.cass.classList.toggle('red', tape === RED);
-  el.num.textContent = tape;
-  el.of2.textContent = `${tape} OF ${RED}`;
+  el.num.textContent = tape === RED ? '' : tape;
   el.title.textContent = tape === RED ? 'The red tape' : `Tape ${tape}`;
   el.case.classList.toggle('playing', st.mode === 'playing');
   el.cass.classList.toggle('away', !st.cur || st.empty);
   if (st.mode === 'playing') el.play.classList.add('down');
   else if (!el.play.matches(':active')) el.play.classList.remove('down');
-  el.status.textContent = {
-    loading: 'Loading', idle: 'Ready', swap: '', playing: 'Play', stopped: 'Stop',
-    ended: 'End of tape', done: 'End of tape',
-  }[st.mode];
   renderTray();
-  renderPage();
+  renderPaper();
   renderDebug();
 }
 
@@ -344,18 +341,10 @@ function frame() {
     const t = elapsed();
     const seg = SEGS[st.cur];
     const p = Math.min(1, t / dur(st.cur));
-    el.packL.setAttribute('r', (40 - 18 * p).toFixed(1));
-    el.packR.setAttribute('r', (22 + 18 * p).toFixed(1));
-    const c = String(Math.floor(t * 1.7) % 1000).padStart(3, '0');
-    if (el.counter.dataset.v !== c) {
-      el.counter.dataset.v = c;
-      el.counter.innerHTML = `<b>${c[0]}</b><b>${c[1]}</b><b>${c[2]}</b>`;
-    }
-    if (seg.page && !st.turned && st.mode === 'playing' && t >= seg.page) { st.turned = true; renderPage(); }
-  } else if (el.counter.dataset.v !== '000') {
-    el.counter.dataset.v = '000';
-    el.counter.innerHTML = '<b>0</b><b>0</b><b>0</b>';
-    el.packL.setAttribute('r', 40); el.packR.setAttribute('r', 22);
+    el.packL.setAttribute('r', (42 - 19 * p).toFixed(1));
+    el.packR.setAttribute('r', (23 + 19 * p).toFixed(1));
+    if (seg.page && !st.turned && st.mode === 'playing' && t >= seg.page) st.turned = true;
+    if (st.mode === 'playing') renderPaper();
   }
   requestAnimationFrame(frame);
 }
@@ -372,12 +361,12 @@ $('slipClose').addEventListener('click', () => {
 $('slipReset').addEventListener('click', () => { reset(); el.slip.hidden = true; });
 if (!seen() && !DEBUG) openSlip();
 
-let plateTimer = 0;
-el.plate.addEventListener('pointerdown', () => { plateTimer = setTimeout(openSlip, 1000); });
+let slipTimer = 0;
+el.deck.addEventListener('pointerdown', () => { slipTimer = setTimeout(openSlip, 1000); });
 for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) {
-  el.plate.addEventListener(ev, () => clearTimeout(plateTimer));
+  el.deck.addEventListener(ev, () => clearTimeout(slipTimer));
 }
-el.plate.addEventListener('contextmenu', (e) => e.preventDefault());
+el.deck.addEventListener('contextmenu', (e) => e.preventDefault());
 
 /* ------------------------------------------------------------ odds and ends */
 

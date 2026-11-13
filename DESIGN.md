@@ -59,7 +59,7 @@ three seconds, and REWIND in that window puts it back in the case unplayed.
 it for last. The final question on every route ends "whatever they answer,
 don't say a word; play the red tape". The red tape tells the student to put
 their hands in their lap, speaks to the partner, describes two features of
-the drawing, names it, and sends them to the last page of the booklet.
+the drawing, names it, and the drawing appears on the paper.
 
 Routes differ in length (three to five answers), so tape 6 is often skipped.
 The tape says so. Two routes resolve before a final question and get a short
@@ -71,17 +71,21 @@ partner directly for the two passages whose wording carries the method
 ("Partner, this part is for you"), so a first-timer cannot get them wrong. The voice never
 recites what has been learned. Rules are at the top of `tools/tapes.py`.
 
-**The look.** The inside of a cassette album: a paper title plate, the tape in
-the player, seven tapes on edge in the tray, the typed booklet, three keys.
-Flat printed and moulded surfaces, two typefaces (Libre Franklin for printed
-labels, Courier Prime for the typed booklet), one spot colour plus the red.
-Played tapes go back the other way round. The booklet shows the line the
-student has to say. Its last page is a leaf from a school notebook with the
-doodle in pencil, which is where tape 1 told the partner they drew it.
+**The look.** A player, a sheet of paper, the tapes on edge, three keys. Flat
+printed and moulded surfaces, two typefaces (Libre Franklin for print, Courier
+Prime for the typed sheet), one spot colour plus the red. Nothing is labelled
+unless the object itself would carry the label: the cassette has the course
+title and its number, the keys have their symbols, and that is all. Played
+tapes go back the other way round.
 
-**Any screen.** Upright, the album is one column: player, tapes, booklet,
-keys. Wider than tall (a phone on its side, a tablet, a laptop) it lies open:
-player and keys on the left leaf, tapes and booklet on the right. Sizes scale
+**The paper.** Before the first tape it is the cover. While a tape plays it is
+a transcript, typed out in time with the voice, with the line the student has
+to repeat set heavier. At the end it is a leaf from a school notebook with the
+doodle in pencil.
+
+**Any screen.** Upright it is one column: player, paper, tapes, keys. Wider
+than tall (a phone on its side, a tablet, a laptop) the player and keys go on
+the left, the paper and tapes on the right. Sizes scale
 with the height of the screen.
 
 ## Method notes

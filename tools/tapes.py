@@ -23,15 +23,14 @@
 #   "text"           spoken
 #   ("say", "text")  a line the student repeats; spoken slower
 #   ("beat", 1.0)    silence, tape still running
-#   ("page",)        the booklet turns to its last page here (red tapes only)
+#   ("page",)        the drawing appears here (red tapes only)
 #
 # Segment fields:
 #   tape   1..6, or RED for the red tape: the label shown while it plays
 #   next   "id"                    one recording follows, however it is picked
 #          {"yes": id, "no": id}   a tap picks yes, a hold picks no
 #          None                    end of the lesson
-#   note   booklet text for this tape
-#   say    the line the student speaks, printed in the booklet
+#   say    the line the student speaks, shown on screen while the tape plays
 #   art    red tapes: which drawing is on the last page
 
 COURSE = "How to Read Minds"
@@ -40,9 +39,8 @@ RED = 7      # tapes 1..6 are numbered; the seventh is the red one
 S = {}
 
 
-def seg(sid, tape, next, parts, note="", say=None, art=None):
-    S[sid] = {"tape": tape, "next": next, "parts": parts,
-              "note": note, "say": say, "art": art}
+def seg(sid, tape, next, parts, say=None, art=None):
+    S[sid] = {"tape": tape, "next": next, "parts": parts, "say": say, "art": art}
 
 
 # ------------------------------------------------------------------ setting up
@@ -63,7 +61,7 @@ seg("t1", 1, "t2", [
     "Got it? Don't say it out loud.",
     ("beat", 0.7),
     "When your partner is ready, play tape two.",
-], note="Sit your partner down in front of you and let the tape talk to them. When they have a drawing, play tape 2.")
+])
 
 # ---------------------------------------------------------------------- letters
 
@@ -85,8 +83,7 @@ seg("t2", 2, {"yes": "t3y", "no": "t3n"}, [
     ("say", "There is an A in your word."),
     ("beat", 0.9),
     "Wait for the answer. Then play tape three.",
-], note="Two fingers on your temple. Tell them, don't ask. Wait for the answer, then play tape 3.",
-   say="There is an A in your word.")
+], say="There is an A in your word.")
 
 seg("t3y", 3, {"yes": "t4yy", "no": "t4yn"}, [
     "Tape three. You got the A! Now that you have one letter, the next comes easier.",
@@ -98,8 +95,7 @@ seg("t3y", 3, {"yes": "t4yy", "no": "t4yn"}, [
     ("say", "And there is a T."),
     ("beat", 0.9),
     "Wait for their answer. Then play tape four.",
-], note="Fingers on your temple. Have them picture the whole word again. Then play tape 4.",
-   say="And there is a T.")
+], say="And there is a T.")
 
 seg("t3n", 3, {"yes": "t4ny", "no": "t4nn"}, [
     "Tape three. Your partner said no to the A. Perfect. They are supposed to.",
@@ -111,8 +107,7 @@ seg("t3n", 3, {"yes": "t4ny", "no": "t4nn"}, [
     ("say", "There is an S."),
     ("beat", 0.9),
     "Wait for their answer. Then play tape four.",
-], note="That was the test letter. Ask them to focus harder. Then play tape 4.",
-   say="There is an S.")
+], say="There is an S.")
 
 seg("t4yy", 4, {"yes": "t5s", "no": "t5r"}, [
     "Tape four. An A and a T! You have a real connection going, so don't rush it.",
@@ -124,8 +119,7 @@ seg("t4yy", 4, {"yes": "t5s", "no": "t5r"}, [
     ("say", "I think there's an R."),
     ("beat", 0.9),
     "Then play tape five.",
-], note="A slow breath, both of you. Be a little less certain. Then play tape 5.",
-   say="I think there's an R.")
+], say="I think there's an R.")
 
 seg("t4yn", 4, {"yes": "t5hold", "no": "t5man"}, [
     "Tape four. That one was a no. Good.",
@@ -137,8 +131,7 @@ seg("t4yn", 4, {"yes": "t5hold", "no": "t5man"}, [
     ("say", "What you drew is not a living thing."),
     ("beat", 0.9),
     "If they agree, fine. If they correct you, that is fine too. Then play tape five.",
-], note="Lower your hand. Say it firmly. Agree or correct, either is fine. Then play tape 5.",
-   say="What you drew is not a living thing.")
+], say="What you drew is not a living thing.")
 
 seg("t4ny", 4, {"yes": "t5live", "no": "t5sun"}, [
     "Tape four. There's your S! One letter is all we need from the word.",
@@ -150,8 +143,7 @@ seg("t4ny", 4, {"yes": "t5live", "no": "t5sun"}, [
     ("say", "Can you touch it?"),
     ("beat", 0.9),
     "Then play tape five.",
-], note="Lower your hand. Have them see it in front of them, life size. Then play tape 5.",
-   say="Can you touch it?")
+], say="Can you touch it?")
 
 seg("t4nn", 4, {"yes": "t5big", "no": "t5touch"}, [
     "Tape four. Two no's in a row. That is exactly the result we were looking for.",
@@ -165,17 +157,13 @@ seg("t4nn", 4, {"yes": "t5big", "no": "t5touch"}, [
     ("say", "Is it alive?"),
     ("beat", 0.9),
     "Then play tape five.",
-], note="A picture thinker. Forget the letters. Have them look at the thing itself. Then play tape 5.",
-   say="Is it alive?")
+], say="Is it alive?")
 
 # --------------------------------------------------------------- the thing itself
 
 LAST = "Whatever they answer, don't say a word. You can skip tape six. Play the red tape."
 LAST8 = "Whatever they answer, don't say a word. Play the red tape."
 ENOUGH = "That is everything you need. Don't ask anything else. You can skip tape six. Play the red tape."
-NOTE_LAST = "Whatever they answer, don't say a word. Skip tape 6. Play the red tape."
-NOTE_LAST8 = "Whatever they answer, don't say a word. Play the red tape."
-NOTE_ENOUGH = "Don't ask anything else. Skip tape 6. Play the red tape."
 
 seg("t5s", 5, {"yes": "r_star", "no": "r_heart"}, [
     "Tape five. A, T, and R. Three letters is as far as lesson one goes, and you got there.",
@@ -185,7 +173,7 @@ seg("t5s", 5, {"yes": "r_star", "no": "r_heart"}, [
     ("say", "I'm not sure about this one. Is there an S?"),
     ("beat", 0.9),
     LAST,
-], note=NOTE_LAST, say="I'm not sure about this one. Is there an S?")
+], say="I'm not sure about this one. Is there an S?")
 
 seg("t5r", 5, {"yes": "t6small", "no": "t6home"}, [
     "Tape five. No R. That is your signal that the letters are finished.",
@@ -197,7 +185,7 @@ seg("t5r", 5, {"yes": "t6small", "no": "t6home"}, [
     ("say", "Is it alive?"),
     ("beat", 0.9),
     "Then play tape six.",
-], note="The letters are finished. Lower your hand. Then play tape 6.", say="Is it alive?")
+], say="Is it alive?")
 
 seg("t5hold", 5, {"yes": "t6hard", "no": "t6own"}, [
     "Tape five. They agreed. It is not alive. You are reading the thing itself now.",
@@ -207,8 +195,7 @@ seg("t5hold", 5, {"yes": "t6hard", "no": "t6own"}, [
     ("say", "Could you pick it up and hold it in your hands?"),
     ("beat", 0.9),
     "Then play tape six.",
-], note="Hold out your hands, palms up. Then play tape 6.",
-   say="Could you pick it up and hold it in your hands?")
+], say="Could you pick it up and hold it in your hands?")
 
 seg("t5man", 5, "r_stickman", [
     "Tape five. They corrected you. That is what that step is for.",
@@ -216,7 +203,7 @@ seg("t5man", 5, "r_stickman", [
     "People answer a question slowly, but they correct a mistake right away. Now they have told you it is alive.",
     ("beat", 0.8),
     ENOUGH,
-], note=NOTE_ENOUGH)
+])
 
 seg("t5live", 5, {"yes": "r_fish", "no": "r_house"}, [
     "Tape five. They can touch it. So it is close, and it is solid.",
@@ -226,13 +213,13 @@ seg("t5live", 5, {"yes": "r_fish", "no": "r_house"}, [
     ("say", "Is it alive?"),
     ("beat", 0.9),
     LAST,
-], note=NOTE_LAST, say="Is it alive?")
+], say="Is it alive?")
 
 seg("t5sun", 5, "r_sun", [
     "Tape five. They can't touch it. That is the most useful answer in lesson one.",
     ("beat", 0.8),
     ENOUGH,
-], note=NOTE_ENOUGH)
+])
 
 seg("t5big", 5, {"yes": "r_tree", "no": "r_flower"}, [
     "Tape five. It is alive. Ask your partner to stand right next to it.",
@@ -242,7 +229,7 @@ seg("t5big", 5, {"yes": "r_tree", "no": "r_flower"}, [
     ("say", "Is it bigger than you?"),
     ("beat", 0.9),
     LAST,
-], note=NOTE_LAST, say="Is it bigger than you?")
+], say="Is it bigger than you?")
 
 seg("t5touch", 5, {"yes": "r_pencil", "no": "r_moon"}, [
     "Tape five. Not alive. That's fine. Most drawings aren't.",
@@ -254,7 +241,7 @@ seg("t5touch", 5, {"yes": "r_pencil", "no": "r_moon"}, [
     ("say", "Can you touch it?"),
     ("beat", 0.9),
     LAST,
-], note=NOTE_LAST, say="Can you touch it?")
+], say="Can you touch it?")
 
 seg("t6small", 6, {"yes": "r_cat", "no": "r_stickman"}, [
     "Tape six. It is alive. Ask your partner to stand right next to it.",
@@ -264,7 +251,7 @@ seg("t6small", 6, {"yes": "r_cat", "no": "r_stickman"}, [
     ("say", "Is it smaller than you?"),
     ("beat", 0.9),
     LAST8,
-], note=NOTE_LAST8, say="Is it smaller than you?")
+], say="Is it smaller than you?")
 
 seg("t6home", 6, {"yes": "r_table", "no": "r_boat"}, [
     "Tape six. Not alive. That's fine. Most drawings aren't.",
@@ -274,7 +261,7 @@ seg("t6home", 6, {"yes": "r_table", "no": "r_boat"}, [
     ("say", "Is there one in your home?"),
     ("beat", 0.9),
     LAST8,
-], note=NOTE_LAST8, say="Is there one in your home?")
+], say="Is there one in your home?")
 
 seg("t6hard", 6, {"yes": "r_glass", "no": "r_ball"}, [
     "Tape six. They can hold it. Ask your partner to close their hands around it.",
@@ -284,7 +271,7 @@ seg("t6hard", 6, {"yes": "r_glass", "no": "r_ball"}, [
     ("say", "Is it hard?"),
     ("beat", 0.9),
     LAST8,
-], note=NOTE_LAST8, say="Is it hard?")
+], say="Is it hard?")
 
 seg("t6own", 6, {"yes": "r_car", "no": "r_plane"}, [
     "Tape six. Too big to hold. Good. That helps.",
@@ -294,7 +281,7 @@ seg("t6own", 6, {"yes": "r_car", "no": "r_plane"}, [
     ("say", "Do you own one?"),
     ("beat", 0.9),
     LAST8,
-], note=NOTE_LAST8, say="Do you own one?")
+], say="Do you own one?")
 
 # --------------------------------------------------------------------- red tape
 # One recording per drawing. Two details a child's version nearly always has,
@@ -336,7 +323,7 @@ for key, (detail, name) in DRAWINGS.items():
         ("page",),
         ("beat", 1.8),
         "And that is how you read a mind! Congratulations on finishing lesson one.",
-    ], note="Hands in your lap. Let the tape finish.", art=key)
+    ], art=key)
 
 # File order. Names on disk are just numbers, so the folder says nothing.
 ORDER = list(S)
