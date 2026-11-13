@@ -58,32 +58,37 @@ three seconds, and REWIND in that window puts it back in the case unplayed.
 **The red tape.** It sits in the case from the start and tape 1 says to save
 it for last. The final question on every route ends "whatever they answer,
 don't say a word; play the red tape". The red tape tells the student to put
-their hands in their lap, speaks to the participant, describes two features of
+their hands in their lap, speaks to the partner, describes two features of
 the drawing, names it, and sends them to the last page of the booklet.
 
-Routes differ in length (three to five answers), so tape 8 is often skipped.
+Routes differ in length (three to five answers), so tape 6 is often skipped.
 The tape says so. Two routes resolve before a final question and get a short
 tape that says "That is everything you need."
 
-**The voice.** A friendly how-to instructor: encouraging, clear, never
-surprised, never joking. The tapes talk to the participant directly for the
-two steps whose wording carries the method, with a reason given ("this part
-has to be done just right, so I will talk to them myself"). The voice never
+**The voice.** An upbeat how-to instructor: encouraging, brisk, never
+surprised, never joking. The set-up is one tape. The tape talks to the
+partner directly for the two passages whose wording carries the method
+("Partner, this part is for you"), so a first-timer cannot get them wrong. The voice never
 recites what has been learned. Rules are at the top of `tools/tapes.py`.
 
 **The look.** The inside of a cassette album: a paper title plate, the tape in
-the player, nine tapes on edge in the tray, the typed booklet, three keys.
+the player, seven tapes on edge in the tray, the typed booklet, three keys.
 Flat printed and moulded surfaces, two typefaces (Libre Franklin for printed
 labels, Courier Prime for the typed booklet), one spot colour plus the red.
 Played tapes go back the other way round. The booklet shows the line the
 student has to say. Its last page is a leaf from a school notebook with the
-doodle in pencil, which is where tape 2 told the participant they drew it.
+doodle in pencil, which is where tape 1 told the partner they drew it.
+
+**Any screen.** Upright, the album is one column: player, tapes, booklet,
+keys. Wider than tall (a phone on its side, a tablet, a laptop) it lies open:
+player and keys on the left leaf, tapes and booklet on the right. Sizes scale
+with the height of the screen.
 
 ## Method notes
 
 - The tree is the book's, with the "not a living thing" check kept on the no-T
   branch.
-- Tape 3 adds "use the simple word, the one a kid would use", to pull people
+- Tape 2 adds "use the simple word, the one a kid would use", to pull people
   off ROSE and towards FLOWER.
 - Red-tape details are chosen to be true of nearly any child's version (fish
   from the side, crescent moon, lines on the ball).

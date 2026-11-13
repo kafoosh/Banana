@@ -16,7 +16,7 @@ import numpy as np
 from scipy.signal import butter, sosfilt
 
 sys.path.insert(0, str(Path(__file__).parent))
-from tapes import S, ORDER, START, COURSE  # noqa: E402
+from tapes import S, ORDER, START, COURSE, RED  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIO_DIR = ROOT / "docs" / "audio"
@@ -231,6 +231,7 @@ def main() -> None:
 
     manifest["course"] = COURSE
     manifest["start"] = START
+    manifest["tapes"] = RED
     manifest["segs"] = {sid: manifest["segs"][sid] for sid in ORDER if sid in manifest["segs"]}
     manifest_path.write_text(json.dumps(manifest, indent=1, ensure_ascii=False) + "\n")
     total = sum(s["dur"] for s in manifest["segs"].values())

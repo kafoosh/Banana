@@ -21,6 +21,7 @@ const el = {
 };
 const DEBUG = new URLSearchParams(location.search).has('debug');
 const WORDS = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
+let RED = 7;                        // number of tapes; the last one is red
 
 let SEGS = {};
 let START = '';
@@ -51,7 +52,8 @@ async function boot() {
     el.status.textContent = 'No tapes found';
     return;
   }
-  SEGS = data.segs; START = data.start;
+  SEGS = data.segs; START = data.start; RED = data.tapes || RED;
+  render();
 
   const AC = window.AudioContext || window.webkitAudioContext;
   ctx = new AC();
@@ -279,10 +281,11 @@ document.addEventListener('keyup', (e) => {
 function renderTray() {
   const tape = st.cur && !st.empty ? SEGS[st.cur].tape : 0;
   let html = '';
-  for (let i = 1; i <= 9; i++) {
+  el.tray.style.setProperty('--n', RED);
+  for (let i = 1; i <= RED; i++) {
     const state = i === tape ? 'out' : i === st.lift ? 'lift' : st.played.has(i) ? 'done' : '';
-    const cls = ['slot', i === 9 ? 'red' : '', state].join(' ');
-    html += `<div class="${cls}" data-n="${i}"><i>${i === 9 ? '' : i}</i><small>${i === 9 ? 'RED' : i}</small></div>`;
+    const cls = ['slot', i === RED ? 'red' : '', state].join(' ');
+    html += `<div class="${cls}" data-n="${i}"><i>${i === RED ? '' : i}</i><small>${i === RED ? 'RED' : i}</small></div>`;
   }
   if (el.tray.dataset.sig !== html) { el.tray.innerHTML = html; el.tray.dataset.sig = html; }
 }
@@ -292,14 +295,14 @@ function renderPage() {
   let html, leaf = false;
   if (!seg) {
     html = `<div class="head"><span>Lesson one</span><span>Booklet</span></div>
-      <p class="note">Nine cassettes. Eight are numbered and one is red.</p>
+      <p class="note">${WORDS[RED][0].toUpperCase() + WORDS[RED].slice(1)} cassettes. ${WORDS[RED - 1][0].toUpperCase() + WORDS[RED - 1].slice(1)} are numbered and one is red.</p>
       <p class="note">&nbsp;</p>
       <p class="note">${st.cur ? 'Take the next tape from the case.' : 'Begin with tape 1.'}</p>`;
   } else if (st.turned) {
     leaf = true;
     html = DOODLES[seg.art] + (st.mode === 'done' ? backButton() : '');
   } else {
-    const name = seg.tape === 9 ? 'The red tape' : `Tape ${WORDS[seg.tape]}`;
+    const name = seg.tape === RED ? 'The red tape' : `Tape ${WORDS[seg.tape]}`;
     html = `<div class="head"><span>${name}</span><span>Lesson one</span></div>` +
       (seg.say ? `<p class="say"><small>${/\?$/.test(seg.say) ? 'Ask' : 'Say'}</small>&ldquo;${seg.say}&rdquo;</p>` : '') +
       `<p class="note">${seg.note}</p>`;
@@ -319,10 +322,10 @@ const backButton = () => '<button class="back" type="button">Return tapes to the
 function render() {
   const seg = st.cur && SEGS[st.cur];
   const tape = seg ? seg.tape : 1;
-  el.cass.dataset.tape = tape;
+  el.cass.classList.toggle('red', tape === RED);
   el.num.textContent = tape;
-  el.of2.textContent = tape === 9 ? '9 OF 9' : `${tape} OF 9`;
-  el.title.textContent = tape === 9 ? 'The red tape' : `Tape ${tape}`;
+  el.of2.textContent = `${tape} OF ${RED}`;
+  el.title.textContent = tape === RED ? 'The red tape' : `Tape ${tape}`;
   el.case.classList.toggle('playing', st.mode === 'playing');
   el.cass.classList.toggle('away', !st.cur || st.empty);
   if (st.mode === 'playing') el.play.classList.add('down');

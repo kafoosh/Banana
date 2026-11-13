@@ -1,10 +1,9 @@
 {
   "name": "How to Read Minds",
   "short_name": "Read Minds",
-  "description": "A home course in nine cassettes.",
+  "description": "A home course in seven cassettes.",
   "start_url": "./",
   "display": "standalone",
-  "orientation": "portrait",
   "background_color": "#1f1915",
   "theme_color": "#1f1915",
   "icons": [

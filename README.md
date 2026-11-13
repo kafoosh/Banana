@@ -2,13 +2,13 @@
 
 A magic trick that runs in a phone browser.
 
-On screen is an open cassette album: *How to Read Minds, a home course in nine
-cassettes*. Eight numbered tapes, one red. The performer has never done this
+On screen is an open cassette album: *How to Read Minds, a home course in seven
+cassettes*. Six numbered tapes, one red. The performer has never done this
 before and says so. They put on tape 1 and follow it, with a spectator as the
-practice participant.
+practice partner.
 
-The participant thinks of a drawing and never says what it is. Each tape gives
-the student one step and one line to say, then stops. Whatever the participant
+The partner thinks of a drawing and never says what it is. Each tape gives
+the student one step and one line to say, then stops. Whatever the partner
 answers, the next tape opens as if that answer was the lesson plan: after a yes
 it builds on it, after a no it explains that the no was a test, or a signal, or
 exactly the result the course was looking for. The red tape finishes the reading
@@ -23,10 +23,10 @@ itself and names the drawing, which is also on the last page of the booklet.
 
 Read the slip that opens the first time you load the app. In short:
 
-1. Phone between you and your participant, ringer on, volume up.
+1. Phone between you and your partner, ringer on, volume up.
 2. Touch tape 1 in the case. It goes into the player and plays. When a tape
    stops, do the step, then take the next tape from the case.
-3. From tape 4 on, the participant's answer goes into how you pick up the next
+3. From tape 2 on, the partner's answer goes into how you pick up the next
    tape. **Yes: tap it. No: rest your finger on it until it lifts** (0.4 s).
    On a tap it lifts as your finger leaves; on a hold it lifts under your
    finger. That is your confirmation.
@@ -42,7 +42,7 @@ case**. After the red tape the same button appears on the booklet.
 Keyboard, for rehearsal at a desk: Space picks the next tape (tap or hold),
 S stops, R rewinds.
 
-A full run is a little under five minutes of tape. If it misses, you have the
+A full run is about three and a half minutes of tape. If it misses, you have the
 best out available: you are on lesson one.
 
 ## Dev
