@@ -227,15 +227,8 @@ The book's question pages model the emotional arc; the app's copy should reprodu
 
 ---
 
-## 8. App design notes (agreed direction)
+## 8. The app
 
-- **Spectator-facing web app that plays the book's role**: priming screen(s) with the full
-  funnel script → yes/no question flow per §5 tree → full-screen reveal image.
-- Include the **Man contingency** as a configurable option (default on).
-- Copy should be **paraphrased patter** with the same beats (§6), not the book's verbatim
-  text.
-- Never expose method words like "anagram", "tree", "elimination" anywhere user-visible.
-- Reveal should land as the climax: consider a beat of silence/blank before showing the
-  drawing.
-- Nice-to-have (from the book's structure): a hidden performer/debug mode showing current
-  node + remaining candidates, for development only.
+See `DESIGN.md` for the presentation and `tools/tapes.py` for the script and graph.
+The tree above is implemented as written, with the Man contingency on.
+No method words appear in anything the spectator sees or hears.

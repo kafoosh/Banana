@@ -1,0 +1,420 @@
+{
+ "segs": {
+  "t1": {
+   "tape": 1,
+   "next": "t2",
+   "note": "Find a participant. Sit them across from you, with the player between you. Then play tape 2.",
+   "file": "audio/01.mp3",
+   "dur": 39.77,
+   "safe": 5.23
+  },
+  "t2": {
+   "tape": 2,
+   "next": "t3",
+   "note": "Let the tape talk to your participant. When they nod, play tape 3.",
+   "file": "audio/02.mp3",
+   "dur": 67.05,
+   "safe": 2.9
+  },
+  "t3": {
+   "tape": 3,
+   "next": "t4",
+   "note": "When they tell you they have their word, play tape 4.",
+   "file": "audio/03.mp3",
+   "dur": 45.34,
+   "safe": 2.87
+  },
+  "t4": {
+   "tape": 4,
+   "next": {
+    "yes": "t5y",
+    "no": "t5n"
+   },
+   "note": "Two fingers on your temple. Tell them, don't ask. Wait for their answer, then play tape 5.",
+   "file": "audio/04.mp3",
+   "dur": 24.09,
+   "safe": 2.87,
+   "say": "There is an A in your word."
+  },
+  "t5y": {
+   "tape": 5,
+   "next": {
+    "yes": "t6yy",
+    "no": "t6yn"
+   },
+   "note": "Fingers on your temple. Have them picture the whole word again. Then play tape 6.",
+   "file": "audio/05.mp3",
+   "dur": 21.65,
+   "safe": 2.9,
+   "say": "And there is a T."
+  },
+  "t5n": {
+   "tape": 5,
+   "next": {
+    "yes": "t6ny",
+    "no": "t6nn"
+   },
+   "note": "That was the test letter. Ask them to focus harder. Then play tape 6.",
+   "file": "audio/06.mp3",
+   "dur": 31.8,
+   "safe": 2.9,
+   "say": "There is an S."
+  },
+  "t6yy": {
+   "tape": 6,
+   "next": {
+    "yes": "t7s",
+    "no": "t7r"
+   },
+   "note": "A slow breath, both of you. Be a little less certain. Then play tape 7.",
+   "file": "audio/07.mp3",
+   "dur": 22.55,
+   "safe": 2.87,
+   "say": "I think there's an R."
+  },
+  "t6yn": {
+   "tape": 6,
+   "next": {
+    "yes": "t7hold",
+    "no": "t7man"
+   },
+   "note": "Lower your hand. Say it firmly. Agree or correct, either is fine. Then play tape 7.",
+   "file": "audio/08.mp3",
+   "dur": 33.9,
+   "safe": 2.87,
+   "say": "What you drew is not a living thing."
+  },
+  "t6ny": {
+   "tape": 6,
+   "next": {
+    "yes": "t7live",
+    "no": "t7sun"
+   },
+   "note": "Lower your hand. Have them see it in front of them, life size. Then play tape 7.",
+   "file": "audio/09.mp3",
+   "dur": 24.17,
+   "safe": 2.87,
+   "say": "Can you touch it?"
+  },
+  "t6nn": {
+   "tape": 6,
+   "next": {
+    "yes": "t7big",
+    "no": "t7touch"
+   },
+   "note": "A picture thinker. Forget the letters. Have them look at the thing itself. Then play tape 7.",
+   "file": "audio/10.mp3",
+   "dur": 30.58,
+   "safe": 2.87,
+   "say": "Is it alive?"
+  },
+  "t7s": {
+   "tape": 7,
+   "next": {
+    "yes": "r_star",
+    "no": "r_heart"
+   },
+   "note": "Whatever they answer, don't say a word. Skip tape 8. Play the red tape.",
+   "file": "audio/11.mp3",
+   "dur": 23.5,
+   "safe": 2.85,
+   "say": "I'm not sure about this one. Is there an S?"
+  },
+  "t7r": {
+   "tape": 7,
+   "next": {
+    "yes": "t8small",
+    "no": "t8home"
+   },
+   "note": "The letters are finished. Lower your hand. Then play tape 8.",
+   "file": "audio/12.mp3",
+   "dur": 23.75,
+   "safe": 2.85,
+   "say": "Is it alive?"
+  },
+  "t7hold": {
+   "tape": 7,
+   "next": {
+    "yes": "t8hard",
+    "no": "t8own"
+   },
+   "note": "Hold out your hands, palms up. Then play tape 8.",
+   "file": "audio/13.mp3",
+   "dur": 18.04,
+   "safe": 2.85,
+   "say": "Could you pick it up and hold it in your hands?"
+  },
+  "t7man": {
+   "tape": 7,
+   "next": "r_stickman",
+   "note": "Don't ask anything else. Skip tape 8. Play the red tape.",
+   "file": "audio/14.mp3",
+   "dur": 22.21,
+   "safe": 2.85
+  },
+  "t7live": {
+   "tape": 7,
+   "next": {
+    "yes": "r_fish",
+    "no": "r_house"
+   },
+   "note": "Whatever they answer, don't say a word. Skip tape 8. Play the red tape.",
+   "file": "audio/15.mp3",
+   "dur": 18.31,
+   "safe": 2.85,
+   "say": "Is it alive?"
+  },
+  "t7sun": {
+   "tape": 7,
+   "next": "r_sun",
+   "note": "Don't ask anything else. Skip tape 8. Play the red tape.",
+   "file": "audio/16.mp3",
+   "dur": 15.62,
+   "safe": 2.85
+  },
+  "t7big": {
+   "tape": 7,
+   "next": {
+    "yes": "r_tree",
+    "no": "r_flower"
+   },
+   "note": "Whatever they answer, don't say a word. Skip tape 8. Play the red tape.",
+   "file": "audio/17.mp3",
+   "dur": 18.85,
+   "safe": 2.85,
+   "say": "Is it bigger than you?"
+  },
+  "t7touch": {
+   "tape": 7,
+   "next": {
+    "yes": "r_pencil",
+    "no": "r_moon"
+   },
+   "note": "Whatever they answer, don't say a word. Skip tape 8. Play the red tape.",
+   "file": "audio/18.mp3",
+   "dur": 22.94,
+   "safe": 2.85,
+   "say": "Can you touch it?"
+  },
+  "t8small": {
+   "tape": 8,
+   "next": {
+    "yes": "r_cat",
+    "no": "r_stickman"
+   },
+   "note": "Whatever they answer, don't say a word. Play the red tape.",
+   "file": "audio/19.mp3",
+   "dur": 17.31,
+   "safe": 2.81,
+   "say": "Is it smaller than you?"
+  },
+  "t8home": {
+   "tape": 8,
+   "next": {
+    "yes": "r_table",
+    "no": "r_boat"
+   },
+   "note": "Whatever they answer, don't say a word. Play the red tape.",
+   "file": "audio/20.mp3",
+   "dur": 17.2,
+   "safe": 2.81,
+   "say": "Is there one in your home?"
+  },
+  "t8hard": {
+   "tape": 8,
+   "next": {
+    "yes": "r_glass",
+    "no": "r_ball"
+   },
+   "note": "Whatever they answer, don't say a word. Play the red tape.",
+   "file": "audio/21.mp3",
+   "dur": 17.21,
+   "safe": 2.81,
+   "say": "Is it hard?"
+  },
+  "t8own": {
+   "tape": 8,
+   "next": {
+    "yes": "r_car",
+    "no": "r_plane"
+   },
+   "note": "Whatever they answer, don't say a word. Play the red tape.",
+   "file": "audio/22.mp3",
+   "dur": 15.67,
+   "safe": 2.81,
+   "say": "Do you own one?"
+  },
+  "r_fish": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/23.mp3",
+   "dur": 36.26,
+   "safe": 2.84,
+   "art": "fish",
+   "page": 28.19
+  },
+  "r_house": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/24.mp3",
+   "dur": 36.17,
+   "safe": 2.84,
+   "art": "house",
+   "page": 28.1
+  },
+  "r_sun": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/25.mp3",
+   "dur": 35.88,
+   "safe": 2.84,
+   "art": "sun",
+   "page": 27.8
+  },
+  "r_tree": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/26.mp3",
+   "dur": 36.28,
+   "safe": 2.84,
+   "art": "tree",
+   "page": 28.21
+  },
+  "r_flower": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/27.mp3",
+   "dur": 37.11,
+   "safe": 2.84,
+   "art": "flower",
+   "page": 29.04
+  },
+  "r_pencil": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/28.mp3",
+   "dur": 36.73,
+   "safe": 2.84,
+   "art": "pencil",
+   "page": 28.66
+  },
+  "r_moon": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/29.mp3",
+   "dur": 37.26,
+   "safe": 2.84,
+   "art": "moon",
+   "page": 29.19
+  },
+  "r_glass": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/30.mp3",
+   "dur": 36.34,
+   "safe": 2.84,
+   "art": "glass",
+   "page": 28.27
+  },
+  "r_ball": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/31.mp3",
+   "dur": 36.73,
+   "safe": 2.84,
+   "art": "ball",
+   "page": 28.66
+  },
+  "r_car": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/32.mp3",
+   "dur": 35.7,
+   "safe": 2.84,
+   "art": "car",
+   "page": 27.63
+  },
+  "r_plane": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/33.mp3",
+   "dur": 35.49,
+   "safe": 2.84,
+   "art": "plane",
+   "page": 27.42
+  },
+  "r_cat": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/34.mp3",
+   "dur": 34.04,
+   "safe": 2.84,
+   "art": "cat",
+   "page": 25.97
+  },
+  "r_stickman": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/35.mp3",
+   "dur": 37.84,
+   "safe": 2.84,
+   "art": "stickman",
+   "page": 29.77
+  },
+  "r_table": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/36.mp3",
+   "dur": 34.87,
+   "safe": 2.84,
+   "art": "table",
+   "page": 26.8
+  },
+  "r_boat": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/37.mp3",
+   "dur": 35.3,
+   "safe": 2.84,
+   "art": "boat",
+   "page": 27.23
+  },
+  "r_heart": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/38.mp3",
+   "dur": 34.89,
+   "safe": 2.84,
+   "art": "heart",
+   "page": 26.82
+  },
+  "r_star": {
+   "tape": 9,
+   "next": null,
+   "note": "Hands in your lap. Let the tape finish.",
+   "file": "audio/39.mp3",
+   "dur": 36.88,
+   "safe": 2.84,
+   "art": "star",
+   "page": 28.81
+  }
+ },
+ "course": "How to Read Minds",
+ "start": "t1"
+}

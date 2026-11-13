@@ -1,0 +1,289 @@
+/* How to Read Minds: the open cassette album.
+   Everything is a flat printed or moulded surface. No blur, no glow, no gradients
+   except the ruled lines on the last page of the booklet. */
+
+@font-face { font-family: Franklin; font-weight: 500; font-display: block; src: url(../fonts/libre-franklin-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: Franklin; font-weight: 800; font-display: block; src: url(../fonts/libre-franklin-latin-800-normal.woff2) format("woff2"); }
+@font-face { font-family: Typed; font-weight: 400; font-display: block; src: url(../fonts/courier-prime-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: Typed; font-weight: 700; font-display: block; src: url(../fonts/courier-prime-latin-700-normal.woff2) format("woff2"); }
+
+:root {
+  --case: #1f1915;        /* moulded tray */
+  --rib: #2c241e;         /* raised plastic */
+  --pit: #130f0c;         /* recesses */
+  --paper: #e9e1cd;
+  --ink: #1c1a17;
+  --faint: #6f675a;       /* secondary ink on paper */
+  --shell: #cdc5b3;
+  --shell-lo: #b1a996;
+  --ochre: #c2861a;
+  --red: #a3271e;
+  --red-lo: #7f1d16;
+  --key: #37302a;
+  --sans: Franklin, "Franklin Gothic Medium", "Helvetica Neue", Arial, sans-serif;
+  --typed: Typed, "Courier New", Courier, monospace;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--pit);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-weight: 500;
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+.case {
+  height: 100dvh;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: calc(12px + env(safe-area-inset-top)) 16px calc(14px + env(safe-area-inset-bottom));
+  background: var(--case);
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  gap: 12px;
+}
+
+/* ---- title plate: the label stuck inside the lid ---- */
+.plate {
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 9px 12px 8px;
+  border-top: 5px solid var(--ochre);
+}
+.plate h1 {
+  margin: 0;
+  font-size: 15px; line-height: 1.2;
+  font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+}
+.plate p { margin: 1px 0 0; font-size: 11.5px; color: var(--faint); }
+.plate .lesson {
+  position: absolute; right: 12px; top: 10px;
+  font-size: 10.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+}
+
+/* ---- deck ---- */
+.well {
+  background: var(--pit);
+  border: 1px solid #000;
+  border-bottom-color: var(--rib);
+  padding: 14px 26px 0;
+  overflow: hidden;
+}
+.cass {
+  transition: transform .26s cubic-bezier(.3, .6, .3, 1);
+  will-change: transform;
+}
+.cass.away { transform: translateY(-112%); }
+.cass svg { display: block; width: 100%; height: auto; }
+
+.shell { fill: var(--shell); stroke: #000; stroke-width: 1; }
+.edge { fill: none; stroke: var(--shell-lo); stroke-width: 1.5; }
+.foot { fill: var(--shell-lo); }
+.holes * { fill: var(--pit); }
+.screws circle { fill: var(--shell-lo); stroke: #8e8676; stroke-width: 1; }
+.label { fill: var(--paper); }
+.band { fill: var(--ochre); }
+.window { fill: #2a221c; stroke: var(--ink); stroke-width: 1.5; }
+.pack { fill: #4a3526; }
+.hub circle { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
+.hub path { stroke: var(--ink); stroke-width: 3.2; fill: none; }
+.hub { transform-box: fill-box; transform-origin: center; }
+.rule { stroke: var(--ink); stroke-width: 1; }
+.cass text { font-family: var(--sans); fill: var(--ink); }
+.l-course { font-size: 14px; font-weight: 800; letter-spacing: .13em; }
+.l-lesson { font-size: 10.5px; font-weight: 800; letter-spacing: .12em; }
+.l-num { font-size: 68px; font-weight: 800; }
+.l-of { font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+.l-small { font-size: 8.5px; font-weight: 500; letter-spacing: .12em; fill: var(--faint); }
+.l-last { display: none; font-size: 15px; font-weight: 800; letter-spacing: .1em; }
+
+.cass[data-tape="9"] .shell { fill: var(--red); }
+.cass[data-tape="9"] .edge, .cass[data-tape="9"] .foot { stroke: var(--red-lo); fill: var(--red-lo); }
+.cass[data-tape="9"] .edge { fill: none; }
+.cass[data-tape="9"] .screws circle { fill: var(--red-lo); stroke: #5f1510; }
+.cass[data-tape="9"] .band { fill: var(--ink); }
+.cass[data-tape="9"] .l-course, .cass[data-tape="9"] .l-lesson { fill: var(--paper); }
+.cass[data-tape="9"] .l-num { display: none; }
+.cass[data-tape="9"] .l-last { display: block; }
+
+@keyframes turn { to { transform: rotate(-360deg); } }
+.playing .hub { animation: turn 2.6s linear infinite; }
+.rewinding .hub { animation: turn .28s linear infinite reverse; }
+
+.meter {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 2px 0;
+}
+.counter { display: inline-flex; gap: 1px; background: #000; padding: 2px; }
+.counter b {
+  width: 15px; height: 20px;
+  display: grid; place-items: center;
+  background: var(--paper); color: var(--ink);
+  font: 700 14px/1 var(--typed);
+  padding-top: 2px;
+}
+.status {
+  font-size: 10.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+  color: #8d8271;
+}
+
+/* ---- tray: nine tapes on edge ---- */
+.tray {
+  display: grid; grid-template-columns: repeat(9, 1fr); gap: 5px;
+  background: var(--pit);
+  border: 1px solid #000; border-bottom-color: var(--rib);
+  padding: 0 6px 4px;
+}
+.slot { text-align: center; touch-action: none; padding-top: 8px; }
+.slot i {
+  display: block; height: 52px; pointer-events: none;
+  background: var(--paper);
+  border-top: 9px solid var(--ochre);
+  color: var(--ink);
+  font: normal 800 17px/41px var(--sans);
+  transition: transform .12s ease-out;
+}
+.slot small {
+  display: block; margin-top: 3px;
+  font-size: 8px; font-weight: 800; letter-spacing: .08em; color: #5c5145;
+}
+.slot.red i { background: var(--red); border-top-color: var(--red-lo); }
+/* played and put back the other way round */
+.slot.done i { background: var(--shell-lo); border-top-color: #9a927f; color: transparent; }
+.slot.red.done i { background: var(--red-lo); border-top-color: #5f1510; }
+/* picked: rising out of the tray */
+.slot.lift i { transform: translateY(-8px); }
+/* in the player */
+.slot.out i { background: none; border-top-color: transparent; outline: 1px solid var(--rib); outline-offset: -1px; color: transparent; }
+
+/* ---- booklet ---- */
+.booklet { min-height: 0; display: flex; }
+.page {
+  flex: 1; min-height: 0; overflow: hidden;
+  position: relative;
+  background: var(--paper); color: var(--ink);
+  padding: 12px 14px 12px;
+  font-family: var(--typed); font-size: 15px; line-height: 1.38;
+  display: flex; flex-direction: column;
+}
+.page .head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font: 800 10.5px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase;
+  padding-bottom: 7px; margin-bottom: 9px;
+  border-bottom: 1px solid var(--ink);
+}
+.page .head span:last-child { font-weight: 500; letter-spacing: .1em; color: var(--faint); }
+.page p { margin: 0; }
+.page .say {
+  margin: 0 0 9px;
+  font-size: 19px; line-height: 1.28; font-weight: 700;
+}
+.page .say small { display: block; font: 800 10px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; margin-bottom: 5px; color: var(--faint); }
+.page .note { color: #3b372f; }
+.page .back {
+  margin-top: auto; align-self: flex-start;
+  font: 800 11px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink); background: none;
+  border: 1.5px solid var(--ink); border-radius: 0;
+  padding: 9px 12px;
+}
+
+/* the last page: a leaf from a school exercise book */
+.page.leaf {
+  padding: 0;
+  background:
+    linear-gradient(90deg, transparent 39px, #c9837a 39px, #c9837a 40px, transparent 40px),
+    repeating-linear-gradient(#f3efe2 0 21px, #a9bccb 21px 22px);
+}
+.page.leaf svg { flex: 1; min-height: 0; width: 100%; padding: 6px 28px 6px 52px; }
+.page.leaf path, .page.leaf circle, .page.leaf ellipse {
+  fill: none; stroke: #4b4845; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round;
+}
+.page.leaf .back { position: absolute; left: 52px; bottom: 10px; background: #f3efe2; }
+@keyframes leafin { from { transform: translateX(24px); opacity: 0; } }
+.page.turned > * { animation: leafin .22s ease-out; }
+
+/* ---- keys ---- */
+.keys {
+  display: grid; grid-template-columns: 1fr 1fr 1.7fr; gap: 6px;
+  background: var(--pit);
+  border: 1px solid #000; border-bottom-color: var(--rib);
+  padding: 7px 7px 13px;
+}
+.key {
+  appearance: none; border: 0; border-radius: 2px; margin: 0;
+  height: 62px;
+  background: var(--key); color: var(--paper);
+  box-shadow: 0 6px 0 #0a0807;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  font: 800 9.5px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase;
+  touch-action: none; cursor: default;
+  transition: transform .05s linear, box-shadow .05s linear;
+}
+.key svg { width: 34px; height: 20px; fill: currentColor; pointer-events: none; }
+.key span { color: #a99e8b; pointer-events: none; }
+.key.down { transform: translateY(5px); box-shadow: 0 1px 0 #0a0807; background: #2f2924; }
+.key:focus-visible { outline: 2px solid var(--ochre); outline-offset: 2px; }
+
+/* ---- the slip of paper tucked in the lid (performer only) ---- */
+.slip-wrap {
+  position: fixed; inset: 0; z-index: 5;
+  background: rgba(10, 8, 6, .82);
+  display: grid; place-items: center;
+  padding: 16px;
+  overflow: auto;
+}
+.slip-wrap[hidden] { display: none; }
+.slip {
+  width: 100%; max-width: 400px;
+  background: var(--paper); color: var(--ink);
+  padding: 18px 18px 16px;
+  font-family: var(--typed); font-size: 14px; line-height: 1.42;
+  -webkit-user-select: text; user-select: text;
+}
+.slip h2 { margin: 0; font: 800 14px/1.2 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+.slip-sub { margin: 2px 0 10px; padding-bottom: 9px; border-bottom: 1px solid var(--ink); color: var(--faint); }
+.slip ol { margin: 0 0 10px; padding-left: 22px; }
+.slip li { margin-bottom: 8px; }
+.slip dl { margin: 6px 0; display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; }
+.slip dt { font-weight: 700; }
+.slip dd { margin: 0; }
+.slip p { margin: 0 0 12px; }
+.slip-btns { display: flex; gap: 8px; justify-content: space-between; }
+.slip-btns button {
+  font: 800 11px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink); background: none; border: 1.5px solid var(--ink); border-radius: 0;
+  padding: 11px 12px;
+}
+.slip-btns .primary { background: var(--ink); color: var(--paper); }
+
+.debug {
+  position: fixed; left: 8px; top: 8px; z-index: 9;
+  background: #000c; color: #9f9; padding: 6px; font: 11px/1.3 monospace;
+  pointer-events: none;
+}
+.debug[hidden] { display: none; }
+.debug pre { margin: 0 0 4px; white-space: pre-wrap; max-width: 250px; }
+.debug button { pointer-events: auto; font: inherit; }
+
+@media (max-height: 700px) {
+  .case { gap: 8px; padding-top: calc(8px + env(safe-area-inset-top)); }
+  .well { padding: 10px 58px 0; }
+  .slot i { height: 40px; line-height: 30px; font-size: 15px; }
+  .key { height: 54px; }
+  .page { font-size: 14px; padding: 10px 12px; }
+  .page .say { font-size: 17px; }
+}
+@media (min-height: 860px) {
+  .well { padding: 18px 16px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cass, .slot i, .key { transition: none; }
+  .hub { animation: none !important; }
+}

@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect width="128" height="128" rx="18" fill="#008080"/>
-  <rect x="14" y="34" width="100" height="60" rx="8" fill="#23242e" stroke="#0c0c12" stroke-width="4"/>
-  <rect x="22" y="42" width="84" height="20" rx="3" fill="#f1e6c8"/>
-  <text x="64" y="57" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#33302a">SIDE B</text>
-  <circle cx="42" cy="76" r="11" fill="#5a5d70" stroke="#0c0c12" stroke-width="4"/>
-  <circle cx="86" cy="76" r="11" fill="#5a5d70" stroke="#0c0c12" stroke-width="4"/>
-  <rect x="53" y="72" width="22" height="8" rx="2" fill="#0c0c12"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#1f1915"/>
+  <rect x="86" y="146" width="340" height="220" rx="14" fill="#cdc5b3"/>
+  <rect x="104" y="162" width="304" height="134" rx="5" fill="#e9e1cd"/>
+  <rect x="104" y="162" width="304" height="32" fill="#c2861a"/>
+  <rect x="172" y="214" width="168" height="56" rx="7" fill="#2a221c"/>
+  <circle cx="212" cy="242" r="15" fill="#e9e1cd"/>
+  <circle cx="300" cy="242" r="15" fill="#e9e1cd"/>
+  <path d="M152 366l12-52h184l12 52z" fill="#b1a996"/>
 </svg>
