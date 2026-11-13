@@ -1,5 +1,5 @@
 /* Offline copy of the whole case, so a performance never depends on a signal. */
-const VERSION = 'tr-7';
+const VERSION = 'tr-8';
 const CORE = [
   './', './index.html', './css/app.css', './js/app.js', './js/doodles.js',
   './data/tapes.json', './icon.svg', './manifest.webmanifest',

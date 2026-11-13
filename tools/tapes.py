@@ -6,8 +6,12 @@
 # the way the performer presses NEXT chooses one.
 #
 # Writing rules for the voice (keep to these when editing):
-#   - A coach. Upbeat, brisk, on the student's side. It coaches the delivery:
-#     posture, breath, eye contact, how firmly to say the line.
+#   - A coach on a how-to cassette. Short orders, plainly put: "Hand down."
+#     "Eyes on your volunteer." "Slow down." It coaches what to do with the
+#     body and the voice, and says nothing it doesn't need to.
+#   - No pep talk and no commentary: nothing like "now the real reading
+#     starts", "stay with it", "you have everything you need". If a sentence
+#     gives the student nothing to do or say, cut it.
 #   - Every tape must sound like the only version of that tape.
 #   - The voice does not know what the volunteer answered. It never says
 #     "they said yes", "it is alive", "no R". It only gives the next step.
@@ -73,22 +77,21 @@ seg("t2", 2, "t3", [
 ])
 
 seg("t3", 3, {"yes": "t4y", "no": "t4n"}, [
-    "Tape three. Nice work! Your volunteer has a picture in mind. Now let's make it stronger.",
+    "Tape three. Your volunteer has a drawing. Good.",
     ("beat", 0.6),
-    "Volunteer, imagine the real thing, right in front of you, life size.",
+    "Volunteer, picture the real thing in front of you, life size.",
     ("beat", 1.5),
-    "Now think of it as a word. The simple word, the one a kid would use. If you had drawn a smiley face, you would see a face, and think the word smiley.",
+    "Now think of it as a word. The simple word, the one a kid would use. If you drew a smiley face, you'd see a face, and think the word smiley.",
     ("beat", 0.6),
-    "Spell your word in your head, one letter at a time.",
+    "Spell the word in your head, one letter at a time.",
     ("beat", 3.0),
-    "And once more.",
+    "Again.",
     ("beat", 3.0),
-    "Great. Now, mind reader, it's your turn.",
+    "Okay, mind reader. Your turn.",
     ("beat", 0.4),
-    "Sit up straight. Put two fingers on your temple, and look your volunteer in the eye.",
+    "Sit up. Two fingers on your temple. Look your volunteer in the eye.",
     ("beat", 0.5),
-] + ask("There is an A in your word.", "Don't mumble. Tell them:", "Wait for the answer. " + NEXT),
-    say="There is an A in your word.")
+] + ask("There is an A in your word.", "Tell them:"), say="There is an A in your word.")
 
 # ---------------------------------------------------------------------- letters
 # From here on the voice does not say what the volunteer answered. The one
@@ -100,108 +103,106 @@ def first_no(tape, letter):
     return [
         f"Tape {tape}. Your volunteer said no to the {letter}. Don't worry, they are supposed to.",
         ("beat", 0.6),
-        "One of the letters in this course is always a test. It tells you they are answering honestly, and it shows you what a no looks like on this person's face.",
+        "One letter in this course is always wrong on purpose. It's a test. Now you know they are telling you the truth.",
         ("beat", 0.7),
     ]
 
 
+PICTURE = "Ask your volunteer to picture the thing in front of them again, life size."
+
 seg("t4y", 4, {"yes": "t5yy", "no": "t5yn"}, [
-    "Tape four. Keep your fingers on your temple, and keep your eyes on your volunteer.",
-    ("beat", 0.5),
-    "Ask them to picture the whole word again.",
+    "Tape four. Keep your fingers where they are. Ask your volunteer to think of the whole word again.",
     ("beat", 1.4),
-] + ask("And there is a T.", "Speak like you already know. Say:"), say="And there is a T.")
+] + ask("And there is a T.", "Say:"), say="And there is a T.")
 
 seg("t4n", 4, {"yes": "t5ny", "no": "t5nn"}, first_no("four", "A") + [
-    "Now the real reading starts. Keep your back straight, and your fingers on your temple.",
-    ("beat", 0.5),
-    "Ask your volunteer to focus harder on the word.",
+    "Fingers on your temple. Ask your volunteer to concentrate on the word.",
     ("beat", 1.2),
-] + ask("There is an S.", "Same voice as before. Say:"), say="There is an S.")
+] + ask("There is an S.", "Say:"), say="There is an S.")
 
 seg("t5yy", 5, {"yes": "t6s", "no": "t6r"}, [
-    "Tape five. Don't rush this one. Take a slow breath, and ask your volunteer to do the same.",
+    "Tape five. Slow down. Take a breath, and have your volunteer take one too.",
     ("beat", 1.6),
-] + ask("I think there's an R.", "This time, sound a little less certain. Say:"), say="I think there's an R.")
+] + ask("I think there's an R.", "Don't sound so sure this time. Say:"), say="I think there's an R.")
 
 seg("t5yn", 5, {"yes": "t6hold", "no": "final_stickman6"}, first_no("five", "T") + [
-    "Lower your hand. Now you are going to pick up the thing itself.",
+    "Hand down. No more letters.",
     ("beat", 0.5),
-    "Look at the space between the two of you, as if it were sitting right there.",
+    "Look at the space between you, as if the thing were sitting there.",
     ("beat", 0.8),
-] + ask("What you drew is not a living thing.", "Tell them, firmly:",
-        "If they agree, fine. If they correct you, that is fine too. " + NEXT),
+] + ask("What you drew is not a living thing.", "Say this flat out:",
+        "They may agree. They may correct you. Either is fine. " + NEXT),
     say="What you drew is not a living thing.")
 
 seg("t5ny", 5, {"yes": "t6live", "no": "final_sun"}, [
-    "Tape five. Lower your hand, and relax your shoulders. Now you are going to pick up the thing itself.",
+    "Tape five. Hand down. No more letters.",
     ("beat", 0.5),
-    "Ask your volunteer to keep seeing it, right in front of them, life size.",
+    PICTURE,
     ("beat", 1.2),
-] + ask("Can you touch it?", "Then ask, gently:"), say="Can you touch it?")
+] + ask("Can you touch it?"), say="Can you touch it?")
 
 seg("t5nn", 5, {"yes": "t6big", "no": "t6touch"}, [
-    "Tape five. Now forget the letters. Lower your hand, and relax your shoulders.",
+    "Tape five. Hand down. Forget the letters.",
     ("beat", 0.5),
-    "Ask your volunteer to look at the thing itself, right in front of them.",
+    PICTURE,
     ("beat", 1.2),
-] + ask("Is it alive?", "Then ask, gently:"), say="Is it alive?")
+] + ask("Is it alive?"), say="Is it alive?")
 
 # --------------------------------------------------------------- the thing itself
 
 seg("t6s", 6, {"yes": "final_star", "no": "final_heart"}, [
-    "Tape six. Stay with it. One more letter.",
+    "Tape six. One more letter. Ask this one as a question.",
     ("beat", 0.5),
-] + ask("I'm not sure about this one. Is there an S?", "This time, ask it as a question. Say:"),
+] + ask("I'm not sure about this one. Is there an S?", "Say:"),
     say="I'm not sure about this one. Is there an S?")
 
 seg("t6r", 6, {"yes": "t7small", "no": "t7home"}, first_no("six", "R") + [
-    "Lower your hand. Now you are going to pick up the thing itself.",
+    "Hand down. No more letters.",
     ("beat", 0.5),
-    "Ask your volunteer to see it, right in front of them.",
+    PICTURE,
     ("beat", 1.2),
-] + ask("Is it alive?", "Then ask, gently:"), say="Is it alive?")
+] + ask("Is it alive?"), say="Is it alive?")
 
 seg("t6hold", 6, {"yes": "t7hard", "no": "t7own"}, [
-    "Tape six. Hold out your hands, palms up. Let your volunteer look at them.",
+    "Tape six. Hold your hands out, palms up.",
     ("beat", 0.9),
 ] + ask("Could you pick it up and hold it in your hands?"),
     say="Could you pick it up and hold it in your hands?")
 
 seg("t6live", 6, {"yes": "final_fish", "no": "final_house"}, [
-    "Tape six. Stay with it. Keep your eyes on your volunteer.",
+    "Tape six. Eyes on your volunteer. One more question.",
     ("beat", 0.6),
-] + ask("Is it alive?", "One last question. Ask:"), say="Is it alive?")
+] + ask("Is it alive?", "Ask:"), say="Is it alive?")
 
 seg("t6big", 6, {"yes": "final_tree", "no": "final_flower"}, [
-    "Tape six. Stay with it. Ask your volunteer to stand right next to it.",
+    "Tape six. Ask your volunteer to stand next to it.",
     ("beat", 1.2),
-] + ask("Is it bigger than you?", "One last question. Ask:"), say="Is it bigger than you?")
+] + ask("Is it bigger than you?"), say="Is it bigger than you?")
 
 seg("t6touch", 6, {"yes": "final_pencil", "no": "final_moon"}, [
-    "Tape six. Stay with it. Ask your volunteer to reach out toward it.",
+    "Tape six. Ask your volunteer to reach out toward it.",
     ("beat", 1.2),
-] + ask("Can you touch it?", "One last question. Ask:"), say="Can you touch it?")
+] + ask("Can you touch it?"), say="Can you touch it?")
 
 seg("t7small", 7, {"yes": "final_cat", "no": "final_stickman8"}, [
-    "Tape seven. Nearly there. Ask your volunteer to stand right next to it.",
+    "Tape seven. Ask your volunteer to stand next to it.",
     ("beat", 1.2),
-] + ask("Is it smaller than you?", "One last question. Ask:"), say="Is it smaller than you?")
+] + ask("Is it smaller than you?"), say="Is it smaller than you?")
 
 seg("t7home", 7, {"yes": "final_table", "no": "final_boat"}, [
-    "Tape seven. Nearly there. Keep your eyes on your volunteer.",
+    "Tape seven. Eyes on your volunteer. One more question.",
     ("beat", 0.6),
-] + ask("Is there one in your home?", "One last question. Ask:"), say="Is there one in your home?")
+] + ask("Is there one in your home?", "Ask:"), say="Is there one in your home?")
 
 seg("t7hard", 7, {"yes": "final_glass", "no": "final_ball"}, [
-    "Tape seven. Nearly there. Ask your volunteer to close their hands around it.",
+    "Tape seven. Ask your volunteer to close their hands around it.",
     ("beat", 1.2),
-] + ask("Is it hard?", "One last question. Ask:"), say="Is it hard?")
+] + ask("Is it hard?"), say="Is it hard?")
 
 seg("t7own", 7, {"yes": "final_car", "no": "final_plane"}, [
-    "Tape seven. Nearly there. Keep your eyes on your volunteer.",
+    "Tape seven. Eyes on your volunteer. One more question.",
     ("beat", 0.6),
-] + ask("Do you own one?", "One last question. Ask:"), say="Do you own one?")
+] + ask("Do you own one?", "Ask:"), say="Do you own one?")
 
 # -------------------------------------------------------------------- last tape
 # The student makes the reveal. One recording per drawing; its number depends
@@ -232,17 +233,17 @@ DRAWINGS = {
 
 for key, (art, n, line) in DRAWINGS.items():
     seg("final_" + key, n, None, [
-        f"Tape {WORD[n]}. This is the last one, and it's all yours. You have everything you need.",
+        f"Tape {WORD[n]}. Last tape.",
         ("beat", 0.7),
-        "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+        "Hands down. Look your volunteer in the eye. Take a breath.",
         ("beat", 1.8),
-        "Don't ask this time. Say it like you have known all along. Tell them:",
+        "No question this time. Tell them:",
         ("beat", 0.4),
         ("say", line),
         ("beat", 2.4),
         ("page",),
         ("beat", 1.0),
-        "And that is how you read a mind! Congratulations on finishing lesson one.",
+        "That's lesson one. Well done.",
     ], say=line, art=art)
 
 # File order. Names on disk are just numbers, so the folder says nothing.

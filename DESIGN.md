@@ -37,17 +37,15 @@ step and the next line, and that step is always the right one.
 
 The one exception is the first no to a letter on a route, whichever letter it
 is (A, T or R): "Your volunteer said no to the T. Don't worry, they are
-supposed to. One of the letters in this course is always a test." It is the
+supposed to. One letter in this course is always wrong on purpose." It is the
 moment a first-time student would otherwise look lost, and it is said once.
 
-**A coach.** The voice coaches the delivery: sit up straight, fingers on the
-temple, don't mumble, sound a little less certain this time, relax your
-shoulders, ask gently. That gives every tape something to say that has nothing
-to do with the answer.
+**A coach.** Short orders, plainly put: "Sit up." "Hand down." "Slow down."
+"Eyes on your volunteer." "Don't sound so sure this time." No pep talk and no
+commentary. If a sentence gives the student nothing to do or say, it is cut.
 
-**The student makes the reveal.** The last tape says it is the last one, has
-the student lower their hands, look the volunteer in the eye and take a
-breath, and then gives the line: "You drew a fish." The student says it. The
+**The student makes the reveal.** "Last tape. Hands down. Look your volunteer
+in the eye. Take a breath. No question this time. Tell them: You drew a fish." The student says it. The
 drawing appears on the paper a moment later. The tape does not take over.
 
 **One key.** NEXT TAPE. A tap is yes; a press held until the key latches is
