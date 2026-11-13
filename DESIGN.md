@@ -35,10 +35,10 @@ is no "you got the A", no "it is alive", no "no R". Each tape gives the next
 step and the next line, and that step is always the right one. The spectator
 hears a recording that never reacts and still ends up exactly where it should.
 
-The one exception is the tape after a no to the first letter: "Your volunteer
-said no to the A. Don't worry, they are supposed to. The first letter in this
-course is always a test." It is the most common first answer, and it is the
-moment a first-time student would otherwise look lost.
+The one exception is the first no to a letter on a route, whichever letter it
+is (A, T or R): "Your volunteer said no to the T. Don't worry, they are
+supposed to. One of the letters in this course is always a test." It is the
+moment a first-time student would otherwise look lost, and it is said once.
 
 Each tape also gives the student something to do: fingers on the temple, a
 slow breath, hands out palms up.

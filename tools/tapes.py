@@ -11,7 +11,8 @@
 #   - Every tape must sound like the only version of that tape.
 #   - The voice does not know what the volunteer answered. It never says
 #     "they said yes", "it is alive", "no R". It only gives the next step.
-#     The single exception is the tape after a no to the first letter.
+#     The single exception is first_no(): the tape after the first no to a
+#     letter on a route, whichever letter that is.
 #   - Each tape gives the student something to do, then one line to say.
 #   - The red tape names the drawing. It does not describe it.
 #
@@ -85,7 +86,18 @@ seg("t3", 3, {"yes": "t4y", "no": "t4n"}, [
 
 # ---------------------------------------------------------------------- letters
 # From here on the voice does not say what the volunteer answered. The one
-# exception is the no to the first letter.
+# exception is the first no to a letter, wherever on a route it comes.
+
+
+def first_no(tape, letter):
+    """Opens the tape that follows the first no on a route."""
+    return [
+        f"Tape {tape}. Your volunteer said no to the {letter}. Don't worry, they are supposed to.",
+        ("beat", 0.6),
+        "One of the letters in this course is always a test. It tells you they are answering honestly, and it shows you what a no looks like on this person's face.",
+        ("beat", 0.7),
+    ]
+
 
 seg("t4y", 4, {"yes": "t5yy", "no": "t5yn"}, [
     "Tape four. Keep your fingers on your temple. Ask your volunteer to picture the whole word again.",
@@ -97,11 +109,7 @@ seg("t4y", 4, {"yes": "t5yy", "no": "t5yn"}, [
     "Wait for their answer. Then play tape five.",
 ], say="And there is a T.")
 
-seg("t4n", 4, {"yes": "t5ny", "no": "t5nn"}, [
-    "Tape four. Your volunteer said no to the A. Don't worry, they are supposed to.",
-    ("beat", 0.6),
-    "The first letter in this course is always a test. It tells you they are answering honestly, and it shows you what a no looks like on this person's face.",
-    ("beat", 0.7),
+seg("t4n", 4, {"yes": "t5ny", "no": "t5nn"}, first_no("four", "A") + [
     "Now the real reading starts. Ask your volunteer to focus harder on the word. Fingers on your temple. Say:",
     ("beat", 0.4),
     ("say", "There is an S."),
@@ -119,8 +127,8 @@ seg("t5yy", 5, {"yes": "t6s", "no": "t6r"}, [
     "Then play tape six.",
 ], say="I think there's an R.")
 
-seg("t5yn", 5, {"yes": "t6hold", "no": "t6man"}, [
-    "Tape five. Perfect. Lower your hand. Now you are going to pick up the thing itself.",
+seg("t5yn", 5, {"yes": "t6hold", "no": "t6man"}, first_no("five", "T") + [
+    "Lower your hand. Now you are going to pick up the thing itself.",
     ("beat", 0.5),
     "Look at the space between the two of you, and tell them, firmly:",
     ("beat", 0.4),
@@ -167,8 +175,8 @@ seg("t6s", 6, {"yes": "r_star", "no": "r_heart"}, [
     LAST,
 ], say="I'm not sure about this one. Is there an S?")
 
-seg("t6r", 6, {"yes": "t7small", "no": "t7home"}, [
-    "Tape six. Lower your hand. Now you are going to pick up the thing itself.",
+seg("t6r", 6, {"yes": "t7small", "no": "t7home"}, first_no("six", "R") + [
+    "Lower your hand. Now you are going to pick up the thing itself.",
     ("beat", 0.5),
     "Ask your volunteer to see it, right in front of them.",
     ("beat", 1.2),

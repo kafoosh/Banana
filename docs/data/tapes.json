@@ -199,7 +199,7 @@
     "no": "t5nn"
    },
    "file": "audio/05.mp3",
-   "dur": 32.4,
+   "dur": 32.53,
    "safe": 2.87,
    "lines": [
     [
@@ -216,25 +216,25 @@
     ],
     [
      7.96,
-     17.3,
-     "The first letter in this course is always a test. It tells you they are answering honestly, and it shows you what a no looks like on this person's face.",
+     17.43,
+     "One of the letters in this course is always a test. It tells you they are answering honestly, and it shows you what a no looks like on this person's face.",
      0
     ],
     [
-     18.18,
-     25.35,
+     18.31,
+     25.48,
      "Now the real reading starts. Ask your volunteer to focus harder on the word. Fingers on your temple. Say:",
      0
     ],
     [
-     25.93,
-     27.27,
+     26.06,
+     27.4,
      "There is an S.",
      1
     ],
     [
-     28.17,
-     31.05,
+     28.3,
+     31.18,
      "Wait for their answer. Then play tape five.",
      0
     ]
@@ -289,7 +289,7 @@
     "no": "t6man"
    },
    "file": "audio/07.mp3",
-   "dur": 21.78,
+   "dur": 36.49,
    "safe": 2.9,
    "lines": [
     [
@@ -300,25 +300,37 @@
     ],
     [
      3.15,
-     7.37,
-     "Perfect. Lower your hand. Now you are going to pick up the thing itself.",
+     7.26,
+     "Your volunteer said no to the T. Don't worry, they are supposed to.",
      0
     ],
     [
-     8.05,
-     11.44,
+     8.04,
+     17.51,
+     "One of the letters in this course is always a test. It tells you they are answering honestly, and it shows you what a no looks like on this person's face.",
+     0
+    ],
+    [
+     18.39,
+     22.09,
+     "Lower your hand. Now you are going to pick up the thing itself.",
+     0
+    ],
+    [
+     22.77,
+     26.16,
      "Look at the space between the two of you, and tell them, firmly:",
      0
     ],
     [
-     12.02,
-     14.47,
+     26.74,
+     29.19,
      "What you drew is not a living thing.",
      1
     ],
     [
-     15.37,
-     20.43,
+     30.09,
+     35.15,
      "If they agree, fine. If they correct you, that is fine too. Then play tape six.",
      0
     ]
@@ -463,7 +475,7 @@
     "no": "t7home"
    },
    "file": "audio/11.mp3",
-   "dur": 18.89,
+   "dur": 34.14,
    "safe": 2.87,
    "lines": [
     [
@@ -474,31 +486,43 @@
     ],
     [
      3.12,
-     6.81,
+     7.24,
+     "Your volunteer said no to the R. Don't worry, they are supposed to.",
+     0
+    ],
+    [
+     8.02,
+     17.49,
+     "One of the letters in this course is always a test. It tells you they are answering honestly, and it shows you what a no looks like on this person's face.",
+     0
+    ],
+    [
+     18.37,
+     22.06,
      "Lower your hand. Now you are going to pick up the thing itself.",
      0
     ],
     [
-     7.49,
-     10.78,
+     22.74,
+     26.03,
      "Ask your volunteer to see it, right in front of them.",
      0
     ],
     [
-     12.16,
-     13.14,
+     27.41,
+     28.39,
      "Then ask:",
      0
     ],
     [
-     13.72,
-     15.15,
+     28.97,
+     30.4,
      "Is it alive?",
      1
     ],
     [
-     16.05,
-     17.54,
+     31.3,
+     32.79,
      "Then play tape seven.",
      0
     ]
