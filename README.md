@@ -1,76 +1,99 @@
-# Banana 🍌📼
+# Banana
 
-A webapp magic trick. On screen it's **AudioMaster™ 98**, a crusty shareware
-player with one file loaded: *"MIND-AEROBICS™ — Tape 2, Side B: Your First
-Mind-Read"*, hosted by Gerald — an 80s workout-cassette instructor gone
-completely deadpan. You (the magician) press play and do exactly what the
-tape says, live, in front of a spectator. The tape runs the warm-up, feeds
-you every line, dryly *calls* every "no" before you could possibly have told
-it ("Don't ask how I know. I recorded this in 1987. The no arrived before
-you did.")… and then tells you exactly what they drew.
+A magic trick that runs in a phone browser.
 
-The spectator sees a dumb linear audio file. It is not a dumb linear audio file.
+On screen is an open cassette album: *How to Read Minds, a home course in nine
+cassettes*. Eight numbered tapes, one red. The performer has never done this
+before and says so. They put on tape 1 and follow it, with a spectator as the
+practice participant.
 
-- **Method:** `METHOD.md` (private — the whole product is the secret)
-- **Design pitch & alternates:** `DESIGNS.md`, `designs/mockups.html`
-- **The app:** `docs/` (static, no backend, PWA)
+The participant thinks of a drawing and never says what it is. Each tape gives
+the student one step and one line to say, then stops. Whatever the participant
+answers, the next tape opens as if that answer was the lesson plan: after a yes
+it builds on it, after a no it explains that the no was a test, or a signal, or
+exactly the result the course was looking for. The red tape finishes the reading
+itself and names the drawing, which is also on the last page of the booklet.
+
+- `METHOD.md`: how the drawing is found. Private.
+- `DESIGN.md`: why the trick is built this way.
+- `docs/`: the app. Static files, no backend, works offline once loaded.
+- `tools/`: the script and the audio build.
 
 ## Performing it
 
-1. Open the app (phone, full volume). Read the packed-in insert once, alone.
-2. Seat your subject, phone flat between you, press ▶, and obey Gerald.
-3. When the tape stops, say Gerald's line and get the subject's answer. Then
-   resume with your thumb on the correct half of the big ▶ button:
-   **right half = YES, left half = NO.** Your thumb covers the whole button,
-   so there is nothing to see — and Gerald reacts to an answer he was "never
-   told." On air he only ever says: *"Don't tell me the answer. Press play.
-   I'll know. I always know. Try not to think about it."*
-4. Pressed the wrong half? Tap **◀◀10 immediately** — within ~3 seconds the
-   tape rewinds to just before the question, and you simply answer again.
-   (After that window, ◀◀10 is an honest 10-second replay, which is also fine.)
-5. At the end, Gerald coaches you through announcing the drawing; the cassette
-   art flips to the doodle as printed proof. Press ■ to rewind for the next
-   spectator.
+Read the slip that opens the first time you load the app. In short:
 
-Emergency bail: triple-tap the title bar (rewinds the whole cassette).
-`Playback` menu toggles captions. `Help` reopens the insert.
+1. Phone between you and your participant, ringer on, volume up.
+2. Touch tape 1 in the case. It goes into the player and plays. When a tape
+   stops, do the step, then take the next tape from the case.
+3. From tape 4 on, the participant's answer goes into how you pick up the next
+   tape. **Yes: tap it. No: rest your finger on it until it lifts** (0.4 s).
+   On a tap it lifts as your finger leaves; on a hold it lifts under your
+   finger. That is your confirmation.
+4. Wrong one? REWIND immediately. Every version of a tape is identical for its
+   first three seconds (leader, then its number), so nothing has been given
+   away. The tape goes back in the case; pick it again.
+5. REWIND later than that takes the tape back to its start. PLAY restarts it.
+
+Only the next tape in order responds to a touch. Hold a finger on the title
+plate for one second to reopen the slip, which also has **Return tapes to the
+case**. After the red tape the same button appears on the booklet.
+
+Keyboard, for rehearsal at a desk: Space picks the next tape (tap or hold),
+S stops, R rewinds.
+
+A full run is a little under five minutes of tape. If it misses, you have the
+best out available: you are on lesson one.
 
 ## Dev
 
-Serve `docs/` statically, e.g.:
-
-```
+```bash
 python3 -m http.server -d docs 8080
 ```
 
-- `?debug=1` shows a dev overlay: current node, remaining candidate outs, and
-  YES/NO/SKIP/MUTE buttons for dry-running the tree without performing.
-- If audio files are missing the app runs in silent-rehearsal mode: captions +
-  timers, same state machine.
+`?debug` adds an overlay with the current recording, the drawings still
+possible, and yes / no / skip-to-end buttons. It also keeps the service worker
+off. If the audio files are missing the app runs silently on timers.
 
-## Rebuilding Gerald's voice
-
-The tape is ~40 pre-rendered MP3 clips — one per branch transition, neutrally
-named (`t01.mp3`…) so the audio folder leaks nothing.
-
+```bash
+python3 tools/tapes.py
 ```
+
+prints all eighteen routes.
+
+## Re-recording
+
+The script and the graph are in `tools/tapes.py`. Its header has the rules the
+instructor's lines are written to. The voice is Kokoro TTS run through a
+cassette chain (band limit, saturation, wow and flutter, hiss).
+
+```bash
 pip install kokoro-onnx soundfile numpy scipy lameenc
-# model files (not committed): tools/voices/kokoro-v1.0.onnx + voices-v1.0.bin
-#   from https://github.com/thewh1teagle/kokoro-onnx/releases (model-files-v1.0)
-python3 tools/build_audio.py            # all segments, voice am_michael
-python3 tools/build_audio.py --only 24  # re-render one segment
-python3 tools/build_audio.py --voice bm_george   # different Gerald
 ```
 
-The script text + branch graph live in `tools/gerald_script.py`; the build
-band-limits, saturates and adds tape hiss so the TTS reads as a deliberate
-lo-fi cassette dub, then writes `docs/audio/*.mp3` and `docs/data/segments.json`.
+Put `kokoro-v1.0.onnx` and `voices-v1.0.bin` from the kokoro-onnx
+`model-files-v1.0` release in `tools/voices/` (git-ignored, 340 MB). Then:
+
+```bash
+python3 tools/build_audio.py
+```
+
+```bash
+python3 tools/build_audio.py --only t5n t6nn
+```
+
+```bash
+python3 tools/build_audio.py --voice bm_george
+```
+
+Files are written as `docs/audio/01.mp3`… so the folder says nothing, and the
+graph goes to `docs/data/tapes.json`. After changing anything in `docs/`, bump
+`VERSION` in `docs/sw.js` or installed copies keep the old one.
 
 ## Deploying
 
-`docs/` is plain static files — GitHub Pages (serve `/docs`), Netlify, or any
-web server. It registers a service worker, so after one full load it performs
-offline. Add to home screen for a chromeless, app-like run.
+Serve `docs/` from anywhere static. GitHub Pages sites are public even when the
+repo is private, and `docs/` contains the performer's slip and the graph, so
+anyone given the URL can work out the pick. Keep `METHOD.md` out of it either way.
 
-Note: GitHub Pages sites are public even from private repos. `docs/` contains
-no method words and never explains itself — but don't publish `METHOD.md`.
+Fonts: Libre Franklin and Courier Prime, both SIL Open Font License.

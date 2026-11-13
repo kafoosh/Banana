@@ -3,113 +3,132 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-<meta name="theme-color" content="#008080">
-<title>AudioMaster™ 98</title>
+<meta name="theme-color" content="#1f1915">
+<title>How to Read Minds</title>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="css/player.css">
+<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 
-<main class="win" id="win">
-  <div class="tbar" id="tbar">
-    <span class="ttl">AudioMaster™ 98&nbsp;—&nbsp;UNREGISTERED</span>
-    <span class="tbtn">_</span><span class="tbtn">□</span><span class="tbtn">×</span>
-  </div>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <filter id="pencil" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3" result="warp"/>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="2.4"/>
+  </filter>
+</svg>
 
-  <nav class="menu">
-    <button class="mitem" id="m-file" type="button">File</button>
-    <button class="mitem" id="m-playback" type="button">Playback</button>
-    <button class="mitem" id="m-eq" type="button">EQ</button>
-    <button class="mitem" id="m-help" type="button">Help</button>
-  </nav>
+<main class="case" id="case">
 
-  <div class="nag" id="nag">⚠ Trial day 2,847 of 30. Please register: mail $12 cheque to AudioMaster, P.O.&nbsp;Box&nbsp;40, Reseda&nbsp;CA.</div>
+  <header class="plate" id="plate">
+    <h1>How to Read Minds</h1>
+    <p>A home course in nine cassettes</p>
+    <span class="lesson">Lesson 1</span>
+  </header>
 
-  <div class="well">
-    <div class="tape" id="tape">
-      <div class="tape-face" id="tapeFace">
-        <div class="lab">
-          <div class="l1">MIND-AEROBICS™ · TAPE 2 — SIDE B</div>
-          <div class="l2">“Your First Mind-Read”</div>
-          <div class="l3">with Gerald. Side A sold separately.</div>
-        </div>
-        <div class="spools">
-          <span class="spool fat"></span>
-          <span class="tapewin"></span>
-          <span class="spool"></span>
-        </div>
+  <section class="deck" aria-label="Cassette player">
+    <div class="well">
+      <div class="cass" id="cass" data-tape="1">
+        <svg viewBox="0 0 400 254" role="img" aria-labelledby="cassTitle">
+          <title id="cassTitle">Tape 1</title>
+          <defs><clipPath id="win"><rect x="98" y="78" width="204" height="60" rx="7"/></clipPath></defs>
+          <rect class="shell" x="1" y="1" width="398" height="252" rx="13"/>
+          <rect class="edge" x="7" y="7" width="386" height="240" rx="9"/>
+          <rect class="label" x="20" y="18" width="360" height="156" rx="5"/>
+          <path class="band" d="M20 23a5 5 0 0 1 5-5h350a5 5 0 0 1 5 5v31H20z"/>
+          <text class="l-course" x="32" y="42">HOW TO READ MINDS</text>
+          <text class="l-lesson" x="368" y="42" text-anchor="end">LESSON ONE</text>
+
+          <text class="l-num" id="lNum" x="58" y="131" text-anchor="middle">1</text>
+          <text class="l-last" x="58" y="104" text-anchor="middle">PLAY</text>
+          <text class="l-last" x="58" y="124" text-anchor="middle">LAST</text>
+          <text class="l-of" id="lOf" x="342" y="104" text-anchor="middle">TAPE</text>
+          <text class="l-of" id="lOf2" x="342" y="120" text-anchor="middle">1 OF 9</text>
+
+          <rect class="window" x="98" y="78" width="204" height="60" rx="7"/>
+          <g clip-path="url(#win)">
+            <circle class="pack" id="packL" cx="146" cy="108" r="40"/>
+            <circle class="pack" id="packR" cx="254" cy="108" r="22"/>
+            <g class="hub" id="hubL"><circle cx="146" cy="108" r="17"/><path d="M146 93v6m0 18v6m-13-22.5 5.200 3m15.600 9 5.200 3m-26 0 5.200-3m15.600-9 5.200-3"/></g>
+            <g class="hub" id="hubR"><circle cx="254" cy="108" r="17"/><path d="M254 93v6m0 18v6m-13-22.5 5.200 3m15.600 9 5.200 3m-26 0 5.200-3m15.600-9 5.200-3"/></g>
+          </g>
+          <path class="rule" d="M32 156h336"/>
+          <text class="l-small" x="32" y="168">PLAY IN ORDER</text>
+          <text class="l-small" x="368" y="168" text-anchor="end">C&#8201;10</text>
+
+          <path class="foot" d="M76 253l14-62h220l14 62z"/>
+          <g class="holes">
+            <circle cx="124" cy="226" r="9"/><circle cx="276" cy="226" r="9"/>
+            <rect x="158" y="220" width="11" height="11" rx="2"/><rect x="231" y="220" width="11" height="11" rx="2"/>
+            <circle cx="200" cy="232" r="4.500"/>
+          </g>
+          <g class="screws">
+            <circle cx="16" cy="16" r="3.500"/><circle cx="384" cy="16" r="3.500"/>
+            <circle cx="16" cy="238" r="3.500"/><circle cx="384" cy="238" r="3.500"/>
+          </g>
+        </svg>
       </div>
-      <div class="tape-art" id="tapeArt" hidden>
-        <div class="art-frame" id="artFrame"></div>
-        <div class="art-done">SIDE B COMPLETE ■</div>
-      </div>
     </div>
-  </div>
-
-  <div class="lcd">
-    <div class="file" id="lcdFile">MindAerobics_Tape2_SideB.mp3</div>
-    <div class="time" id="lcdTime">■ 00:00 / 11:47</div>
-    <div class="stat" id="lcdStat">LOADING TAPE…</div>
-    <div class="eq" id="eqBars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  </div>
-
-  <div class="prog" id="prog">
-    <span class="fill" id="progFill"></span>
-    <span class="thumb" id="progThumb"></span>
-    <span class="toast" id="toast" hidden>⏪ −10 SEC</span>
-  </div>
-
-  <div class="ctl">
-    <div class="ctlrow">
-      <button class="cbtn" id="btnRew" type="button" aria-label="Back 10 seconds"><span class="rw">◀◀10</span></button>
-      <em>back 10s</em>
+    <div class="meter">
+      <span class="counter" id="counter" aria-hidden="true"><b>0</b><b>0</b><b>0</b></span>
+      <span class="status" id="status" role="status">Loading</span>
     </div>
-    <div class="ctlrow">
-      <button class="cbtn big" id="btnPlay" type="button" aria-label="Play or pause">▶</button>
-      <em id="playLabel">play</em>
-    </div>
-    <div class="ctlrow">
-      <button class="cbtn" id="btnStop" type="button" aria-label="Stop">■</button>
-      <em>stop</em>
-    </div>
-  </div>
+  </section>
 
-  <div class="cc" id="cc">
-    <span class="cctag">CC</span>
-    <p id="ccText" class="dim">Captions appear during playback. Seat your subject across from you, press PLAY, and follow Gerald.</p>
-  </div>
+  <section class="tray" id="tray" aria-label="Tapes in the case"></section>
 
-  <!-- Performer-only insert. Hidden once dismissed; Help > reopens. -->
-  <div class="insert-wrap" id="insert">
-    <div class="insert">
-      <div class="i-meta"><span>PACKED-IN INSERT</span><span>PERFORMER ONLY</span></div>
-      <div class="i-rule"></div>
-      <div class="i-title">READ ME FIRST,<br>THEN HIDE ME</div>
-      <ol class="i-list">
-        <li>This tape performs the trick <b>for</b> you. Press ▶, do what Gerald says, and repeat his lines like you mean them. He'll handle the rest. He always has.</li>
-        <li>When the tape stops itself, that's your part: say the line, get your subject's answer.</li>
-        <li><b>THE SECRET.</b> Resume with your thumb on the correct half of the big ▶ button: <b>RIGHT half = they said YES · LEFT half = they said NO.</b> (Right = they were right. Left = they left you hanging.) Your thumb covers the whole button — nobody can ever see which half. Gerald will know. He's at peace with it.</li>
-        <li>Pressed the wrong half? Tap ◀◀10 <b>immediately</b> — the tape rewinds to before the question, and you answer again. No one will mind.</li>
-        <li>Never explain. Never repeat for the same subject. Your subject may watch the player freely — it's just a tape.</li>
-        <li>Phone flat on the table, screen up, volume high. Emergencies: triple-tap the title bar to rewind the whole cassette.</li>
-      </ol>
-      <button class="i-btn" id="insertHide" type="button">I'M READY — HIDE THIS INSERT</button>
-      <div class="i-fine">Gerald Enterprises, Reseda CA. Results not typical. No refunds. Side A sold separately.</div>
-    </div>
-  </div>
+  <section class="booklet" id="booklet" aria-live="polite">
+    <div class="page" id="page"></div>
+  </section>
 
-  <div class="debug" id="debug" hidden>
-    <div id="dbgInfo">–</div>
-    <div class="dbtns">
-      <button id="dbgYes" type="button">YES▶</button>
-      <button id="dbgNo" type="button">NO⏪</button>
-      <button id="dbgSkip" type="button">SKIP»</button>
-      <button id="dbgMute" type="button">MUTE</button>
-    </div>
-  </div>
+  <section class="keys">
+    <button class="key" id="kRew" type="button" aria-label="Rewind">
+      <svg viewBox="0 0 40 24"><path d="M19 3v18L5 12zm15 0v18l-14-9z"/></svg>
+      <span>Rewind</span>
+    </button>
+    <button class="key" id="kStop" type="button" aria-label="Stop">
+      <svg viewBox="0 0 40 24"><path d="M12 4h16v16H12z"/></svg>
+      <span>Stop</span>
+    </button>
+    <button class="key wide" id="kPlay" type="button" aria-label="Play">
+      <svg viewBox="0 0 40 24"><path d="M13 2.500v19l17-9.500z"/></svg>
+      <span>Play</span>
+    </button>
+  </section>
 </main>
 
-<script type="module" src="js/main.js"></script>
+<div class="slip-wrap" id="slip" hidden>
+  <article class="slip">
+    <h2>To the student</h2>
+    <p class="slip-sub">Read this alone. It is not part of the lesson.</p>
+    <ol>
+      <li>Touch tape 1 in the case. It goes into the player and plays. Do what it tells you. When a tape stops, do the step, then take the next tape from the case.</li>
+      <li>From tape 4 on, every tape ends with something you say to your participant. Their answer goes into the way you pick up the next tape.
+        <dl>
+          <dt>They said yes</dt><dd>Tap the tape.</dd>
+          <dt>They said no</dt><dd>Rest your finger on the tape until it lifts and clicks. That takes under half a second.</dd>
+        </dl>
+        On a tap, the tape lifts as your finger leaves. On a hold, it lifts under your finger. That is how you know which one the machine took.</li>
+      <li>If it was the wrong one, press REWIND at once. For its first three seconds a tape has only said its number, so nothing is given away. The tape goes back in the case. Pick it again, properly.</li>
+      <li>Any later press of REWIND takes the tape in the player back to its start. PLAY starts it again. STOP and PLAY pause and resume.</li>
+      <li>Only the next tape in order responds. The tape always tells you which that is; sometimes it is the red one and tape 8 stays in the case.</li>
+      <li>Never repeat your participant's answer for the benefit of the tape. As far as anyone knows, it cannot hear you.</li>
+    </ol>
+    <p>To see this slip again, hold your finger on the title plate for one second.</p>
+    <div class="slip-btns">
+      <button type="button" id="slipReset">Return tapes to the case</button>
+      <button type="button" id="slipClose" class="primary">Close</button>
+    </div>
+  </article>
+</div>
+
+<div class="debug" id="debug" hidden>
+  <pre id="dbgInfo"></pre>
+  <button id="dbgYes" type="button">yes</button>
+  <button id="dbgNo" type="button">no</button>
+  <button id="dbgEnd" type="button">to end</button>
+</div>
+
+<script type="module" src="js/app.js"></script>
 </body>
 </html>
