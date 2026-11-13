@@ -1,25 +1,24 @@
-// How to Read Minds: nine tapes, played in order.
+// How to Read Minds: one tape after another.
 //
-// What it must look like: a case of cassettes and a player with three keys.
+// What it must look like: a cassette player with four keys.
 // What happens: from tape 4 on, each tape has more than one recording, and the
-// way the next tape is picked out of the case chooses. A tap on it is yes. A
-// finger held on it until it lifts is no. Same tape, same finger, same place.
+// way NEXT is pressed chooses. A tap is yes. A press held until the key
+// latches is no. Same key, same thumb, same place.
 
 import { DOODLES } from './doodles.js';
 
-const HOLD_MS = 420;      // held this long, the tape lifts by itself: "no"
+const HOLD_MS = 420;      // held this long, the key latches by itself: "no"
 const SWAP_MS = 760;      // one tape out, the next one in
 
 const $ = (id) => document.getElementById(id);
 const el = {
-  case: $('case'), deck: $('deck'), cass: $('cass'), tray: $('tray'), paper: $('paper'),
+  case: $('case'), deck: $('deck'), cass: $('cass'), paper: $('paper'),
   num: $('lNum'), title: $('cassTitle'),
   packL: $('packL'), packR: $('packR'),
-  play: $('kPlay'), stop: $('kStop'), rew: $('kRew'),
+  next: $('kNext'), play: $('kPlay'), stop: $('kStop'), rew: $('kRew'),
   slip: $('slip'),
 };
 const DEBUG = new URLSearchParams(location.search).has('debug');
-let RED = 7;                        // number of tapes; the last one is red
 
 let SEGS = {};
 let START = '';
@@ -30,18 +29,15 @@ const st = {
   mode: 'loading',                  // loading | idle | swap | playing | stopped | ended | done
   cur: null,                        // recording in the player
   from: null,                       // the recording whose answer chose `cur`, if it was a choice
-  empty: false,                     // the tape was put back; the player is empty
-  lift: 0,                          // tape number rising out of the tray
+  empty: false,                     // the tape was taken back out; the player is empty
   pos: 0,                           // where a stopped tape is
-  played: new Set(),                // tape numbers that have been in the player
-  turned: false,                    // booklet is on its last page
+  turned: false,                    // the paper shows the drawing
   src: null, t0: 0, run: 0, timer: 0,
 };
 
 /* ------------------------------------------------------------ loading */
 
 async function boot() {
-  renderTray();
   renderPaper();
   let data;
   try {
@@ -49,8 +45,7 @@ async function boot() {
   } catch {
     return;
   }
-  SEGS = data.segs; START = data.start; RED = data.tapes || RED;
-  render();
+  SEGS = data.segs; START = data.start;
 
   const AC = window.AudioContext || window.webkitAudioContext;
   ctx = new AC();
@@ -96,7 +91,6 @@ function halt() {
 function start(id, offset = 0) {
   halt();
   st.cur = id; st.mode = 'playing'; st.empty = false;
-  st.played.add(SEGS[id].tape);
   if (offset === 0) st.turned = false;
   const run = st.run;
   const done = () => { if (run === st.run) onEnd(); };
@@ -131,8 +125,7 @@ function change(id) {
   st.empty = true;                  // the old tape slides out (if there is one)
   render();
   setTimeout(() => {
-    st.cur = id; st.pos = 0; st.turned = false; st.empty = false; st.lift = 0;
-    st.played.add(SEGS[id].tape);
+    st.cur = id; st.pos = 0; st.turned = false; st.empty = false;
     render();
   }, SWAP_MS * 0.45);
   setTimeout(() => { if (st.mode === 'swap') start(id); }, SWAP_MS);
@@ -143,16 +136,10 @@ const pick = (id, answer) => {
   return typeof n === 'string' ? n : n[answer];
 };
 
-// The number of the tape that goes in next, or 0 if none can.
-function nextTape() {
-  if (st.mode === 'idle') return SEGS[START].tape;
-  if (st.mode === 'ended') return SEGS[pick(st.cur, 'yes')].tape;
-  return 0;
-}
+const canNext = () => st.mode === 'idle' || st.mode === 'ended';
 
-// The next tape has been picked out of the case. `answer` is how:
-// 'yes' by a tap, 'no' by a hold.
-function take(answer) {
+// NEXT went down and latched. `answer` is how: 'yes' by a tap, 'no' by a hold.
+function next(answer) {
   ctx?.resume();
   fx('key');
   if (st.mode === 'idle') { st.from = null; change(START); return; }
@@ -189,9 +176,8 @@ function rewind() {
   el.case.classList.add('rewinding');
   setTimeout(() => el.case.classList.remove('rewinding'), 620);
   if (live && st.from && at < SEGS[st.cur].safe) {
-    // The tape has only said its number. Put it back in the case, unplayed,
-    // so it can be picked again.
-    st.played.delete(SEGS[st.cur].tape);
+    // The tape has only said its number. Take it back out, so NEXT can be
+    // pressed again.
     st.cur = st.from; st.from = null;
     st.pos = dur(st.cur); st.mode = 'ended'; st.empty = true;
   } else {
@@ -202,89 +188,70 @@ function rewind() {
 
 function reset() {
   halt();
-  Object.assign(st, { mode: 'idle', cur: null, from: null, empty: false, lift: 0, pos: 0, turned: false });
-  st.played.clear();
+  Object.assign(st, { mode: 'idle', cur: null, from: null, empty: false, pos: 0, turned: false });
   wake(false);
   render();
 }
 
-/* ------------------------------------------------------------ picking a tape */
+/* ------------------------------------------------------------ the NEXT key */
 
-let press = null;                   // { timer, taken }
+let press = null;                   // { timer, latched }
 let forced = null;                  // debug buttons
 
-function pickDown(tape) {
-  if (press || !tape || tape !== nextTape()) return;
-  press = { taken: false, timer: 0 };
+function nextDown() {
+  if (press) return;
+  el.next.classList.add('down');
+  if (!canNext()) { press = { latched: true, timer: 0 }; return; }
+  press = { latched: false, timer: 0 };
   press.timer = setTimeout(() => {
     if (!press) return;
-    press.taken = true;
-    st.lift = tape;
-    take(forced ?? 'no');
+    press.latched = true;
+    next(forced ?? 'no');
     forced = null;
   }, HOLD_MS);
 }
 
-function pickUp(cancel = false) {
+function nextUp(cancel = false) {
   if (!press) return;
   clearTimeout(press.timer);
-  const taken = press.taken;
+  const latched = press.latched;
   press = null;
-  if (!taken && !cancel) { st.lift = nextTape(); take(forced ?? 'yes'); forced = null; }
+  el.next.classList.remove('down');
+  if (!latched && !cancel && canNext()) { next(forced ?? 'yes'); forced = null; }
   ctx?.resume();
 }
 
-el.tray.addEventListener('pointerdown', (e) => {
-  const slot = e.target.closest('.slot');
-  if (!slot) return;
-  e.preventDefault();
-  try { el.tray.setPointerCapture(e.pointerId); } catch {}
-  pickDown(Number(slot.dataset.n));
-});
-el.tray.addEventListener('pointerup', (e) => { e.preventDefault(); pickUp(false); });
-el.tray.addEventListener('pointercancel', () => pickUp(true));
-el.tray.addEventListener('contextmenu', (e) => e.preventDefault());
-
-function bindKey(node, action) {
+function bindKey(node, down, up) {
   node.addEventListener('pointerdown', (e) => {
     e.preventDefault();
     try { node.setPointerCapture(e.pointerId); } catch {}
-    node.classList.add('down');
-    action();
+    down();
   });
-  const up = () => { node.classList.remove('down'); render(); };
-  node.addEventListener('pointerup', up);
-  node.addEventListener('pointercancel', up);
+  node.addEventListener('pointerup', (e) => { e.preventDefault(); up(false); });
+  node.addEventListener('pointercancel', () => up(true));
   node.addEventListener('contextmenu', (e) => e.preventDefault());
 }
-bindKey(el.play, play);
-bindKey(el.stop, stop);
-bindKey(el.rew, rewind);
+const simple = (node, action) => bindKey(node,
+  () => { node.classList.add('down'); action(); },
+  () => { node.classList.remove('down'); render(); });
 
-// Rehearsal at a desk: Space picks the next tape (tap or hold), or resumes.
+bindKey(el.next, nextDown, nextUp);
+simple(el.play, play);
+simple(el.stop, stop);
+simple(el.rew, rewind);
+
+// Rehearsal at a desk: Space is NEXT (tap or hold), or resumes a stopped tape.
 document.addEventListener('keydown', (e) => {
   if (e.repeat || !el.slip.hidden) return;
-  if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); if (st.mode === 'stopped') play(); else pickDown(nextTape()); }
+  if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); if (st.mode === 'stopped') play(); else nextDown(); }
   else if (e.code === 'KeyS') stop();
   else if (e.code === 'KeyR' || e.code === 'ArrowLeft') rewind();
 });
 document.addEventListener('keyup', (e) => {
-  if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); pickUp(); }
+  if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); nextUp(); }
 });
 
-/* ------------------------------------------------------------ drawing the case */
-
-function renderTray() {
-  const tape = st.cur && !st.empty ? SEGS[st.cur].tape : 0;
-  let html = '';
-  el.tray.style.setProperty('--n', RED);
-  for (let i = 1; i <= RED; i++) {
-    const state = i === tape ? 'out' : i === st.lift ? 'lift' : st.played.has(i) ? 'done' : '';
-    const cls = ['slot', i === RED ? 'red' : '', state].join(' ');
-    html += `<div class="${cls}" data-n="${i}"><i>${i === RED ? '' : i}</i></div>`;
-  }
-  if (el.tray.dataset.sig !== html) { el.tray.innerHTML = html; el.tray.dataset.sig = html; }
-}
+/* ------------------------------------------------------------ drawing */
 
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
@@ -300,8 +267,8 @@ function typed(seg, t) {
   return html;
 }
 
-// The paper in the case: the cover before anything is played, the transcript
-// while a tape plays, and the drawing at the end.
+// The paper: the cover before anything is played, the transcript while a tape
+// plays, and the drawing at the end.
 function renderPaper() {
   const seg = st.cur && !(st.empty && st.mode !== 'swap') && SEGS[st.cur];
   let html = '', kind = 'type';
@@ -324,14 +291,12 @@ function renderPaper() {
 function render() {
   const seg = st.cur && SEGS[st.cur];
   const tape = seg ? seg.tape : 1;
-  el.cass.classList.toggle('red', tape === RED);
-  el.num.textContent = tape === RED ? '' : tape;
-  el.title.textContent = tape === RED ? 'The red tape' : `Tape ${tape}`;
+  el.num.textContent = tape;
+  el.title.textContent = `Tape ${tape}`;
   el.case.classList.toggle('playing', st.mode === 'playing');
   el.cass.classList.toggle('away', !st.cur || st.empty);
   if (st.mode === 'playing') el.play.classList.add('down');
   else if (!el.play.matches(':active')) el.play.classList.remove('down');
-  renderTray();
   renderPaper();
   renderDebug();
 }
@@ -352,11 +317,11 @@ requestAnimationFrame(frame);
 
 /* ------------------------------------------------------------ the slip */
 
-const seen = () => { try { return localStorage.getItem('tr-slip') === '1'; } catch { return false; } };
+const seen = () => { try { return localStorage.getItem('tr-slip') === '2'; } catch { return false; } };
 const openSlip = () => { el.slip.hidden = false; };
 $('slipClose').addEventListener('click', () => {
   el.slip.hidden = true;
-  try { localStorage.setItem('tr-slip', '1'); } catch {}
+  try { localStorage.setItem('tr-slip', '2'); } catch {}
 });
 $('slipReset').addEventListener('click', () => { reset(); el.slip.hidden = true; });
 if (!seen() && !DEBUG) openSlip();
@@ -381,29 +346,29 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible' && st.mode === 'playing') { lock = null; wake(true); }
 });
 
-function outs(id, seen = new Set()) {
+function outs(id, found = new Set()) {
   const s = SEGS[id];
-  if (s.art) seen.add(s.art);
-  else for (const t of typeof s.next === 'string' ? [s.next] : Object.values(s.next)) outs(t, seen);
-  return seen;
+  if (s.art) found.add(s.art);
+  else for (const t of typeof s.next === 'string' ? [s.next] : Object.values(s.next)) outs(t, found);
+  return found;
 }
 
 function renderDebug() {
   if (!DEBUG || !START) return;
   const left = [...outs(st.cur || START)];
   $('dbgInfo').textContent =
-    `${st.cur ?? '-'} ${st.mode}${st.empty ? ' empty' : ''} next=${nextTape()} from=${st.from ?? '-'}\n${left.length}: ${left.join(' ')}`;
+    `${st.cur ?? '-'} ${st.mode}${st.empty ? ' empty' : ''} from=${st.from ?? '-'}\n${left.length}: ${left.join(' ')}`;
 }
 
 if (DEBUG) {
   $('debug').hidden = false;
-  const tap = (a) => { forced = a; pickDown(nextTape()); pickUp(); };
+  const tap = (a) => { forced = a; nextDown(); nextUp(); };
   $('dbgYes').addEventListener('click', () => tap('yes'));
   $('dbgNo').addEventListener('click', () => tap('no'));
   $('dbgEnd').addEventListener('click', () => {
     if (st.mode === 'playing') start(st.cur, Math.max(0, dur(st.cur) - 0.4));
   });
-  window.__tr = { st, SEGS: () => SEGS, nextTape };
+  window.__tr = { st, SEGS: () => SEGS };
 }
 
 if ('serviceWorker' in navigator && location.protocol !== 'file:' && !DEBUG) {

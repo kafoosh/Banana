@@ -85,7 +85,7 @@
     "no": "t4n"
    },
    "file": "audio/03.mp3",
-   "dur": 51.39,
+   "dur": 54.23,
    "safe": 2.87,
    "lines": [
     [
@@ -132,20 +132,26 @@
     ],
     [
      39.1,
-     43.68,
-     "Put two fingers on your temple. Look your volunteer in the eye. Tell them:",
+     44.11,
+     "Sit up straight. Put two fingers on your temple, and look your volunteer in the eye.",
      0
     ],
     [
-     44.26,
-     46.4,
+     44.79,
+     46.45,
+     "Don't mumble. Tell them:",
+     0
+    ],
+    [
+     47.03,
+     49.17,
      "There is an A in your word.",
      1
     ],
     [
-     47.3,
-     50.05,
-     "Wait for the answer. Then play tape four.",
+     50.07,
+     52.88,
+     "Wait for the answer. Then play the next tape.",
      0
     ]
    ]
@@ -157,7 +163,7 @@
     "no": "t5yn"
    },
    "file": "audio/04.mp3",
-   "dur": 17.85,
+   "dur": 21.59,
    "safe": 2.87,
    "lines": [
     [
@@ -168,26 +174,32 @@
     ],
     [
      3.12,
-     8.29,
-     "Keep your fingers on your temple. Ask your volunteer to picture the whole word again.",
+     7.45,
+     "Keep your fingers on your temple, and keep your eyes on your volunteer.",
      0
     ],
     [
-     9.87,
+     8.13,
      10.57,
-     "Say:",
+     "Ask them to picture the whole word again.",
      0
     ],
     [
-     11.15,
-     12.73,
+     12.15,
+     14.26,
+     "Speak like you already know. Say:",
+     0
+    ],
+    [
+     14.84,
+     16.42,
      "And there is a T.",
      1
     ],
     [
-     13.63,
-     16.51,
-     "Wait for their answer. Then play tape five.",
+     17.32,
+     20.24,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -199,7 +211,7 @@
     "no": "t5nn"
    },
    "file": "audio/05.mp3",
-   "dur": 32.53,
+   "dur": 37.38,
    "safe": 2.87,
    "lines": [
     [
@@ -222,20 +234,32 @@
     ],
     [
      18.31,
-     25.48,
-     "Now the real reading starts. Ask your volunteer to focus harder on the word. Fingers on your temple. Say:",
+     23.37,
+     "Now the real reading starts. Keep your back straight, and your fingers on your temple.",
      0
     ],
     [
-     26.06,
-     27.4,
+     24.05,
+     26.95,
+     "Ask your volunteer to focus harder on the word.",
+     0
+    ],
+    [
+     28.33,
+     30.29,
+     "Same voice as before. Say:",
+     0
+    ],
+    [
+     30.87,
+     32.21,
      "There is an S.",
      1
     ],
     [
-     28.3,
-     31.18,
-     "Wait for their answer. Then play tape five.",
+     33.11,
+     36.04,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -247,7 +271,7 @@
     "no": "t6r"
    },
    "file": "audio/06.mp3",
-   "dur": 17.16,
+   "dur": 20.23,
    "safe": 2.9,
    "lines": [
     [
@@ -258,26 +282,26 @@
     ],
     [
      3.15,
-     6.81,
-     "Take a slow breath, and ask your volunteer to do the same.",
+     8.24,
+     "Don't rush this one. Take a slow breath, and ask your volunteer to do the same.",
      0
     ],
     [
-     8.59,
-     10.98,
-     "This time, be a little less certain. Say:",
+     10.02,
+     12.61,
+     "This time, sound a little less certain. Say:",
      0
     ],
     [
-     11.56,
-     13.44,
+     13.19,
+     15.06,
      "I think there's an R.",
      1
     ],
     [
-     14.34,
-     15.81,
-     "Then play tape six.",
+     15.96,
+     18.89,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -286,10 +310,10 @@
    "tape": 5,
    "next": {
     "yes": "t6hold",
-    "no": "t6man"
+    "no": "final_stickman6"
    },
    "file": "audio/07.mp3",
-   "dur": 36.49,
+   "dur": 39.65,
    "safe": 2.9,
    "lines": [
     [
@@ -318,20 +342,26 @@
     ],
     [
      22.77,
-     26.16,
-     "Look at the space between the two of you, and tell them, firmly:",
+     26.8,
+     "Look at the space between the two of you, as if it were sitting right there.",
      0
     ],
     [
-     26.74,
-     29.19,
+     27.78,
+     29.08,
+     "Tell them, firmly:",
+     0
+    ],
+    [
+     29.66,
+     32.11,
      "What you drew is not a living thing.",
      1
     ],
     [
-     30.09,
-     35.15,
-     "If they agree, fine. If they correct you, that is fine too. Then play tape six.",
+     33.01,
+     38.3,
+     "If they agree, fine. If they correct you, that is fine too. Then play the next tape.",
      0
     ]
    ]
@@ -340,10 +370,10 @@
    "tape": 5,
    "next": {
     "yes": "t6live",
-    "no": "t6sun"
+    "no": "final_sun"
    },
    "file": "audio/08.mp3",
-   "dur": 19.96,
+   "dur": 23.54,
    "safe": 2.9,
    "lines": [
     [
@@ -354,32 +384,32 @@
     ],
     [
      3.15,
-     6.84,
-     "Lower your hand. Now you are going to pick up the thing itself.",
+     8.48,
+     "Lower your hand, and relax your shoulders. Now you are going to pick up the thing itself.",
      0
     ],
     [
-     7.52,
-     11.85,
+     9.16,
+     13.49,
      "Ask your volunteer to keep seeing it, right in front of them, life size.",
      0
     ],
     [
-     13.23,
-     14.21,
-     "Then ask:",
+     14.87,
+     16.34,
+     "Then ask, gently:",
      0
     ],
     [
-     14.79,
-     16.24,
+     16.92,
+     18.37,
      "Can you touch it?",
      1
     ],
     [
-     17.14,
-     18.61,
-     "Then play tape six.",
+     19.27,
+     22.19,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -391,7 +421,7 @@
     "no": "t6touch"
    },
    "file": "audio/09.mp3",
-   "dur": 18.7,
+   "dur": 22.11,
    "safe": 2.9,
    "lines": [
     [
@@ -402,32 +432,32 @@
     ],
     [
      3.15,
-     5.73,
-     "Now forget the letters. Lower your hand.",
+     7.2,
+     "Now forget the letters. Lower your hand, and relax your shoulders.",
      0
     ],
     [
-     6.41,
-     10.61,
+     7.88,
+     12.08,
      "Ask your volunteer to look at the thing itself, right in front of them.",
      0
     ],
     [
-     11.99,
-     12.97,
-     "Then ask:",
+     13.46,
+     14.93,
+     "Then ask, gently:",
      0
     ],
     [
-     13.55,
-     14.98,
+     15.51,
+     16.94,
      "Is it alive?",
      1
     ],
     [
-     15.88,
-     17.35,
-     "Then play tape six.",
+     17.84,
+     20.77,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -435,11 +465,11 @@
   "t6s": {
    "tape": 6,
    "next": {
-    "yes": "r_star",
-    "no": "r_heart"
+    "yes": "final_star",
+    "no": "final_heart"
    },
    "file": "audio/10.mp3",
-   "dur": 18.19,
+   "dur": 17.34,
    "safe": 2.87,
    "lines": [
     [
@@ -450,20 +480,26 @@
     ],
     [
      3.12,
-     6.81,
-     "One more letter. This time, ask it as a question. Say:",
+     5.11,
+     "Stay with it. One more letter.",
      0
     ],
     [
-     7.39,
-     10.62,
+     5.79,
+     8.37,
+     "This time, ask it as a question. Say:",
+     0
+    ],
+    [
+     8.95,
+     12.17,
      "I'm not sure about this one. Is there an S?",
      1
     ],
     [
-     11.52,
-     16.85,
-     "Whatever they answer, don't say a word. You can skip tape seven. Play the red tape.",
+     13.07,
+     15.99,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -475,7 +511,7 @@
     "no": "t7home"
    },
    "file": "audio/11.mp3",
-   "dur": 34.14,
+   "dur": 36.06,
    "safe": 2.87,
    "lines": [
     [
@@ -510,20 +546,20 @@
     ],
     [
      27.41,
-     28.39,
-     "Then ask:",
+     28.88,
+     "Then ask, gently:",
      0
     ],
     [
-     28.97,
-     30.4,
+     29.46,
+     30.89,
      "Is it alive?",
      1
     ],
     [
-     31.3,
-     32.79,
-     "Then play tape seven.",
+     31.79,
+     34.71,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -535,7 +571,7 @@
     "no": "t7own"
    },
    "file": "audio/12.mp3",
-   "dur": 13.12,
+   "dur": 17.65,
    "safe": 2.87,
    "lines": [
     [
@@ -546,41 +582,26 @@
     ],
     [
      3.12,
-     6.09,
-     "Hold out your hands, palms up. Then ask:",
+     7.13,
+     "Hold out your hands, palms up. Let your volunteer look at them.",
      0
     ],
     [
-     6.67,
-     9.38,
+     8.21,
+     9.2,
+     "Then ask:",
+     0
+    ],
+    [
+     9.78,
+     12.49,
      "Could you pick it up and hold it in your hands?",
      1
     ],
     [
-     10.28,
-     11.77,
-     "Then play tape seven.",
-     0
-    ]
-   ]
-  },
-  "t6man": {
-   "tape": 6,
-   "next": "r_stickman",
-   "file": "audio/13.mp3",
-   "dur": 10.74,
-   "safe": 2.87,
-   "lines": [
-    [
-     1.4,
-     2.42,
-     "Tape six.",
-     0
-    ],
-    [
-     3.12,
-     9.4,
-     "That is everything you need. Don't ask anything else. You can skip tape seven. Play the red tape.",
+     13.39,
+     16.31,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -588,11 +609,11 @@
   "t6live": {
    "tape": 6,
    "next": {
-    "yes": "r_fish",
-    "no": "r_house"
+    "yes": "final_fish",
+    "no": "final_house"
    },
-   "file": "audio/14.mp3",
-   "dur": 14.78,
+   "file": "audio/13.mp3",
+   "dur": 16.03,
    "safe": 2.87,
    "lines": [
     [
@@ -603,41 +624,26 @@
     ],
     [
      3.12,
-     5.19,
+     6.0,
+     "Stay with it. Keep your eyes on your volunteer.",
+     0
+    ],
+    [
+     6.78,
+     8.85,
      "One last question. Ask:",
      0
     ],
     [
-     5.77,
-     7.2,
+     9.43,
+     10.86,
      "Is it alive?",
      1
     ],
     [
-     8.1,
-     13.44,
-     "Whatever they answer, don't say a word. You can skip tape seven. Play the red tape.",
-     0
-    ]
-   ]
-  },
-  "t6sun": {
-   "tape": 6,
-   "next": "r_sun",
-   "file": "audio/15.mp3",
-   "dur": 10.74,
-   "safe": 2.87,
-   "lines": [
-    [
-     1.4,
-     2.42,
-     "Tape six.",
-     0
-    ],
-    [
-     3.12,
-     9.4,
-     "That is everything you need. Don't ask anything else. You can skip tape seven. Play the red tape.",
+     11.76,
+     14.69,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -645,11 +651,11 @@
   "t6big": {
    "tape": 6,
    "next": {
-    "yes": "r_tree",
-    "no": "r_flower"
+    "yes": "final_tree",
+    "no": "final_flower"
    },
-   "file": "audio/16.mp3",
-   "dur": 17.82,
+   "file": "audio/14.mp3",
+   "dur": 17.33,
    "safe": 2.87,
    "lines": [
     [
@@ -660,26 +666,26 @@
     ],
     [
      3.12,
-     5.81,
-     "Ask your volunteer to stand right next to it.",
+     6.64,
+     "Stay with it. Ask your volunteer to stand right next to it.",
      0
     ],
     [
-     7.19,
-     8.17,
-     "Then ask:",
+     8.02,
+     10.09,
+     "One last question. Ask:",
      0
     ],
     [
-     8.75,
-     10.25,
+     10.67,
+     12.17,
      "Is it bigger than you?",
      1
     ],
     [
-     11.15,
-     16.48,
-     "Whatever they answer, don't say a word. You can skip tape seven. Play the red tape.",
+     13.07,
+     15.99,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -687,11 +693,11 @@
   "t6touch": {
    "tape": 6,
    "next": {
-    "yes": "r_pencil",
-    "no": "r_moon"
+    "yes": "final_pencil",
+    "no": "final_moon"
    },
-   "file": "audio/17.mp3",
-   "dur": 19.4,
+   "file": "audio/15.mp3",
+   "dur": 17.33,
    "safe": 2.87,
    "lines": [
     [
@@ -702,26 +708,26 @@
     ],
     [
      3.12,
-     7.43,
-     "One last question. Ask your volunteer to reach out toward it.",
+     6.69,
+     "Stay with it. Ask your volunteer to reach out toward it.",
      0
     ],
     [
-     8.81,
-     9.79,
-     "Then ask:",
+     8.07,
+     10.14,
+     "One last question. Ask:",
      0
     ],
     [
-     10.37,
-     11.83,
+     10.72,
+     12.17,
      "Can you touch it?",
      1
     ],
     [
-     12.73,
-     18.06,
-     "Whatever they answer, don't say a word. You can skip tape seven. Play the red tape.",
+     13.07,
+     15.99,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -729,11 +735,11 @@
   "t7small": {
    "tape": 7,
    "next": {
-    "yes": "r_cat",
-    "no": "r_stickman"
+    "yes": "final_cat",
+    "no": "final_stickman8"
    },
-   "file": "audio/18.mp3",
-   "dur": 16.14,
+   "file": "audio/16.mp3",
+   "dur": 17.63,
    "safe": 2.85,
    "lines": [
     [
@@ -744,26 +750,26 @@
     ],
     [
      3.1,
-     5.79,
-     "Ask your volunteer to stand right next to it.",
+     6.81,
+     "Nearly there. Ask your volunteer to stand right next to it.",
      0
     ],
     [
-     7.17,
-     8.15,
-     "Then ask:",
+     8.19,
+     10.26,
+     "One last question. Ask:",
      0
     ],
     [
-     8.73,
-     10.35,
+     10.84,
+     12.47,
      "Is it smaller than you?",
      1
     ],
     [
-     11.25,
-     14.79,
-     "Whatever they answer, don't say a word. Play the red tape.",
+     13.37,
+     16.29,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
@@ -771,47 +777,11 @@
   "t7home": {
    "tape": 7,
    "next": {
-    "yes": "r_table",
-    "no": "r_boat"
+    "yes": "final_table",
+    "no": "final_boat"
    },
-   "file": "audio/19.mp3",
-   "dur": 13.44,
-   "safe": 2.85,
-   "lines": [
-    [
-     1.4,
-     2.4,
-     "Tape seven.",
-     0
-    ],
-    [
-     3.1,
-     5.17,
-     "One last question. Ask:",
-     0
-    ],
-    [
-     5.75,
-     7.65,
-     "Is there one in your home?",
-     1
-    ],
-    [
-     8.55,
-     12.09,
-     "Whatever they answer, don't say a word. Play the red tape.",
-     0
-    ]
-   ]
-  },
-  "t7hard": {
-   "tape": 7,
-   "next": {
-    "yes": "r_glass",
-    "no": "r_ball"
-   },
-   "file": "audio/20.mp3",
-   "dur": 16.16,
+   "file": "audio/17.mp3",
+   "dur": 16.63,
    "safe": 2.85,
    "lines": [
     [
@@ -823,37 +793,37 @@
     [
      3.1,
      6.13,
-     "Ask your volunteer to close their hands around it.",
+     "Nearly there. Keep your eyes on your volunteer.",
      0
     ],
     [
-     7.51,
-     8.49,
-     "Then ask:",
+     6.91,
+     8.98,
+     "One last question. Ask:",
      0
     ],
     [
-     9.07,
-     10.37,
-     "Is it hard?",
+     9.56,
+     11.46,
+     "Is there one in your home?",
      1
     ],
     [
-     11.27,
-     14.82,
-     "Whatever they answer, don't say a word. Play the red tape.",
+     12.36,
+     15.28,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
   },
-  "t7own": {
+  "t7hard": {
    "tape": 7,
    "next": {
-    "yes": "r_car",
-    "no": "r_plane"
+    "yes": "final_glass",
+    "no": "final_ball"
    },
-   "file": "audio/21.mp3",
-   "dur": 12.88,
+   "file": "audio/18.mp3",
+   "dur": 17.65,
    "safe": 2.85,
    "lines": [
     [
@@ -864,723 +834,919 @@
     ],
     [
      3.1,
-     5.17,
+     7.16,
+     "Nearly there. Ask your volunteer to close their hands around it.",
+     0
+    ],
+    [
+     8.54,
+     10.61,
      "One last question. Ask:",
      0
     ],
     [
-     5.75,
-     7.1,
-     "Do you own one?",
+     11.19,
+     12.49,
+     "Is it hard?",
      1
     ],
     [
-     8.0,
-     11.54,
-     "Whatever they answer, don't say a word. Play the red tape.",
+     13.39,
+     16.31,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
    ]
   },
-  "r_fish": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/22.mp3",
-   "dur": 28.14,
-   "safe": 2.84,
+  "t7own": {
+   "tape": 7,
+   "next": {
+    "yes": "final_car",
+    "no": "final_plane"
+   },
+   "file": "audio/19.mp3",
+   "dur": 16.07,
+   "safe": 2.85,
    "lines": [
     [
      1.4,
-     2.91,
-     "This is the red tape.",
+     2.4,
+     "Tape seven.",
      0
     ],
     [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
+     3.1,
+     6.13,
+     "Nearly there. Keep your eyes on your volunteer.",
      0
     ],
     [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
+     6.91,
+     8.98,
+     "One last question. Ask:",
      0
     ],
     [
-     18.45,
-     19.67,
-     "You drew a fish.",
-     0
+     9.56,
+     10.91,
+     "Do you own one?",
+     1
     ],
     [
-     21.85,
-     26.8,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     11.81,
+     14.73,
+     "Wait for their answer. Then play the next tape.",
      0
     ]
-   ],
-   "art": "fish",
-   "page": 19.85
+   ]
   },
-  "r_house": {
-   "tape": 8,
+  "final_sun": {
+   "tape": 6,
    "next": null,
-   "file": "audio/23.mp3",
-   "dur": 28.16,
-   "safe": 2.84,
+   "file": "audio/20.mp3",
+   "dur": 30.74,
+   "safe": 2.87,
    "lines": [
     [
      1.4,
-     2.91,
-     "This is the red tape.",
+     2.42,
+     "Tape six.",
      0
     ],
     [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
+     3.12,
+     7.33,
+     "This is the last one, and it's all yours. You have everything you need.",
      0
     ],
     [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
+     8.21,
+     12.88,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
      0
     ],
     [
-     18.45,
-     19.69,
-     "You drew a house.",
+     14.86,
+     19.04,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
      0
     ],
     [
-     21.87,
-     26.82,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
-     0
-    ]
-   ],
-   "art": "house",
-   "page": 19.87
-  },
-  "r_sun": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/24.mp3",
-   "dur": 28.18,
-   "safe": 2.84,
-   "lines": [
-    [
-     1.4,
-     2.91,
-     "This is the red tape.",
-     0
-    ],
-    [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
-     0
-    ],
-    [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
-     0
-    ],
-    [
-     18.45,
-     19.71,
+     19.62,
+     21.05,
      "You drew the sun.",
-     0
+     1
     ],
     [
-     21.89,
-     26.84,
+     24.45,
+     29.4,
      "And that is how you read a mind! Congratulations on finishing lesson one.",
      0
     ]
    ],
    "art": "sun",
-   "page": 19.89
+   "page": 23.45
   },
-  "r_tree": {
-   "tape": 8,
+  "final_stickman6": {
+   "tape": 6,
    "next": null,
-   "file": "audio/25.mp3",
-   "dur": 28.23,
-   "safe": 2.84,
+   "file": "audio/21.mp3",
+   "dur": 31.09,
+   "safe": 2.87,
    "lines": [
     [
      1.4,
-     2.91,
-     "This is the red tape.",
+     2.42,
+     "Tape six.",
      0
     ],
     [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
+     3.12,
+     7.33,
+     "This is the last one, and it's all yours. You have everything you need.",
      0
     ],
     [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
+     8.21,
+     12.88,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
      0
     ],
     [
-     18.45,
-     19.75,
-     "You drew a tree.",
+     14.86,
+     19.04,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
      0
     ],
     [
-     21.93,
-     26.88,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
-     0
-    ]
-   ],
-   "art": "tree",
-   "page": 19.93
-  },
-  "r_flower": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/26.mp3",
-   "dur": 28.29,
-   "safe": 2.84,
-   "lines": [
-    [
-     1.4,
-     2.91,
-     "This is the red tape.",
-     0
+     19.62,
+     21.39,
+     "You drew a stick figure.",
+     1
     ],
     [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
-     0
-    ],
-    [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
-     0
-    ],
-    [
-     18.45,
-     19.82,
-     "You drew a flower.",
-     0
-    ],
-    [
-     22.0,
-     26.95,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
-     0
-    ]
-   ],
-   "art": "flower",
-   "page": 20.0
-  },
-  "r_pencil": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/27.mp3",
-   "dur": 28.2,
-   "safe": 2.84,
-   "lines": [
-    [
-     1.4,
-     2.91,
-     "This is the red tape.",
-     0
-    ],
-    [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
-     0
-    ],
-    [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
-     0
-    ],
-    [
-     18.45,
-     19.73,
-     "You drew a pencil.",
-     0
-    ],
-    [
-     21.91,
-     26.86,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
-     0
-    ]
-   ],
-   "art": "pencil",
-   "page": 19.91
-  },
-  "r_moon": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/28.mp3",
-   "dur": 28.27,
-   "safe": 2.84,
-   "lines": [
-    [
-     1.4,
-     2.91,
-     "This is the red tape.",
-     0
-    ],
-    [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
-     0
-    ],
-    [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
-     0
-    ],
-    [
-     18.45,
-     19.79,
-     "You drew the moon.",
-     0
-    ],
-    [
-     21.97,
-     26.92,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
-     0
-    ]
-   ],
-   "art": "moon",
-   "page": 19.97
-  },
-  "r_glass": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/29.mp3",
-   "dur": 28.18,
-   "safe": 2.84,
-   "lines": [
-    [
-     1.4,
-     2.91,
-     "This is the red tape.",
-     0
-    ],
-    [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
-     0
-    ],
-    [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
-     0
-    ],
-    [
-     18.45,
-     19.71,
-     "You drew a glass.",
-     0
-    ],
-    [
-     21.89,
-     26.84,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
-     0
-    ]
-   ],
-   "art": "glass",
-   "page": 19.89
-  },
-  "r_ball": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/30.mp3",
-   "dur": 28.16,
-   "safe": 2.84,
-   "lines": [
-    [
-     1.4,
-     2.91,
-     "This is the red tape.",
-     0
-    ],
-    [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
-     0
-    ],
-    [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
-     0
-    ],
-    [
-     18.45,
-     19.69,
-     "You drew a ball.",
-     0
-    ],
-    [
-     21.87,
-     26.82,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
-     0
-    ]
-   ],
-   "art": "ball",
-   "page": 19.87
-  },
-  "r_car": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/31.mp3",
-   "dur": 28.2,
-   "safe": 2.84,
-   "lines": [
-    [
-     1.4,
-     2.91,
-     "This is the red tape.",
-     0
-    ],
-    [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
-     0
-    ],
-    [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
-     0
-    ],
-    [
-     18.45,
-     19.73,
-     "You drew a car.",
-     0
-    ],
-    [
-     21.91,
-     26.86,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
-     0
-    ]
-   ],
-   "art": "car",
-   "page": 19.91
-  },
-  "r_plane": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/32.mp3",
-   "dur": 28.4,
-   "safe": 2.84,
-   "lines": [
-    [
-     1.4,
-     2.91,
-     "This is the red tape.",
-     0
-    ],
-    [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
-     0
-    ],
-    [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
-     0
-    ],
-    [
-     18.45,
-     19.92,
-     "You drew an airplane.",
-     0
-    ],
-    [
-     22.1,
-     27.05,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
-     0
-    ]
-   ],
-   "art": "plane",
-   "page": 20.1
-  },
-  "r_cat": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/33.mp3",
-   "dur": 28.12,
-   "safe": 2.84,
-   "lines": [
-    [
-     1.4,
-     2.91,
-     "This is the red tape.",
-     0
-    ],
-    [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
-     0
-    ],
-    [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
-     0
-    ],
-    [
-     18.45,
-     19.65,
-     "You drew a cat.",
-     0
-    ],
-    [
-     21.83,
-     26.77,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
-     0
-    ]
-   ],
-   "art": "cat",
-   "page": 19.83
-  },
-  "r_stickman": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/34.mp3",
-   "dur": 29.12,
-   "safe": 2.84,
-   "lines": [
-    [
-     1.4,
-     2.91,
-     "This is the red tape.",
-     0
-    ],
-    [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
-     0
-    ],
-    [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
-     0
-    ],
-    [
-     18.45,
-     20.65,
-     "You drew a person. A stick figure.",
-     0
-    ],
-    [
-     22.83,
-     27.78,
+     24.79,
+     29.74,
      "And that is how you read a mind! Congratulations on finishing lesson one.",
      0
     ]
    ],
    "art": "stickman",
-   "page": 20.83
+   "page": 23.79
   },
-  "r_table": {
-   "tape": 8,
+  "final_fish": {
+   "tape": 7,
    "next": null,
-   "file": "audio/35.mp3",
-   "dur": 28.29,
-   "safe": 2.84,
+   "file": "audio/22.mp3",
+   "dur": 30.64,
+   "safe": 2.85,
    "lines": [
     [
      1.4,
-     2.91,
-     "This is the red tape.",
+     2.4,
+     "Tape seven.",
      0
     ],
     [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
+     3.1,
+     7.31,
+     "This is the last one, and it's all yours. You have everything you need.",
      0
     ],
     [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
+     8.19,
+     12.86,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
      0
     ],
     [
-     18.45,
-     19.82,
-     "You drew a table.",
+     14.84,
+     19.02,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
      0
     ],
     [
-     22.0,
-     26.95,
-     "And that is how you read a mind! Congratulations on finishing lesson one.",
-     0
-    ]
-   ],
-   "art": "table",
-   "page": 20.0
-  },
-  "r_boat": {
-   "tape": 8,
-   "next": null,
-   "file": "audio/36.mp3",
-   "dur": 28.08,
-   "safe": 2.84,
-   "lines": [
-    [
-     1.4,
-     2.91,
-     "This is the red tape.",
-     0
-    ],
-    [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
-     0
-    ],
-    [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
-     0
-    ],
-    [
-     18.45,
      19.6,
-     "You drew a boat.",
-     0
+     20.94,
+     "You drew a fish.",
+     1
     ],
     [
-     21.78,
-     26.73,
+     24.34,
+     29.29,
      "And that is how you read a mind! Congratulations on finishing lesson one.",
      0
     ]
    ],
-   "art": "boat",
-   "page": 19.78
+   "art": "fish",
+   "page": 23.34
   },
-  "r_heart": {
-   "tape": 8,
+  "final_house": {
+   "tape": 7,
    "next": null,
-   "file": "audio/37.mp3",
-   "dur": 28.23,
-   "safe": 2.84,
+   "file": "audio/23.mp3",
+   "dur": 30.7,
+   "safe": 2.85,
    "lines": [
     [
      1.4,
-     2.91,
-     "This is the red tape.",
+     2.4,
+     "Tape seven.",
      0
     ],
     [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
+     3.1,
+     7.31,
+     "This is the last one, and it's all yours. You have everything you need.",
      0
     ],
     [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
+     8.19,
+     12.86,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
      0
     ],
     [
-     18.45,
-     19.75,
-     "You drew a heart.",
+     14.84,
+     19.02,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
      0
     ],
     [
-     21.93,
-     26.88,
+     19.6,
+     21.01,
+     "You drew a house.",
+     1
+    ],
+    [
+     24.41,
+     29.36,
      "And that is how you read a mind! Congratulations on finishing lesson one.",
      0
     ]
    ],
-   "art": "heart",
-   "page": 19.93
+   "art": "house",
+   "page": 23.41
   },
-  "r_star": {
-   "tape": 8,
+  "final_tree": {
+   "tape": 7,
    "next": null,
-   "file": "audio/38.mp3",
-   "dur": 28.29,
-   "safe": 2.84,
+   "file": "audio/24.mp3",
+   "dur": 30.79,
+   "safe": 2.85,
    "lines": [
     [
      1.4,
-     2.91,
-     "This is the red tape.",
+     2.4,
+     "Tape seven.",
      0
     ],
     [
-     3.79,
-     10.92,
-     "You have done your part, and you did great. Hands in your lap. I will finish this one, so you can see how it should feel.",
+     3.1,
+     7.31,
+     "This is the last one, and it's all yours. You have everything you need.",
      0
     ],
     [
-     12.0,
-     16.97,
-     "Volunteer: you never said what you drew. Not to my student, and not to me.",
+     8.19,
+     12.86,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
      0
     ],
     [
-     18.45,
-     19.82,
+     14.84,
+     19.02,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.6,
+     21.09,
+     "You drew a tree.",
+     1
+    ],
+    [
+     24.49,
+     29.44,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "tree",
+   "page": 23.49
+  },
+  "final_flower": {
+   "tape": 7,
+   "next": null,
+   "file": "audio/25.mp3",
+   "dur": 30.85,
+   "safe": 2.85,
+   "lines": [
+    [
+     1.4,
+     2.4,
+     "Tape seven.",
+     0
+    ],
+    [
+     3.1,
+     7.31,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.19,
+     12.86,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.84,
+     19.02,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.6,
+     21.16,
+     "You drew a flower.",
+     1
+    ],
+    [
+     24.56,
+     29.51,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "flower",
+   "page": 23.56
+  },
+  "final_pencil": {
+   "tape": 7,
+   "next": null,
+   "file": "audio/26.mp3",
+   "dur": 30.72,
+   "safe": 2.85,
+   "lines": [
+    [
+     1.4,
+     2.4,
+     "Tape seven.",
+     0
+    ],
+    [
+     3.1,
+     7.31,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.19,
+     12.86,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.84,
+     19.02,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.6,
+     21.03,
+     "You drew a pencil.",
+     1
+    ],
+    [
+     24.43,
+     29.38,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "pencil",
+   "page": 23.43
+  },
+  "final_moon": {
+   "tape": 7,
+   "next": null,
+   "file": "audio/27.mp3",
+   "dur": 30.83,
+   "safe": 2.85,
+   "lines": [
+    [
+     1.4,
+     2.4,
+     "Tape seven.",
+     0
+    ],
+    [
+     3.1,
+     7.31,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.19,
+     12.86,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.84,
+     19.02,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.6,
+     21.13,
+     "You drew the moon.",
+     1
+    ],
+    [
+     24.53,
+     29.48,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "moon",
+   "page": 23.53
+  },
+  "final_star": {
+   "tape": 7,
+   "next": null,
+   "file": "audio/28.mp3",
+   "dur": 30.83,
+   "safe": 2.85,
+   "lines": [
+    [
+     1.4,
+     2.4,
+     "Tape seven.",
+     0
+    ],
+    [
+     3.1,
+     7.31,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.19,
+     12.86,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.84,
+     19.02,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.6,
+     21.13,
      "You drew a star.",
-     0
+     1
     ],
     [
-     22.0,
-     26.95,
+     24.53,
+     29.48,
      "And that is how you read a mind! Congratulations on finishing lesson one.",
      0
     ]
    ],
    "art": "star",
-   "page": 20.0
+   "page": 23.53
+  },
+  "final_heart": {
+   "tape": 7,
+   "next": null,
+   "file": "audio/29.mp3",
+   "dur": 30.72,
+   "safe": 2.85,
+   "lines": [
+    [
+     1.4,
+     2.4,
+     "Tape seven.",
+     0
+    ],
+    [
+     3.1,
+     7.31,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.19,
+     12.86,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.84,
+     19.02,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.6,
+     21.03,
+     "You drew a heart.",
+     1
+    ],
+    [
+     24.43,
+     29.38,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "heart",
+   "page": 23.43
+  },
+  "final_cat": {
+   "tape": 8,
+   "next": null,
+   "file": "audio/30.mp3",
+   "dur": 30.62,
+   "safe": 2.81,
+   "lines": [
+    [
+     1.4,
+     2.36,
+     "Tape eight.",
+     0
+    ],
+    [
+     3.06,
+     7.26,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.14,
+     12.81,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.79,
+     18.98,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.56,
+     20.92,
+     "You drew a cat.",
+     1
+    ],
+    [
+     24.32,
+     29.27,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "cat",
+   "page": 23.32
+  },
+  "final_stickman8": {
+   "tape": 8,
+   "next": null,
+   "file": "audio/31.mp3",
+   "dur": 31.02,
+   "safe": 2.81,
+   "lines": [
+    [
+     1.4,
+     2.36,
+     "Tape eight.",
+     0
+    ],
+    [
+     3.06,
+     7.26,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.14,
+     12.81,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.79,
+     18.98,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.56,
+     21.33,
+     "You drew a stick figure.",
+     1
+    ],
+    [
+     24.73,
+     29.68,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "stickman",
+   "page": 23.73
+  },
+  "final_table": {
+   "tape": 8,
+   "next": null,
+   "file": "audio/32.mp3",
+   "dur": 30.81,
+   "safe": 2.81,
+   "lines": [
+    [
+     1.4,
+     2.36,
+     "Tape eight.",
+     0
+    ],
+    [
+     3.06,
+     7.26,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.14,
+     12.81,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.79,
+     18.98,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.56,
+     21.11,
+     "You drew a table.",
+     1
+    ],
+    [
+     24.51,
+     29.46,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "table",
+   "page": 23.51
+  },
+  "final_boat": {
+   "tape": 8,
+   "next": null,
+   "file": "audio/33.mp3",
+   "dur": 30.62,
+   "safe": 2.81,
+   "lines": [
+    [
+     1.4,
+     2.36,
+     "Tape eight.",
+     0
+    ],
+    [
+     3.06,
+     7.26,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.14,
+     12.81,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.79,
+     18.98,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.56,
+     20.92,
+     "You drew a boat.",
+     1
+    ],
+    [
+     24.32,
+     29.27,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "boat",
+   "page": 23.32
+  },
+  "final_glass": {
+   "tape": 8,
+   "next": null,
+   "file": "audio/34.mp3",
+   "dur": 30.68,
+   "safe": 2.81,
+   "lines": [
+    [
+     1.4,
+     2.36,
+     "Tape eight.",
+     0
+    ],
+    [
+     3.06,
+     7.26,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.14,
+     12.81,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.79,
+     18.98,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.56,
+     20.99,
+     "You drew a glass.",
+     1
+    ],
+    [
+     24.39,
+     29.33,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "glass",
+   "page": 23.39
+  },
+  "final_ball": {
+   "tape": 8,
+   "next": null,
+   "file": "audio/35.mp3",
+   "dur": 30.64,
+   "safe": 2.81,
+   "lines": [
+    [
+     1.4,
+     2.36,
+     "Tape eight.",
+     0
+    ],
+    [
+     3.06,
+     7.26,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.14,
+     12.81,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.79,
+     18.98,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.56,
+     20.94,
+     "You drew a ball.",
+     1
+    ],
+    [
+     24.34,
+     29.29,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "ball",
+   "page": 23.34
+  },
+  "final_car": {
+   "tape": 8,
+   "next": null,
+   "file": "audio/36.mp3",
+   "dur": 30.68,
+   "safe": 2.81,
+   "lines": [
+    [
+     1.4,
+     2.36,
+     "Tape eight.",
+     0
+    ],
+    [
+     3.06,
+     7.26,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.14,
+     12.81,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.79,
+     18.98,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.56,
+     20.99,
+     "You drew a car.",
+     1
+    ],
+    [
+     24.39,
+     29.33,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "car",
+   "page": 23.39
+  },
+  "final_plane": {
+   "tape": 8,
+   "next": null,
+   "file": "audio/37.mp3",
+   "dur": 30.98,
+   "safe": 2.81,
+   "lines": [
+    [
+     1.4,
+     2.36,
+     "Tape eight.",
+     0
+    ],
+    [
+     3.06,
+     7.26,
+     "This is the last one, and it's all yours. You have everything you need.",
+     0
+    ],
+    [
+     8.14,
+     12.81,
+     "Lower your hands. Look your volunteer in the eye, and take one slow breath.",
+     0
+    ],
+    [
+     14.79,
+     18.98,
+     "Don't ask this time. Say it like you have known all along. Tell them:",
+     0
+    ],
+    [
+     19.56,
+     21.28,
+     "You drew an airplane.",
+     1
+    ],
+    [
+     24.68,
+     29.63,
+     "And that is how you read a mind! Congratulations on finishing lesson one.",
+     0
+    ]
+   ],
+   "art": "plane",
+   "page": 23.68
   }
  },
  "course": "How to Read Minds",
- "start": "t1",
- "tapes": 8
+ "start": "t1"
 }

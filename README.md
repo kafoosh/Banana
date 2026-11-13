@@ -2,17 +2,16 @@
 
 A magic trick that runs in a phone browser.
 
-On screen is an open cassette album: *How to Read Minds, a home course in eight
-cassettes*. Seven numbered tapes, one red. The performer has never done this
-before and says so. They put on tape 1 and follow it, with a spectator as the
-practice volunteer.
+On screen is a cassette player and a sheet of paper: *How to Read Minds*, a
+home course on tape. The performer has never done this before and says so.
+They start tape 1 and follow it, with a spectator as the volunteer.
 
-The volunteer thinks of a drawing and never says what it is. Each tape gives
-the student one step and one line to say, then stops. The tapes never mention
-what the volunteer answered; they only give the next step, and it is always the
-right one. The red tape finishes the reading itself and names the drawing, which
-then appears on the paper as a pencil doodle. The paper types out what the voice
-says as it says it.
+The volunteer thinks of a drawing and never says what it is. Each tape coaches
+the student through one step and one line to say, then stops, and the student
+puts on the next tape. The tapes never mention what the volunteer answered;
+they only give the next step, and it is always the right one. The last tape
+coaches the student to look the volunteer in the eye and name the drawing. The
+paper types out what the voice says as it says it, and ends with the drawing.
 
 - `METHOD.md`: how the drawing is found. Private.
 - `DESIGN.md`: why the trick is built this way.
@@ -24,25 +23,25 @@ says as it says it.
 Read the slip that opens the first time you load the app. In short:
 
 1. Phone between you and your volunteer, ringer on, volume up.
-2. Touch tape 1 in the case. It goes into the player and plays. When a tape
-   stops, do the step, then take the next tape from the case.
-3. From tape 3 on, the volunteer's answer goes into how you pick up the next
-   tape. **Yes: tap it. No: rest your finger on it until it lifts** (0.4 s).
-   On a tap it lifts as your finger leaves; on a hold it lifts under your
-   finger. That is your confirmation.
-4. Wrong one? REWIND immediately. Every version of a tape is identical for its
-   first three seconds (leader, then its number), so nothing has been given
-   away. The tape goes back in the case; pick it again.
+2. The wide key on the right is NEXT TAPE. Press it to start tape 1. When a
+   tape stops, do the step, then press it again.
+3. From tape 3 on, the volunteer's answer goes into that press.
+   **Yes: tap. No: press and hold until the key clicks** (0.4 s).
+   A tap clicks as your thumb leaves; a hold clicks under your thumb. That is
+   your confirmation.
+4. Wrong click? REWIND immediately. Every version of a tape is identical for
+   its first three seconds (leader, then its number), so nothing has been given
+   away. The tape comes back out; press NEXT TAPE again.
 5. REWIND later than that takes the tape back to its start. PLAY restarts it.
+6. The last tape gives you the line that names the drawing. Say it yourself.
 
-Only the next tape in order responds to a touch. Hold a finger on the player
-for one second to reopen the slip, which also has **Start over**. After the
-red tape the same button appears on the paper.
+Hold a finger on the player for one second to reopen the slip, which also has
+**Start over**. After the last tape the same button appears on the paper.
 
-Keyboard, for rehearsal at a desk: Space picks the next tape (tap or hold),
+Keyboard, for rehearsal at a desk: Space is NEXT TAPE (tap or hold),
 S stops, R rewinds.
 
-A full run is about three minutes of tape. If it misses, you have the
+A full run is three and a half to four minutes of tape. If it misses, you have the
 best out available: you are on lesson one.
 
 ## Dev
@@ -94,6 +93,6 @@ graph goes to `docs/data/tapes.json`. After changing anything in `docs/`, bump
 
 Serve `docs/` from anywhere static. GitHub Pages sites are public even when the
 repo is private, and `docs/` contains the performer's slip and the graph, so
-anyone given the URL can work out the pick. Keep `METHOD.md` out of it either way.
+anyone given the URL can work out the press. Keep `METHOD.md` out of it either way.
 
 Fonts: Libre Franklin and Courier Prime, both SIL Open Font License.

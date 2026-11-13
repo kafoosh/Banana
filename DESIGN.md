@@ -26,61 +26,48 @@ trick needs the spectator to believe in a fixed set of old recordings.
 ## What it is now
 
 **A course in separate tapes.** Each tape gives one step and ends. A tape
-ending is what tapes do. The student does the step, then takes the next tape
-out of the case. The numbered tapes going back into the case one by one are
-the proof that this is a fixed sequence.
+ending is what tapes do. The student does the step, then puts on the next
+tape. The number on the label goes up by one each time. Routes differ in
+length, so the last tape is number 6, 7 or 8; nothing is skipped and nothing
+on screen says how many there are.
 
 **The tape does not know.** No tape says what the volunteer answered. There
 is no "you got the A", no "it is alive", no "no R". Each tape gives the next
-step and the next line, and that step is always the right one. The spectator
-hears a recording that never reacts and still ends up exactly where it should.
+step and the next line, and that step is always the right one.
 
 The one exception is the first no to a letter on a route, whichever letter it
 is (A, T or R): "Your volunteer said no to the T. Don't worry, they are
 supposed to. One of the letters in this course is always a test." It is the
 moment a first-time student would otherwise look lost, and it is said once.
 
-Each tape also gives the student something to do: fingers on the temple, a
-slow breath, hands out palms up.
+**A coach.** The voice coaches the delivery: sit up straight, fingers on the
+temple, don't mumble, sound a little less certain this time, relax your
+shoulders, ask gently. That gives every tape something to say that has nothing
+to do with the answer.
 
-**The pick is the input.** The next tape is taken from the case by touching
-it. A tap is yes; a finger rested on it until it lifts is no. Same tape, same
-finger, same place. The lift is the confirmation: it happens as the finger
-leaves, or under it. Only the next tape in order responds, so nothing can be
-played out of sequence. Every version of a tape is identical for its first
-three seconds, and REWIND in that window puts it back in the case unplayed.
+**The student makes the reveal.** The last tape says it is the last one, has
+the student lower their hands, look the volunteer in the eye and take a
+breath, and then gives the line: "You drew a fish." The student says it. The
+drawing appears on the paper a moment later. The tape does not take over.
 
-**The red tape.** It sits in the case from the start and tape 1 says to save
-it for last. The final question on every route ends "whatever they answer,
-don't say a word; play the red tape". The red tape tells the student to put
-their hands in their lap, speaks to the volunteer, names the drawing, and the drawing appears on the paper.
+**One key.** NEXT TAPE. A tap is yes; a press held until the key latches is
+no. Same key, same thumb, same place. The click is the confirmation: it comes
+as the thumb lifts, or under it. Every version of a tape is identical for its
+first three seconds, and REWIND in that window takes it back out.
 
-Routes differ in length (three to five answers), so tape 7 is often skipped.
-The tape says so. Two routes resolve before a final question and get a short
-tape that says "That is everything you need."
-
-**The voice.** An upbeat how-to instructor: encouraging, brisk, never
-surprised, never joking. The tape talks to the
-volunteer directly for the passages whose wording carries the method
-("Volunteer, imagine the real thing"), so a first-timer cannot get them wrong. The voice never
-recites what has been learned. Rules are at the top of `tools/tapes.py`.
-
-**The look.** A player, a sheet of paper, the tapes on edge, three keys. Flat
-printed and moulded surfaces, two typefaces (Libre Franklin for print, Courier
-Prime for the typed sheet), one spot colour plus the red. Nothing is labelled
-unless the object itself would carry the label: the cassette has the course
-title and its number, the keys have their symbols, and that is all. Played
-tapes go back the other way round.
+**The look.** A player, a sheet of paper, four keys. Flat printed and moulded
+surfaces, two typefaces (Libre Franklin for print, Courier Prime for the typed
+sheet), one spot colour. Nothing is labelled unless the object itself would
+carry the label: the cassette has the course title and its number, the keys
+have their symbols.
 
 **The paper.** Before the first tape it is the cover. While a tape plays it is
 a transcript, typed out in time with the voice, with the line the student has
 to repeat set heavier. At the end it is a leaf from a school notebook with the
 doodle in pencil.
 
-**Any screen.** Upright it is one column: player, paper, tapes, keys. Wider
-than tall (a phone on its side, a tablet, a laptop) the player and keys go on
-the left, the paper and tapes on the right. Sizes scale
-with the height of the screen.
+**Any screen.** Upright it is one column: player, paper, keys. Wider than tall
+the player and keys go on the left and the paper on the right.
 
 ## Method notes
 
@@ -89,8 +76,8 @@ with the height of the screen.
 - Tape 3 adds "use the simple word, the one a kid would use", to pull people
   off ROSE and towards FLOWER.
 - Not solved: a drawing outside the seventeen. The frame covers it, since a
-  first-lesson student is allowed to fail, but the red tape will still name
-  the wrong thing.
+  first-lesson student is allowed to fail, but the last tape will still give
+  the wrong line.
 
 ## Not verified
 

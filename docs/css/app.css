@@ -1,5 +1,5 @@
 /* How to Read Minds.
-   A player, a sheet of paper, the tapes, three keys. Nothing on screen is
+   A player, a sheet of paper, four keys. Nothing on screen is
    labelled unless the object itself would carry the label. */
 
 @font-face { font-family: Franklin; font-weight: 500; font-display: block; src: url(../fonts/libre-franklin-latin-500-normal.woff2) format("woff2"); }
@@ -46,12 +46,11 @@ body {
            calc(14px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left));
   background: var(--case);
   display: grid;
-  grid-template: "deck" auto "paper" minmax(0, 1fr) "tray" auto "keys" auto / minmax(0, 1fr);
+  grid-template: "deck" auto "paper" minmax(0, 1fr) "keys" auto / minmax(0, 1fr);
   gap: var(--gap);
 }
 .deck { grid-area: deck; }
 .paper { grid-area: paper; }
-.tray { grid-area: tray; }
 .keys { grid-area: keys; }
 
 /* ---- player ---- */
@@ -82,12 +81,6 @@ body {
 .l-course { font-size: 17px; letter-spacing: .13em; }
 .l-num { font-size: 44px; }
 
-.cass.red .shell { fill: var(--red); }
-.cass.red .edge { stroke: var(--red-lo); }
-.cass.red .foot { fill: var(--red-lo); }
-.cass.red .screws circle { fill: var(--red-lo); stroke: #5f1510; }
-.cass.red .band { fill: var(--ink); }
-.cass.red .l-course { fill: var(--paper); }
 
 @keyframes turn { to { transform: rotate(-360deg); } }
 .playing .hub { animation: turn 2.6s linear infinite; }
@@ -136,40 +129,16 @@ body {
   padding: 9px 12px;
 }
 
-/* ---- tapes ---- */
-.tray {
-  display: grid; grid-template-columns: repeat(var(--n, 7), 1fr); gap: 6px;
-  background: var(--pit);
-  border: 1px solid #000; border-bottom-color: var(--rib);
-  padding: 0 7px 7px;
-  transition: opacity .3s;
-}
-.loading .tray { opacity: .25; }
-.slot { touch-action: none; padding-top: 9px; }
-.slot i {
-  display: block; height: 58px; pointer-events: none;
-  background: var(--paper);
-  border-top: 10px solid var(--ochre);
-  color: var(--ink); text-align: center;
-  font: normal 800 19px/46px var(--sans);
-  transition: transform .12s ease-out;
-}
-.slot.red i { background: var(--red); border-top-color: var(--red-lo); }
-.slot.done i { background: var(--shell-lo); border-top-color: #9a927f; color: transparent; }
-.slot.red.done i { background: var(--red-lo); border-top-color: #5f1510; }
-.slot.lift i { transform: translateY(-8px); }
-.slot.out i { background: none; border-top-color: transparent; outline: 1px solid var(--rib); outline-offset: -1px; color: transparent; }
-
 /* ---- keys ---- */
 .keys {
-  display: grid; grid-template-columns: 1fr 1fr 1.7fr; gap: 6px;
+  display: grid; grid-template-columns: 1fr 1fr 1fr 1.8fr; gap: 6px;
   background: var(--pit);
   border: 1px solid #000; border-bottom-color: var(--rib);
   padding: 7px 7px 13px;
 }
 .key {
   appearance: none; border: 0; border-radius: 2px; margin: 0;
-  height: 58px;
+  height: 64px;
   background: var(--key); color: var(--paper);
   box-shadow: 0 6px 0 #0a0807;
   display: grid; place-items: center;
@@ -226,14 +195,12 @@ body {
 @media (max-height: 700px) and (max-aspect-ratio: 1/1) {
   .case { --gap: 8px; padding-top: calc(8px + env(safe-area-inset-top)); }
   .deck { padding: 10px 64px; }
-  .slot i { height: 44px; line-height: 32px; font-size: 16px; }
   .key { height: 50px; }
   .paper.type { font-size: 14.5px; padding: 12px 14px; }
 }
 /* A tablet held upright */
 @media (min-width: 600px) and (max-aspect-ratio: 1/1) {
   .deck { padding: 26px 80px; }
-  .slot i { height: 76px; line-height: 64px; font-size: 24px; }
   .paper.type { font-size: 20px; padding: 24px 26px; }
   .key { height: 72px; }
 }
@@ -247,26 +214,21 @@ body {
     height: min(100dvh, 780px);
     grid-template:
       "deck paper" minmax(0, 1fr)
-      "deck tray" auto
-      "keys tray" auto
+      "keys paper" auto
       / minmax(0, 1fr) minmax(0, 1fr);
     column-gap: clamp(10px, 2vw, 24px);
   }
   .deck { padding: clamp(10px, 3vh, 34px) clamp(14px, 3vw, 48px); display: flex; }
   .cass, .cass svg { width: 100%; height: 100%; }
-  .tray { align-self: end; }
-  .slot i { height: clamp(40px, 11vh, 84px); line-height: calc(clamp(40px, 11vh, 84px) - 12px); font-size: clamp(16px, 3.6vh, 26px); }
   .key { height: clamp(46px, 11vh, 76px); }
   .paper.cover h1 { font-size: clamp(30px, 8.5vh, 68px); }
   .paper.type { font-size: clamp(14px, 2.7vh, 21px); padding: clamp(10px, 2.6vh, 26px) clamp(12px, 2vw, 28px); }
 }
 @media (min-aspect-ratio: 1/1) and (max-height: 460px) {
   .case { padding-top: calc(8px + env(safe-area-inset-top)); padding-bottom: calc(8px + env(safe-area-inset-bottom)); }
-  .slot { padding-top: 6px; }
-  .tray { padding-bottom: 5px; }
   .keys { padding: 5px 5px 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .cass, .slot i, .key { transition: none; }
+  .cass, .key { transition: none; }
   .hub { animation: none !important; }
 }
